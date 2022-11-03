@@ -1,0 +1,16 @@
+---
+title: "flow_charts"
+editor: visual
+---
+
+pacman::p_load(fontawesome)
+
+```{mermaid}
+graph TD
+    A(fa:fa-pen 00_run_ME_once_to_create_structure.R) --> B[fa:fa-pen  code/000_parameters.R]
+    B --> C[fa:fa-pen code/dft2/01a_dft2_update_data_with_REDCapR.R]
+    0_run_ME_dft2.R
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[ Car]
+```

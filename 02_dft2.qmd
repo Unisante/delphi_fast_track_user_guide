@@ -1,0 +1,122 @@
+---
+title: "Round 2"
+---
+
+
+Once the round 2 is finished in REDCap, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run.
+
+## Update data
+
+`01a_dft2_update_data_with_REDCapR.R`
+		
+This code goes into the corresponding REDCap project using the token, and downloads the raw data and metadata from the project. Finally, it also creates xlsx tables by variable type with the raw data, which can be used for quick checks.
+
+
+
+
+
+
+
+
+Fichiers créés (…/data/redcap_data_raw) :
+-	dft2_metadata.RData 			[métadonnées brutes]
+-	dft2_data_redcapr_raw.RData 		[données brutes]
+
+Fichiers créés (…/output/checks) :
+-	chk_dft2_type1_raw.xlsx			[Table vérification type 1]
+-	chk_dft2_type2_raw.xlsx			[Table vérification type 2]
+-	chk_dft2_type3_raw.xlsx			[Table vérification type 3]
+
+## Recode data 
+
+`01b_dft2_recode_data.R` 
+
+Ce code va traiter les (méta)données (téléchargées en 8a) afin de créer les tables « propres » de données et métadonnées. En particulier, les (méta)données passeront à travers les traitements suivants :
+-	Correction des erreurs de labellisation, typos,…
+-	Simplification de la labellisation
+-	Définition de listes de variables selon le type (1, 2, 3)
+-	Déduplication conditionnelle (en cas de remplissage en plusieurs records REDCap pour un même participant -> garder un choix de réponse mais tous les commentaires)
+-	Création des visuels (.png) de résumé graphique des données pour les questions de type 1 uniquement
+
+Fichiers créés (…/data/dft2) :
+-	dft2_data_clean.RData			[données « propres »]
+-	dft2_lookup_final.RData			[métadonnées « propres » 
+pour variables type 1-2-3 et options de rép. type 3]
+-	dft2_lookup_value_labels_final.RData	[métadonnées « propres » 
+pour options de rép. type 1-2]
+
+Fichiers créés (…/output/png) :
+-	x fois dft2_X_sX_type1.png			[visuels graphiques type 1]
+
+## Prepare tables without participant id
+
+`02a_dft2_prepare_tables_without_participant_id.R`
+	
+Ce code va analyser les données « propres » (générées en 8b) afin de créer les tables de résultats de groupe (= résumés statistiques et graphiques). Il appelle automatiquement le code 01c_dft2_define_cols.R.
+Il crée et sauvegarde aussi sous format xlsx des tables contenant uniquement les réponses « pas d’avis », en cas de vérification rapide.
+
+Fichiers créés (…/output/RData) :
+-	dft2_type0_zz1.RData			[Table profil des participants]
+-	dft2_type1_zz_combined.RData		[Table résultats type 1]
+-	dft2_type2_zz1.RData			[Table résultats type 2]
+-	dft2_type3_zz1.RData			[Table résultats type 3]
+-	dft2_dt_comments_m.RData		[Table résultats comment.]
+
+Fichiers créés (…/output/checks) :
+-	dft2_type1_zz0_no_opinion.xlsx
+-	dft2_type3_zz0_no_opinion.xlsx
+
+## Update texts introduction
+
+`00_update_texts_intro.R`
+
+Ce code met à jour le répertoire en local des textes d’intro de paragraphe pour les rapports (depuis le répertoire disponible et à jour sur le serveur).
+
+## Create generic report
+
+`dft2_report_generic.Rmd`
+
+Ce code va créer le document word des résultats de groupe (« rapport générique ») à partir des textes intro (mis à jour en 8d) et des tables de résultats (créées en 8c), sur la base d’un template word de référence. Il appelle automatiquement le code 01c_dft2_define_cols.R. Puis, il est composé d’un code .Rmd par section (Z – A – B – C), qui lui-même appelle automatiquement 2 codes :
+
+1)	`dft2_child_section_Z.Rmd`
+		Ce code génère la section Z (préambule) du rapport word.
+			`03a_create_flextable_results_type_1_generic.R`
+Ce code crée la table de résultats pour les énoncés de type 1 de la section Z et définit les commentaires de chaque énoncé à mettre en page.
+ 
+ `03b_create_flextable_results_type_2_3_generic.R`
+Ce code crée les tables de résultats pour les énoncés de type 2 et 3 de la section Z et met en page les commentaires de chaque énoncé de type 2 et 3.
+
+2)	dft2_child_section_A.Rmd		[idem]
+3)	dft2_child_section_B.Rmd		[idem]
+4)	dft2_child_section_C.Rmd		[idem]
+
+Fichiers créés (…/output/reports/dft2) :
+-	dft2_report_generic_date.docx			[rapport générique]
+
+## Render individual reports
+
+`05_to_render_individual_reports_dft2.R`
+
+Ce code va créer un document word par participant comprenant les résultats de groupe ainsi que sa propre réponse individuelle. Cela se fait à partir des textes intro (mis à jour en 8d) et des tables de résultats (créées en 8c) auxquelles s’ajoute la réponse individuelle – le tout sur la base d’un template word de référence. Il appelle en boucle (pour chacun des participants) un code .Rmd afin de créer le rapport word, qui lui-même est composé d’un premier code qui apponde les résultats individuels aux résultats de groupe, puis d’un code .Rmd par section (Z – A – B – C), qui lui-même appelle automatiquement 2 codes :
+
+dft2_report_per_participant.Rmd
+
+1)	01c_dft2_define_cols.R
+2)	02b_dft2_prepare_tables_participants.R
+Ce code apponde les résultats individuels aux tables des résultats de groupe
+3)	dft2_child_section_Z.Rmd
+		Ce code génère la section Z (préambule) du rapport word.
+			04a_create_flextable_results_type_1_participants.R
+Ce code crée la table de résultats avec réponse individualisée pour les énoncés de type 1 de la section Z et définit les commentaires de chaque énoncé à mettre en page.
+
+`04b_create_flextable_results_type_2_3_participants.R`
+
+
+Ce code crée les tables de résultats avec réponse individualisée pour les énoncés de type 2 et 3 de la section Z et met en page les commentaires de chaque énoncé de type 2 et 3.
+
+4)	dft2_child_section_A_ per_participant.Rmd	[idem]
+5)	dft2_child_section_B_ per_participant.Rmd	[idem]
+6)	dft2_child_section_C_ per_participant.Rmd	[idem]
+
+Fichiers créés (…/output/reports/dft2/reports_by_participant) :
+-	x fois dft2_report_participant_X_date.docx		[rapport individualisé]

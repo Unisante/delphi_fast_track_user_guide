@@ -1,0 +1,24 @@
+---
+title: "Start your project"
+---
+
+## Pre-requisites
+
+Make sure you are have done the steps presented in @sec-pre-requisites.
+
+## Create the structure of your project
+
+-   run `00_run_ME_once_to_create_structure.R`
+
+## Update parameters
+
+-   open `000_parameters.R` and update as necessary
+
+
+## Update the texts for introduction
+
+These texts are word documents. They should be prepared in advance to gain time and will be updated in several steps once some of the results are available.
+
+- `00_update_texts_intro.R`
+
+

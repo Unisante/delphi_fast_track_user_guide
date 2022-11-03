@@ -1,0 +1,66 @@
+project:
+  type: book
+
+book:
+  title: "Delphi fast-track : user's guide"
+  author:
+  - name: Olivier Duperrex
+    orcid: 0000-0002-0932-6846
+    attributes:
+      corresponding: true
+    affiliations:
+    - id: unisante
+      name: Unisanté
+      address: Route de Berne 113
+      city: Lausanne
+      country: Suisse
+      postal-code: CH-1010
+    - id: unige
+      name: Institute of Global Health, University of Geneva
+      city: Geneva
+      country: Suisse
+  - name: Camille Crézé
+    orcid: 0000-0002-4686-9401
+    affiliations:
+    - ref: unisante
+  date: today
+  search: true
+  repo-url: https://github.com/Unisante/
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - part: "Get ready"
+      chapters:
+        - intro.qmd
+        - structure.qmd
+    - part: "Your project"
+      chapters: 
+        - 01_start_your_project.qmd
+        - 02_dft2.qmd
+        - 03_dft3.qmd
+    - part: "Explore the demo"
+      chapters:
+        - summary.qmd
+    - references.qmd
+  appendices:
+    - tools.qmd
+    - resources.qmd
+  cover-image: _img/screenshot_individual_fr.png
+  page-footer: 
+    center: "![](_img/logo_unisante_RVB_2lignes.png){width=10%}"
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-copy: true
+  docx: 
+    reference-doc: templates/template.docx
+
+editor: visual
+
+
+
