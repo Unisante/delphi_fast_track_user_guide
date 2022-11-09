@@ -1,0 +1,41 @@
+---
+title: "Overall"
+---
+
+> ***TODO:** complete with latest version of demo*
+
+## Update summary image
+
+-   [ ] update the image for the executive summary in the ppt provided and save it as `ExecutiveSummary_figure-Flow.png` in the `./analysis/overall/` folder
+
+It summarises the process with dates, number of experts and number of statements. See @fig-exec-steps for the pilot study that provides the demo data.
+
+![Overview of the steps for the pilot study of the Delphi fast-track method](_img/ExecutiveSummary_figure-Flow.png){#fig-exec-steps fig-align="center"}
+
+## Update introductory texts for the executive summary
+
+-   [ ] update the introductory texts on the server
+
+-   [ ] run `00_update_texts_intro.R` one more time
+
+
+## Modify executive summary report title
+
+-   [ ] modify report title, subtitile and authors as needed in `./analysis/overall/overall_executive_summary.Rmd` in the YAML section
+
+
+## Publish overall report
+
+-   [ ] run `0_run_ME_overall_demo.R`
+
+This code will prepare the result tables with combined round 2 and 3 and publish the overall report
+
+> ***TODO:** continue here*
+
+source(here::here('code', '06_prepare_tables_combined_round_2\_3.R'), encoding = 'UTF-8')
+
+### .. overall_executive_summary.Rmd ------------------------------------------
+
+input \<- "analysis/overall/overall_executive_summary.Rmd"
+
+-   [ ] run `./analysis/overall/overall_executive_summary.Rmd`
