@@ -42,10 +42,14 @@ In order to produce results in a very short time frame, we use an [R project](ht
 
 -   Functions are followed by a () : `fs::dir_tree()`
 
+-   Actions are preceded by a ticking box (not interactive):
+
+    -   [ ] run this code ...
+
 The table below summarises the conventions used in the names of tables and variables.
 
 | Word used     | Example as part of name | Example inside a word document | What it means                                         |
-|---------------|---------------|---------------|---------------------------|
+|-----------------|-----------------|-----------------|---------------------|
 | dt            | dt\_                    | \-                             | a data.table                                          |
 | current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                    |
 | section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic |
@@ -60,7 +64,7 @@ The easiest way to understand the process and see the output is to download the 
 
 We want to thank the following for their contributions, support and feedback :
 
-> ***TODO** : add names and institutions*
+> ***TODO** : to be completed\`*
 
 # Funding
 
@@ -72,6 +76,6 @@ This project was funded by ...
 
 © 2022 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-[![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/) [![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-Citation: Duperrex O and Creze C. Delphi fast-track : user's guide 2022. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse.
+Citation: Duperrex O and Creze C. Delphi fast-track : user guide 2022. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse.
