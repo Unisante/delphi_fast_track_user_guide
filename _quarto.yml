@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Delphi fast-track : user's guide"
+  title: "Delphi fast-track : user guide"
   author:
   - name: Olivier Duperrex
     orcid: 0000-0002-0932-6846
@@ -39,6 +39,7 @@ book:
         - 01_start_your_project.qmd
         - 02_dft2.qmd
         - 03_dft3.qmd
+        - 04_overall.qmd
     - part: "Explore the demo"
       chapters:
         - summary.qmd
@@ -48,7 +49,8 @@ book:
     - resources.qmd
   cover-image: _img/screenshot_individual_fr.png
   page-footer: 
-    center: "![](_img/logo_unisante_RVB_2lignes.png){width=10%}"
+    left: "Delphi fast-track : user guide - version 0.1 - Nov 2022"
+    center: "![](_img/logo_unisante_footer.png.png){width=10%}"
 
 
 bibliography: references.bib
@@ -57,8 +59,9 @@ format:
   html:
     theme: cosmo
     code-copy: true
+    code-link: true
   docx: 
-    reference-doc: templates/template.docx
+    reference-doc: _templates/template-bookdown.docx
 
 editor: visual
 
