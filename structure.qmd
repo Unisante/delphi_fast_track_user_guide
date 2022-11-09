@@ -57,7 +57,8 @@ The following will appear during the analysis and reports production.
 ├── data
 │   ├── dft2
 │   │   ├── dft2_data_clean.RData
-│   │   └── dft2_lookup_final.RData
+│   │   ├── dft2_lookup_final.RData
+│   │   └── dft2_lookup_value_labels_final.RData
 │   ├── dft3
 │   └── redcap_data_raw
 │       ├── dft2_data_redcapr_raw.RData
@@ -69,7 +70,6 @@ The following will appear during the analysis and reports production.
 │   │   ├── .. several *.png files
 │   ├── RData
 │   │   ├── dft2_dt_comments_m.RData
-│   │   ├── dft2_lookup_value_labels_final.RData
 │   │   ├── dft2_type0_zz1.RData
 │   │   ├── dft2_type1_zz_combined.RData
 │   │   ├── dft2_type2_zz1.RData
