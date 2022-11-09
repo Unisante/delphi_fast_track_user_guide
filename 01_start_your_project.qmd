@@ -2,23 +2,54 @@
 title: "Start your project"
 ---
 
-## Pre-requisites
+## Pre-requisites {#sec-pre-requisites}
 
-Make sure you are have done the steps presented in @sec-pre-requisites.
+Make sure you have done the steps presented in @sec-pre-requisites.
 
-## Create the structure of your project
+## Create the structure of your project {#sec-create-structure-project}
 
--   run `00_run_ME_once_to_create_structure.R`
+-   [ ] run `00_run_ME_once_to_create_structure.R`
 
-## Update parameters
+This will create a predefined set of subfolders within the project folder.
 
--   open `000_parameters.R` and update as necessary
+::: callout-warning
+If you choose to modify the structure of the project, you will need to revise every path in the R and Rmd files.
+:::
 
+## Update parameters {#sec-update-parameters}
 
-## Update the texts for introduction
+-   [ ] open `./code/000_parameters.R` and update as necessary, specially some of the labels
 
-These texts are word documents. They should be prepared in advance to gain time and will be updated in several steps once some of the results are available.
+> ***TODO** : improve descriptions in `./code/000_parameters.R`*
 
-- `00_update_texts_intro.R`
+## Update the word templates {#sec-update-word-templates}
 
+This project uses word templates in order to build the reports. The autonumbering will be created by bookdown.
 
+-   [ ] update `./analysis/dft2/template-bookdown.docx` to suit your needs - please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it
+
+## Update the texts for introduction {#sec-update-texts-introduction}
+
+These texts are word documents with one or two paragraphs, sometimes images that will be inserted at the beginning of the reports. They will be updated in several steps, once some of the results are available.
+
+-   [ ] prepare them in advance to gain time
+
+-   [ ] store them on the server in the folder defined in `./code/000_parameters.R` (called `path_texts_intro_server`).
+
+-   [ ] run `./code/00_update_texts_intro.R`
+
+::: {.callout-caution appearance="simple"}
+-   Do not leave a blank line at the beginning of the text, nor at the end
+
+-   Headers are not needed in these texts as they will be provided in Rmd files
+:::
+
+## Discover the functions {#sec-discover-functions}
+
+We chose to keep the functions used in this analyses in a R file because it is easier to toy with than a proper package.
+
+We strongly recommend that you become familiar with the functions developed for this analysis in code `./code/00_functions.R`. This code will also run each time `./code/000_parameters.R`.
+
+## Understand the type of questions {#sec-understand-type-of-questions}
+
+> ***TODO** : describe the type of questions and the implications for the recoding and the analysisi*
