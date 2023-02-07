@@ -1,4 +1,6 @@
 # References {.unnumbered}
 
+> ***TODO:** to check if complete when references have been added to the text before*
+
 ::: {#refs}
 :::
