@@ -30,7 +30,7 @@ This code will process the data and the metadata in order to create the "clean" 
 
 \- define the lists of variables by type (1, 2, 3)
 
-\- do a conditional deduplication (in case participants have filled in several REDCap records for the same participant => keep the *latest answer choice* and *all comments*)
+\- do a conditional deduplication (in case participants have filled in several REDCap records for the same participant =\> keep the *latest answer choice* and *all comments*)
 
 \- save clean data and metadata in RData format
 
@@ -43,7 +43,7 @@ This code will process the data and the metadata in order to create the "clean" 
 ### Detail of outputs
 
 | Folder         | Output file                            | Description                                                      |
-|----------------|---------------------|------------------------------------|
+|------------------|--------------------|----------------------------------|
 | `./data/dft2/` | `dft2_data_clean.RData`                | Clean data                                                       |
 | `./data/dft2/` | `dft2_lookup_final.RData`              | Clean lookup table (metadata)                                    |
 | `./data/dft2/` | `dft2_lookup_value_labels_final.RData` | Clean lookup table (metadata) with value labels for type 1 and 2 |
@@ -61,7 +61,7 @@ It also creates and saves in xlsx format tables containing only the "no opinion"
 ### Detail of outputs
 
 | Folder            | Output file                      | Description                                     |
-|-----------------|-----------------------|---------------------------------|
+|------------------|-----------------------|--------------------------------|
 | `./output/RData/` | `dft2_type0_zz1.RData`           | Table with characteristics of participants      |
 | `./output/RData/` | `dft2_dt_comments_m.RData`       | Table with results of all comments              |
 | `./output/check/` | `dft2_type1_zz0_no_opinion.xlsx` | Check tables of no opinion for type 1 questions |
@@ -123,10 +123,6 @@ It will then call one .Rmd per section, which themselves will call two codes:
 ## Update introductory texts with round results from 2
 
 -   [ ] update the introductory texts on the server with some elelements from the generic report created in @sec-create-generic-report-round2
-
--   [ ] update image with the results : ppt\
-
-> \*\*TODO\* : detail which slide and what to update and save as...
 
 -   [ ] run `00_update_texts_intro.R` one more time
 
