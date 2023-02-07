@@ -3,6 +3,8 @@ project:
 
 book:
   title: "Delphi fast-track : user guide"
+  description: | 
+    A user guide for the Delphi fast-track toolkit.
   author:
   - name: Olivier Duperrex
     orcid: 0000-0002-0932-6846
@@ -40,12 +42,10 @@ book:
         - 04_structure.qmd
     - part: "Create your own project"
       chapters: 
-
         - 05_start_your_project.qmd
         - 06_dft2.qmd
         - 07_dft3.qmd
         - 08_overall.qmd
-
     - references.qmd
   appendices:
     - tools.qmd
@@ -55,7 +55,7 @@ book:
     left: "Delphi fast-track : user guide - version 0.2 - Feb 2023"
     center: "![](_img/logo_unisante_footer.png){width=50%}"
 
-
+citation: true
 bibliography: references.bib
 
 format:
