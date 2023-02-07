@@ -19,7 +19,7 @@ book:
       name: Institute of Global Health, University of Geneva
       city: Geneva
       country: Suisse
-  - name: Camille Crézé
+  - name: Camille Velarde Crézé
     orcid: 0000-0002-4686-9401
     affiliations:
     - ref: unisante
@@ -27,30 +27,32 @@ book:
   search: true
   repo-url: https://github.com/Unisante/
   downloads: [pdf, epub]
-  sharing: [twitter, facebook]
+  sharing: [facebook, linkedin]
   chapters:
     - index.qmd
     - part: "Get ready"
       chapters:
-        - intro.qmd
-        - structure.qmd
-    - part: "Your project"
+        - 00_a_intro.qmd
+        - 00_b_questions.qmd
+    - part: "Explore the demo"
+      chapters:
+        - 00_d_demo.qmd
+    - part: "Create your own project"
       chapters: 
+        - 00_c_structure.qmd
         - 01_start_your_project.qmd
         - 02_dft2.qmd
         - 03_dft3.qmd
         - 04_overall.qmd
-    - part: "Explore the demo"
-      chapters:
-        - summary.qmd
+
     - references.qmd
   appendices:
     - tools.qmd
     - resources.qmd
   cover-image: _img/screenshot_individual_fr.png
   page-footer: 
-    left: "Delphi fast-track : user guide - version 0.1 - Nov 2022"
-    center: "![](_img/logo_unisante_footer.png.png){width=10%}"
+    left: "Delphi fast-track : user guide - version 0.2 - Feb 2023"
+    center: "![](_img/logo_unisante_footer.png){width=50%}"
 
 
 bibliography: references.bib
