@@ -6,6 +6,9 @@ title: "Overall"
 
 -   [ ] update the image for the executive summary in the ppt provided and save it as `ExecutiveSummary_figure-Flow.png` in the `./analysis/overall/` folder
 
+> ***TODO** : provide ppt and indicate which slide to update and save as...*
+
+
 It summarises the process with dates, number of experts and number of statements. See @fig-exec-steps for the pilot study that provides the demo data.
 
 ![Overview of the steps for the pilot study of the Delphi fast-track method](_img/ExecutiveSummary_figure-Flow.png){#fig-exec-steps fig-align="center"}
@@ -53,3 +56,8 @@ If table captions and/or tables are on next page, it is probably because of para
 
 -   uncheck **Widow/Orphan control** (Eviter veuves et orphelins) and **Page break before** (Paragraphes solidaires)
 :::
+
+
+
+
+... et voilà !
