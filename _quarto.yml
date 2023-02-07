@@ -32,18 +32,19 @@ book:
     - index.qmd
     - part: "Get ready"
       chapters:
-        - 00_a_intro.qmd
-        - 00_b_questions.qmd
+        - 01_intro.qmd
+        - 02_questions.qmd
     - part: "Explore the demo"
       chapters:
-        - 00_d_demo.qmd
+        - 03_demo.qmd
+        - 04_structure.qmd
     - part: "Create your own project"
       chapters: 
-        - 00_c_structure.qmd
-        - 01_start_your_project.qmd
-        - 02_dft2.qmd
-        - 03_dft3.qmd
-        - 04_overall.qmd
+
+        - 05_start_your_project.qmd
+        - 06_dft2.qmd
+        - 07_dft3.qmd
+        - 08_overall.qmd
 
     - references.qmd
   appendices:
