@@ -2,8 +2,6 @@
 title: "Overall"
 ---
 
-> ***TODO:** complete with latest version of demo*
-
 ## Update summary image
 
 -   [ ] update the image for the executive summary in the ppt provided and save it as `ExecutiveSummary_figure-Flow.png` in the `./analysis/overall/` folder
@@ -18,24 +16,40 @@ It summarises the process with dates, number of experts and number of statements
 
 -   [ ] run `00_update_texts_intro.R` one more time
 
-
 ## Modify executive summary report title
 
 -   [ ] modify report title, subtitile and authors as needed in `./analysis/overall/overall_executive_summary.Rmd` in the YAML section
-
 
 ## Publish overall report
 
 -   [ ] run `0_run_ME_overall_demo.R`
 
-This code will prepare the result tables with combined round 2 and 3 and publish the overall report
+This code will :
 
-> ***TODO:** continue here*
+-   update the introductory texts by running `./code/00_update_texts_intro.R`
 
-source(here::here('code', '06_prepare_tables_combined_round_2\_3.R'), encoding = 'UTF-8')
+-   prepare the result tables (only type 1 questions) with combined round 2 and 3 by running `06_prepare_tables_combined_round_2_3.R`
 
-### .. overall_executive_summary.Rmd ------------------------------------------
+-   publish the overall report (called **Executive summary**) by running `./analysis/overall/overall_executive_summary.Rmd` and saving it as `./output/reports/overall/dft_overall_executive_summary_YYYY-MM-DD.docx`
 
-input \<- "analysis/overall/overall_executive_summary.Rmd"
+## Finalise overall report
 
--   [ ] run `./analysis/overall/overall_executive_summary.Rmd`
+-   [ ] open the summary report using the Word software
+
+-   [ ] add the text 'Key messages'
+
+-   [ ] add the "target" images (.png) in the table headers
+
+-   [ ] if necessary, rearrange the order of the statements (according to dft2 and dft3)
+
+-   [ ] delete the 'section' column
+
+-   [ ] adjust the height of the tables rows
+
+::: callout-tip
+If table captions and/or tables are on next page, it is probably because of paragraph formatting:
+
+-   select caption or table and go to Paragraph \> Line and Page Breaks tab (Enchaînements in french)
+
+-   uncheck **Widow/Orphan control** (Eviter veuves et orphelins) and **Page break before** (Paragraphes solidaires)
+:::
