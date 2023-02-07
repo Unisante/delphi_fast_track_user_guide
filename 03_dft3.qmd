@@ -2,9 +2,6 @@
 title: "Round 3"
 ---
 
-> ***TODO:** check with latest version of demo*
-
-
 Once the round 3 is finished in REDCap, you can open `0_run_ME_dft3.R`. It will show you the order of files to update and run.
 
 ## Update data {#sec-update-data-round3}
@@ -19,7 +16,7 @@ This code will connect to the corresponding REDCap project using the token, and 
 | `./data/redcap_data_raw/` | `dft3_data_redcapr_raw.RData` | Raw data                                       |
 | `./output/check/`         | `chk_dft3_type1_raw.xlsx`     | Check table with raw data for type 1 questions |
 
-:::{.callout-note appearance=minimal}
+::: {.callout-note appearance="minimal"}
 There should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.
 :::
 
@@ -40,25 +37,25 @@ This code will process the data and the metadata in order to create the "clean" 
 \- save clean data and metadata in RData format
 
 ::: column-margin
-![dft3_z_s4_type1.png (for the statement 4 in preamble of round 3)](_img/dft3_z_s4_type1.png){#fig-dft3-type1 fig-align="center"}
+![dft3_z\_s4_type1.png (for the statement 4 in preamble of round 3)](_img/dft3_z_s4_type1.png){#fig-dft3-type1 fig-align="center"}
 :::
 
 \- create visuals (.png) for all type 1 questions, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft3-type1
 
 ### Detail of outputs
 
-| Folder         | Output file                            | Description       |
-|--------------------|-----------------------|-----------------------------|
-| `./data/dft3/` | `dft3_data_clean.RData`                | Clean data        |
+| Folder         | Output file               | Description                   |
+|----------------|---------------------------|-------------------------------|
+| `./data/dft3/` | `dft3_data_clean.RData`   | Clean data                    |
 | `./data/dft3/` | `dft3_lookup_final.RData` | Clean lookup table (metadata) |
 
 ## Prepare tables without participant id {#sec-prepare-tables-without-participant-id-round3}
 
 `02a_dft3_prepare_tables_without_participant_id.R`
 
-This code will analyse the "clean" data (generated in #sec-recode-data-round3) to create the group results tables (= statistical summaries and graphs). 
+This code will analyse the "clean" data (generated in #sec-recode-data-round3) to create the group results tables (= statistical summaries and graphs).
 
-It automatically calls code `01c_dft3_define_cols.R.` 
+It automatically calls code `01c_dft3_define_cols.R.`
 
 It also creates and saves in xlsx format tables containing only the "no opinion" responses, allowing a quick check.
 
@@ -116,30 +113,25 @@ It will then call one .Rmd per section, which themselves will call one code:
 
 -   `./code/03a_create_flextable_results_type_1_generic.R` : creates the results table for type 1 statements in the section and for their comments
 
-
 ### Detail of outputs
 
-| Folder             | Output file              | Description |
+| Folder                  | Output file                                | Description              |
 |--------------------|-----------------------|-----------------------------|
-| `./output/reports/dft3`|`dft3_report_generic_date_YYYY-MM-DD.docx` | Generic report with date |
-
-
+| `./output/reports/dft3` | `dft3_report_generic_date_YYYY-MM-DD.docx` | Generic report with date |
 
 ## Update introductory texts with round results from 2
 
 -   [ ] update the introductory texts on the server with some elelements from the generic report created in @sec-create-generic-report-round3
 
--   [ ] update image with the results : ppt \
+-   [ ] update image with the results : ppt\
 
-
-> ***TODO* : detail which slide and what to update and save as...*
+> \*\**TODO* : detail which slide and what to update and save as...\*
 
 -   [ ] run `00_update_texts_intro.R` one more time
 
-
 ## Run generic report again
 
--   [ ] run the generic report one more time to insert the updated introductory texts  
+-   [ ] run the generic report one more time to insert the updated introductory texts
 
 ## Create individual report {#sec-create-individual-report-round3}
 
@@ -159,17 +151,16 @@ This code will create the word document for each participant ("participant repor
 
 It will iteratively publish `.analysis/dft3/dft3_report_per_participant.Rmd` for each participants by calling automatically :
 
-- `./code/dft3/01c_dft3_define_cols.R` and
+-   `./code/dft3/01c_dft3_define_cols.R` and
 
-- `./code/dft3/02b_dft3_prepare_tables_participants.R` : add results of the participant to generic table
+-   `./code/dft3/02b_dft3_prepare_tables_participants.R` : add results of the participant to generic table
 
 It will then call one .Rmd per section, which themselves call one codes:
 
 -   `./code/03a_create_flextable_results_type_1_participants.R` : creates the results table for type 1 statements with individual answers in the section and for their comments
 
-
 ### Detail of outputs
 
-| Folder             | Output file              | Description |
+| Folder                                        | Output file                                 | Description                  |
 |--------------------|-----------------------|-----------------------------|
-| `/output/reports/dft3/report_by_participant/`|`dft3_report_participant_X_YYYY-MM-DD.docx` | Participant report with date |
+| `/output/reports/dft3/report_by_participant/` | `dft3_report_participant_X_YYYY-MM-DD.docx` | Participant report with date |
