@@ -1,0 +1,21 @@
+## Type of questions {#sec-understand-type-of-questions}
+
+
+> **TODO** : describe the type of questions and the implications for the recoding and the analysis
+
+
+
+## Type 1 question
+
+![Type 1 question - individualised result](_img/screenshot_individual_fr.png){#fig-dft2-type1 fig-align="center"}
+
+
+## Type 2 question
+
+![Type 2 question - individualised result](\_img\dft2_question_type2.jpg){#fig-dft2-type2 fig-align="center"}
+
+## Type 3 question
+
+
+
+![Type 3 question - individualised result](\_img\dft2_question_type3.jpg){#fig-dft2-type3 fig-align="center"}

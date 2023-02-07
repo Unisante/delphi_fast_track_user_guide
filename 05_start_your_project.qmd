@@ -4,7 +4,10 @@ title: "Start your project"
 
 ## Pre-requisites
 
-Make sure you have done the steps presented in @sec-pre-requisites.
+-   [ ] To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
+
+-   [ ] Make sure you have done the steps presented in @sec-pre-requisites.
+
 
 ## Create the structure of your project {#sec-create-structure-project}
 
@@ -24,7 +27,16 @@ If you choose to modify the structure of the project, you will need to revise ev
 
 This project uses `MS Word` templates in order to build the reports. The autonumbering will be created by [`bookdown`](https://pkgs.rstudio.com/bookdown/).
 
--   [ ] update `./analysis/dft2/template-bookdown.docx` to suit your needs - please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it
+
+-   [ ]  update the templates to suit your needs in each subfolder :
+
+    - `../analysis/dft2/template-bookdown.docx`
+    
+    - `../analysis/dft3/template-bookdown.docx`
+    
+    - `../analysis/doverall/template_exec_summary_bookdown.docx`
+
+Please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it.
 
 ## Update the texts for introduction {#sec-update-texts-introduction}
 
@@ -42,8 +54,3 @@ These texts are word documents with one or two paragraphs, sometimes images that
 -   Headers are not needed in these texts as they will be provided in Rmd files
 :::
 
-## Discover the functions {#sec-discover-functions}
-
-We chose to keep the functions used in this analyses in a R file because it is easier to toy with than a proper package.
-
-We strongly recommend that you become familiar with the functions developed for this analysis in code `./code/00_functions.R`. This code will also run each time `./code/000_parameters.R`.

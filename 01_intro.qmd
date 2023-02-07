@@ -59,9 +59,9 @@ You will need to run the following *chunks*
     remotes::install_github("Unisante/delphiFT") 
     ```
 
-## Token to access your REDCap Project *(not necessary for the demo)* {#sec-token-to-access-your-redcap-project}
+## Token to access your REDCap Project *(not for the demo)* {#sec-token-to-access-your-redcap-project}
 
-The steps below will allow the scripts to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the 2 rounds (dft2 and dft3), whilst avoiding sharing them.
+The steps below will allow the scripts to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the two rounds (dft2 and dft3), whilst avoiding sharing them.
 
 -   [ ] obtain your tokens from the API Menu in REDCap - talk with your REDCAp Admin if necessary
 

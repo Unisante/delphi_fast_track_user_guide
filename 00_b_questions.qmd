@@ -1,4 +1,0 @@
-
-## Understand the type of questions {#sec-understand-type-of-questions}
-  
-> **TODO** : describe the type of questions and the implications for the recoding and the analysis

@@ -2,7 +2,9 @@
 
 > **TODO:** revise structure with latest versions
 
-You can use `fs::dir_tree()` to see the structure at any time.
+The demo shows a project when it is finished. Below you'll find the detail of the structure when you start your own project and what will be added by the end.
+
+You can use [`fs::dir_tree()`](https://fs.r-lib.org/reference/dir_tree.html) to see the structure at any time.
 
 ### At the begining
 
