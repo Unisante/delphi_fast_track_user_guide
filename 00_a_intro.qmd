@@ -1,0 +1,83 @@
+# Pre-requisites {#sec-pre-requisites}
+
+To start using the Delphi fast-track, you will need to:
+
+-   install RStudio and R - see [Hands-On Programming with R - Appendix A](https://jjallaire.github.io/hopr/a1-starting.html)
+
+-   get some packages
+
+-   get a token for your REDCap project if you are using one (not necessary to explore the demo)
+
+## Get some packages {#sec-get-some-packages}
+
+You will need to run the following *chunks*
+
+-   [ ] install pacman unless you already have it : simpler to call libraries and keep them up-to-date
+
+    ``` r
+    # install it if not already there
+    if (!require("pacman")) install.packages("pacman") 
+    ```
+
+-   [ ] load the following packages with `pacman::p_load` (it will 1. install package if not installed and keep it up-to-date, 2. call the library)
+
+    ``` r
+    pacman::p_load(
+        bookdown,
+        crayon,
+        data.table,
+        flextable,
+        formattable,
+        fs,
+        ftExtra,
+        ggplot2,
+        haven,
+        here,
+        magrittr,
+        officedown,
+        patchwork,
+        purrr,
+        REDCapR,
+        sjlabelled,
+        sjmisc,
+        sjPlot,
+        stringr,
+        tidyverse,
+        writexl)
+
+    # install.packages("remotes") # If it's not already installed.
+    remotes::install_github("OuhscBbmc/OuhscMunge")
+    ```
+
+-   [ ] install delphiFT
+
+    > ***TODO** : NOT READY YET, but will need to add instructions and make sure it works*
+
+    ``` r
+    Download as a zip file (click on green button Code), and unzip locally
+      or
+    remotes::install_github("Unisante/delphiFT") 
+    ```
+
+## Token to access your REDCap Project *(not necessary for the demo)* {#sec-token-to-access-your-redcap-project}
+
+The steps below will allow the scripts to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the 2 rounds (dft2 and dft3), whilst avoiding sharing them.
+
+-   [ ] obtain your tokens from the API Menu in REDCap - talk with your REDCAp Admin if necessary
+
+-   [ ] create a local file **outside** the RStudio project, so no one else can use it, and give it a name *token_delphi_ft_projectname.R* (replace *projectname* by your project name)
+
+-   [ ] copy-paste the following lines, replace *yourinstitution* by your institution name, *projectname* by a short project name, and update with your details
+
+    ``` r
+    uri_redcap_yourinstitution <- "<https://XXXXXXXXX>" 
+    token_dft2_projectname <- "YYYYYYYYYYYYYYYY"
+    token_dft3_projectname <- "ZZZZZZZZZZZZZZZZ"
+    ```
+
+-   [ ] update the following files with the `path/to/your/token_file.R` and your modified *uri_redcap_yourinstitution* and *token_dft2_projectname*
+
+    ``` r
+    ../code/dft2/01a_dft2_update_data_with_REDCapR.R
+    ../code/dft3/01a_dft3_update_data_with_REDCapR.R
+    ```
