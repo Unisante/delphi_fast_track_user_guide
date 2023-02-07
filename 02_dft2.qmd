@@ -11,7 +11,7 @@ Once the round 2 is finished in REDCap, you can open `0_run_ME_dft2.R`. It will 
 This code will connect to the corresponding REDCap project using the token, and downloads the raw data and metadata from the project and save them as RData. It also creates xlsx tables by variable type with the raw data, which can be used for quick checks.
 
 | Folder                    | Output file                   | Description                                    |
-|--------------------|-----------------------|-----------------------------|
+|-------------------|---------------------|--------------------------------|
 | `./data/redcap_data_raw/` | `dft2_metadata.RData`         | Raw metadata                                   |
 | `./data/redcap_data_raw/` | `dft2_data_redcapr_raw.RData` | Raw data                                       |
 | `./output/check/`         | `chk_dft2_type1_raw.xlsx`     | Check table with raw data for type 1 questions |
@@ -30,7 +30,7 @@ This code will process the data and the metadata in order to create the "clean" 
 
 \- define the lists of variables by type (1, 2, 3)
 
-\- do a conditional deduplication (in case participants have filled in several REDCap records for the same participant -\> keep the latest answer choice but all comments)
+\- do a conditional deduplication (in case participants have filled in several REDCap records for the same participant => keep the *latest answer choice* and *all comments*)
 
 \- save clean data and metadata in RData format
 
@@ -42,27 +42,26 @@ This code will process the data and the metadata in order to create the "clean" 
 
 ### Detail of outputs
 
-| Folder         | Output file                            | Description                                       |
-|--------------------|-----------------------|-----------------------------|
-| `./data/dft2/` | `dft2_data_clean.RData`                | Clean data             |
-|`./data/dft2/`   | `dft2_lookup_final.RData`  | Clean lookup table (metadata)                         |
+| Folder         | Output file                            | Description                                                      |
+|----------------|---------------------|------------------------------------|
+| `./data/dft2/` | `dft2_data_clean.RData`                | Clean data                                                       |
+| `./data/dft2/` | `dft2_lookup_final.RData`              | Clean lookup table (metadata)                                    |
 | `./data/dft2/` | `dft2_lookup_value_labels_final.RData` | Clean lookup table (metadata) with value labels for type 1 and 2 |
-
 
 ## Prepare tables without participant id {#sec-prepare-tables-without-participant-id-round2}
 
-`02a_dft2_prepare_tables_without_participant_id.R`
+`./data/dft2/02a_dft2_prepare_tables_without_participant_id.R`
 
-This code will analyse the "clean" data (generated in #sec-recode-data-round2) to create the group results tables (= statistical summaries and graphs). 
+This code will analyse the "clean" data (generated in @sec-recode-data-round2) to create the group results tables (= statistical summaries and graphs).
 
-It automatically calls code `01c_dft2_define_cols.R.` 
+It automatically calls code `./data/dft2/01c_dft2_define_cols.R`.
 
 It also creates and saves in xlsx format tables containing only the "no opinion" responses, allowing a quick check.
 
 ### Detail of outputs
 
 | Folder            | Output file                      | Description                                     |
-|----------------------|-------------------------|-------------------------|
+|-----------------|-----------------------|---------------------------------|
 | `./output/RData/` | `dft2_type0_zz1.RData`           | Table with characteristics of participants      |
 | `./output/RData/` | `dft2_dt_comments_m.RData`       | Table with results of all comments              |
 | `./output/check/` | `dft2_type1_zz0_no_opinion.xlsx` | Check tables of no opinion for type 1 questions |
@@ -70,9 +69,9 @@ It also creates and saves in xlsx format tables containing only the "no opinion"
 
 ## Update texts for introduction {#sec-update-texts-introduction-round2}
 
--   [ ] Update the texts (\*.docx) if needed as indicated in the [Start your project](#sec-update-texts-introduction) section.
+-   [ ] Update the texts (\*.docx) if needed as indicated in the [Start your project](@sec-update-texts-introduction) section.
 
--   [ ] run `00_update_texts_intro.R`
+-   [ ] run `./code/00_update_texts_intro.R`
 
 This code updates the local directory of texts used in the introduction of the reports (from the available and up-to-date directory on the server).
 
@@ -117,27 +116,23 @@ It will then call one .Rmd per section, which themselves will call two codes:
 
 ### Detail of outputs
 
-| Folder             | Output file              | Description |
-|--------------------|-----------------------|-----------------------------|
-| `./output/reports/dft2`|`dft2_report_generic_date_YYYY-MM-DD.docx` | Generic report with date |
-
-
+| Folder                  | Output file                                | Description              |
+|-------------------|---------------------------------|--------------------|
+| `./output/reports/dft2` | `dft2_report_generic_date_YYYY-MM-DD.docx` | Generic report with date |
 
 ## Update introductory texts with round results from 2
 
 -   [ ] update the introductory texts on the server with some elelements from the generic report created in @sec-create-generic-report-round2
 
--   [ ] update image with the results : ppt \
+-   [ ] update image with the results : ppt\
 
-
-> ***TODO* : detail which slide and what to update and save as...*
-
+> \*\*TODO\* : detail which slide and what to update and save as...
 
 -   [ ] run `00_update_texts_intro.R` one more time
 
 ## Run generic report again
 
--   [ ] run the generic report one more time to insert the updated introductory texts  
+-   [ ] run the generic report one more time to insert the updated introductory texts
 
 ## Create individual report {#sec-create-individual-report-round2}
 
@@ -161,12 +156,9 @@ This code will create the word document for each participant ("participant repor
 
 It will iteratively publish `.analysis/dft2/dft2_report_per_participant.Rmd` for each participants by calling automatically :
 
-- `./code/dft2/01c_dft2_define_cols.R` and
+-   `./code/dft2/01c_dft2_define_cols.R` and
 
-
-
-
-- `./code/dft2/02b_dft2_prepare_tables_participants.R` : add results of the participant to generic table. include plots like @fig-dft2-type1-participantX.
+-   `./code/dft2/02b_dft2_prepare_tables_participants.R` : add results of the participant to generic table. include plots like @fig-dft2-type1-participantX.
 
 It will then call one .Rmd per section, which themselves call two codes:
 
@@ -176,8 +168,6 @@ It will then call one .Rmd per section, which themselves call two codes:
 
 ### Detail of outputs
 
-| Folder             | Output file              | Description |
-|--------------------|-----------------------|-----------------------------|
-| `/output/reports/dft2/report_by_participant/`|`dft2_report_participant_X_YYYY-MM-DD.docx` | Participant report with date |
-
-
+| Folder                                        | Output file                                 | Description                  |
+|----------------------------|--------------------------|------------------|
+| `/output/reports/dft2/report_by_participant/` | `dft2_report_participant_X_YYYY-MM-DD.docx` | Participant report with date |
