@@ -6,8 +6,12 @@ title: "Start your project"
 
 -   [ ] To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
 
--   [ ] Make sure you have done the steps presented in @sec-pre-requisites.
+-   [ ] Make sure you have done the steps presented in @sec-pre-requisites:
+    - install RStudio and R - see Hands-On Programming with R - Appendix A
 
+    - get some packages
+
+    - get a token for your REDCap project if you are using one and update some files 
 
 ## Create the structure of your project {#sec-create-structure-project}
 
@@ -27,14 +31,13 @@ If you choose to modify the structure of the project, you will need to revise ev
 
 This project uses `MS Word` templates in order to build the reports. The autonumbering will be created by [`bookdown`](https://pkgs.rstudio.com/bookdown/).
 
+-   [ ] update the templates to suit your needs in each subfolder :
 
--   [ ]  update the templates to suit your needs in each subfolder :
+    -   `../analysis/dft2/template-bookdown.docx`
 
-    - `../analysis/dft2/template-bookdown.docx`
-    
-    - `../analysis/dft3/template-bookdown.docx`
-    
-    - `../analysis/doverall/template_exec_summary_bookdown.docx`
+    -   `../analysis/dft3/template-bookdown.docx`
+
+    -   `../analysis/doverall/template_exec_summary_bookdown.docx`
 
 Please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it.
 
@@ -53,4 +56,3 @@ These texts are word documents with one or two paragraphs, sometimes images that
 
 -   Headers are not needed in these texts as they will be provided in Rmd files
 :::
-
