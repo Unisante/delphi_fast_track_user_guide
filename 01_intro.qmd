@@ -6,7 +6,7 @@ To start using the Delphi fast-track, you will need to:
 
 -   get some packages
 
--   get a token for your REDCap project if you are using one (not necessary to explore the demo)
+-   get a token for your REDCap project if you are using one and update some files (not necessary to explore the demo)
 
 ## Get some packages {#sec-get-some-packages}
 
@@ -65,9 +65,9 @@ The steps below will allow the scripts to automatically retrieve your personal t
 
 -   [ ] obtain your tokens from the API Menu in REDCap - talk with your REDCAp Admin if necessary
 
--   [ ] create a local file **outside** the RStudio project, so no one else can use it, and give it a name *token_delphi_ft_projectname.R* (replace *projectname* by your project name)
+-   [ ] create a local file **outside** the RStudio project, so no one else can use it, and give it a name *token_delphi_ft_project_name.R* (replace *project_name* by your project name)
 
--   [ ] copy-paste the following lines, replace *yourinstitution* by your institution name, *projectname* by a short project name, and update with your details
+-   [ ] copy-paste the following lines, replace *your_institution* by your institution name, *project_name* by a short project name, and update with your details
 
     ``` r
     uri_redcap_your_institution <- "<https://XXXXXXXXX>" 
@@ -75,7 +75,7 @@ The steps below will allow the scripts to automatically retrieve your personal t
     token_dft3_your_project <- "ZZZZZZZZZZZZZZZZ"
     ```
 
--   [ ] update the following files with the `path/to/your/token_file.R` and your modified *uri_redcap_yourinstitution* and *token_dft2_projectname*
+-   [ ] update the following files with the `path/to/your/token_file.R` and your modified *uri_redcap_your_institution* and *token_dft2_project_name*
 
     ``` r
     ../code/dft2/01a_dft2_update_data_with_REDCapR.R
