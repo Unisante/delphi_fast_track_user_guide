@@ -12,7 +12,7 @@ To start your own project, download the [Delphi Fast Track : code only](https://
 
 The `Delphi fast-track` was developed by [Unisanté](https://www.unisante.ch/) to provide consensus information for political decisions in context of public health crisis.
 
-Rational for the methodology and details of the results of the testing phase can be found in the [publications].
+Rational for the methodology and details of the results of the testing phase can be found in the [publications](#sec-publications).
 
 The process consists in three rounds of consultation. The participants will be brought together in a first round during which a series of topics/questions/statements will be collected using a nominal group technique (NGT). The participants will then respond individually to questions in the second and third rounds using an online questionnaire build with [**`REDCap`**](https://projectredcap.org/).
 
@@ -41,22 +41,22 @@ In order to produce results in a very short time frame, we use an [R project](ht
 -   Filenames and paths are in `typewriter style`
 
 -   Packages are in **bold** : **data.table**
-  
-  -   Functions are followed by a () : `fs::dir_tree()`
+
+-   Functions are followed by a () : `fs::dir_tree()`
 
 -   Actions you need to take to prepare your own project are preceded by a ticking box (not interactive):
-  
-  -   [ ] run this code ...
+
+-   [ ] run this code ...
 
 The table below summarises the conventions used in the names of tables and variables.
 
 | Word used     | Example as part of name | Example inside a word document | What it means                                         |
-  |-----------------|-----------------|-----------------|---------------------|
-  | dt            | dt\_                    | \-                             | a data.table                                          |
-  | current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                    |
-  | section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic |
-  | statement     | \_s1\_                  | Statement 1                    | statement followed by its number                      |
-  | type          | \_type1                 | type 1                         | type of variable (3 sorts here, see below)            |
+|---------------|-------------------------|--------------------------------|-------------------------------------------------------|
+| dt            | dt\_                    | \-                             | a data.table                                          |
+| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                    |
+| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic |
+| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                      |
+| type          | \_type1                 | type 1                         | type of variable (3 sorts here, see below)            |
 
 ::: callout-tip
 The easiest way to understand the process and see the output is to download the [demo](https://github.com/Unisante/delphi_ft_demo) and explore it (see @sec-demo).
@@ -74,7 +74,6 @@ This manual is a [`quarto book`](https://quarto.org/docs/books/).
 
 We want to warmly thank all the people who developed the libraries we used for this work.
 
-
 # Funding
 
 This project was funded by ...
@@ -89,7 +88,6 @@ This project was funded by ...
 
 > ***TODO** : add presentations and posters in congresses*
 
-
 # Licence
 
 © 2023 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -101,5 +99,3 @@ This project was funded by ...
 # Citation
 
 Duperrex O and Velarde Crézé C. Delphi fast-track : user guide. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. https://github.com/Unisante/
-
-
