@@ -1,7 +1,5 @@
 # Understand the structure {#sec-understand-the-structure}
 
-> **TODO:** revise structure with latest versions
-
 The demo shows a project when it is finished. Below you'll find the detail of the structure when you start your own project and what will be added by the end.
 
 You can use [`fs::dir_tree()`](https://fs.r-lib.org/reference/dir_tree.html) to see the structure at any time.
@@ -63,15 +61,7 @@ When you start your project, you will have the following structure.
 │       ├── 02a_dft3_prepare_tables_without_participant_id.R
 │       ├── 02b_dft3_prepare_tables_participants.R
 │       └── 05_dft3_to_render_individual_reports.R
-├── data
-│   └── redcap_data_raw
-│       ├── dft2_data_redcapr_raw.RData
-│       ├── dft2_metadata.RData
-│       ├── dft3_data_redcapr_raw.RData
-│       └── dft3_metadata.RData
-├── delphi_ft.Rproj
-└── texts_intro
-    ├── .. several introductory texts *.docx
+└── delphi_ft.Rproj
 ```
 
 ### At the end
