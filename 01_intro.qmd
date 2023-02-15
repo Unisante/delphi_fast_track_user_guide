@@ -70,9 +70,9 @@ The steps below will allow the scripts to automatically retrieve your personal t
 -   [ ] copy-paste the following lines, replace *yourinstitution* by your institution name, *projectname* by a short project name, and update with your details
 
     ``` r
-    uri_redcap_yourinstitution <- "<https://XXXXXXXXX>" 
-    token_dft2_projectname <- "YYYYYYYYYYYYYYYY"
-    token_dft3_projectname <- "ZZZZZZZZZZZZZZZZ"
+    uri_redcap_your_institution <- "<https://XXXXXXXXX>" 
+    token_dft2_your_project <- "YYYYYYYYYYYYYYYY"
+    token_dft3_your_project <- "ZZZZZZZZZZZZZZZZ"
     ```
 
 -   [ ] update the following files with the `path/to/your/token_file.R` and your modified *uri_redcap_yourinstitution* and *token_dft2_projectname*
