@@ -39,16 +39,17 @@ book:
     - part: "Explore the demo"
       chapters:
         - 03_demo.qmd
-        - 04_structure.qmd
+        
     - part: "Create your own project"
+        
       chapters: 
+        - 04_structure.qmd
         - 05_start_your_project.qmd
         - 06_dft2.qmd
         - 07_dft3.qmd
         - 08_overall.qmd
     - references.qmd
   appendices:
-    - tools.qmd
     - resources.qmd
   cover-image: _img/screenshot_individual_fr.png
   page-footer: 
