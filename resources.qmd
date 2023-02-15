@@ -3,4 +3,19 @@ title: "Resources"
 editor: visual
 ---
 
-> ***TODO:** delete if not used*
+Here are some of resources we used to learn and improve our skills with R, RStudio, Quarto and various packages.
+
+Thanks to the contributors of the packages and tutorials.
+
+-   [R for Data Science (2e) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund](https://r4ds.hadley.nz)
+
+-  [Tom Mock. Beautiful Reports and Presentations with Quarto. 2022-09-27](https://thomasmock.quarto.pub/reports-presentations/#/title-slide)
+
+-   [Tracy Teal. These are a few of my favorite things (about Quarto presentations). RStudio (2022)](https://www.youtube.com/watch?v=ttLnLdU1-CQ)
+
+- [Quarto Blog - News, tips, and commentary about all things Quarto ](https://quarto.org/docs/blog/)
+
+
+- [David Gohel. Using the flextable R package](https://ardata-fr.github.io/flextable-book/)
+
+[David Gohel. Officeverse](https://ardata-fr.github.io/officeverse/index.html)
