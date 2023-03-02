@@ -1,0 +1,65 @@
+# Start your project
+
+## Pre-requisites
+
+-   [ ] To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
+
+-   [ ] Make sure you have done the steps presented in @sec-pre-requisites:
+
+    -   install RStudio and R - see Hands-On Programming with R
+
+    -   get some packages
+
+    -   get a token for your REDCap project and update some files
+
+-   [ ] Make sure you went through and understood @sec-understand-type-of-questions
+
+-   [ ] Make sure you have prepared the structure of your project in [**`REDCap`**](https://projectredcap.org/) according to the instructions in @sec-instructions-for-redcap
+
+## Create the structure of your project {#sec-create-structure-project}
+
+-   [ ] Run `00_run_ME_once_to_create_structure.R`
+
+This will create a predefined set of subfolders within the project folder.
+
+::: callout-warning
+If you choose to modify the structure of the project, you will need to revise every path in the `*.R` and `*.Rmd` files.
+:::
+
+## Update parameters {#sec-update-parameters}
+
+-   [ ] Open `./code/000_parameters.R` and update as necessary
+
+::: callout-note
+In section 4 at the end of the code, `statement_numbers_in_dft2_to_keep_for_execsummary` cannot be updated at this stage. It will be done after round 3 for the Executive Summary report (overall)
+:::
+
+## Update the word templates {#sec-update-word-templates}
+
+This project uses `MS Word` templates in order to build the reports. The autonumbering will be created by [`bookdown`](https://pkgs.rstudio.com/bookdown/).
+
+-   [ ] Update the templates to suit your needs in each subfolder :
+
+    -   `./analysis/dft2/template-bookdown.docx`
+
+    -   `./analysis/dft3/template-bookdown.docx`
+
+    -   `./analysis/doverall/template_exec_summary_bookdown.docx`
+
+Please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it.
+
+## Update introductory texts {#sec-update-texts-introduction}
+
+These texts are word documents with one or two paragraphs, sometimes images that will be inserted at the beginning of the reports. They will be updated in several steps, once some of the results are available.
+
+-   [ ] Prepare them in advance to gain time
+
+-   [ ] Store them on the server in the folder defined in `./code/000_parameters.R` (called `path_texts_intro_server`).
+
+-   [ ] Run `./code/00_update_texts_intro.R`
+
+::: {.callout-caution appearance="simple"}
+-   Do not leave a blank line at the beginning of the text, nor at the end
+
+-   Headers are not needed in these texts as they will be provided in Rmd files
+:::

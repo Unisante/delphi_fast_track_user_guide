@@ -1,19 +1,21 @@
 # Understand the structure {#sec-understand-the-structure}
 
-The demo shows a project when it is finished. Below you'll find the detail of the structure when you start your own project and what will be added by the end.
+You are now ready to start your own project. Below you will find the detail of the structure - folders, subfolders and files - when you start your project, and what will be added by the end. The demo you have been through in @sec-demo shows a project when it is finished.
 
+::: callout-tip
 You can use [`fs::dir_tree()`](https://fs.r-lib.org/reference/dir_tree.html) to see the structure at any time.
+:::
 
-### At the begining
+## At the begining
 
-When you start your project, you will have the following structure.
+When you start your project (i.e., when downloading the [fast-track Delphi: code only](https://github.com/Unisante) on GitHub), you will have the following structure:
 
 ``` r
 ├── 000_READ_ME_first.md
 ├── 00_run_ME_once_to_create_structure.R
-├── 0_run_ME_dft2_demo.R
-├── 0_run_ME_dft3_demo.R
-├── 0_run_ME_overall_demo.R
+├── 0_run_ME_dft2.R
+├── 0_run_ME_dft3.R
+├── 0_run_ME_overall.R
 ├── analysis
 │   ├── 00_child_intro_method.Rmd
 │   ├── dft2
@@ -33,7 +35,6 @@ When you start your project, you will have the following structure.
 │   │   ├── dft3_report_per_participant.Rmd
 │   │   └── template-bookdown.docx
 │   └── overall
-│       ├── ExecutiveSummary_figure-Flow.png
 │       ├── ExecutiveSummary_figure_Target-Consensus.png
 │       ├── ExecutiveSummary_figure_Target-NoConsensus.png
 │       ├── overall_executive_summary.Rmd
@@ -61,12 +62,15 @@ When you start your project, you will have the following structure.
 │       ├── 02a_dft3_prepare_tables_without_participant_id.R
 │       ├── 02b_dft3_prepare_tables_participants.R
 │       └── 05_dft3_to_render_individual_reports.R
+├── texts_intro
+│   ├── delphiFT_Overall_FigureFlow.pptx
+│   ├── .. several *.docx files
 └── delphi_ft.Rproj
 ```
 
-### At the end
+## At the end
 
-The following will appear during the analysis and reports production.
+The following will appear during the analysis and report production.
 
 ``` r
 ├── data
@@ -82,8 +86,6 @@ The following will appear during the analysis and reports production.
 │       ├── dft2_metadata.RData
 │       ├── dft3_data_redcapr_raw.RData
 │       └── dft3_metadata.RData
-├── texts_intro
-│   ├── .. several *.docx files
 ├── output
 │   ├── checks
 │   │   ├── .. several *.xlsx files
@@ -94,7 +96,7 @@ The following will appear during the analysis and reports production.
 │   │   ├── dft2_type0_zz1.RData
 │   │   ├── dft2_type1_zz_combined.RData
 │   │   ├── dft2_type2_zz1.RData
-│   │   ├──  dft2_type3_zz1.RData
+│   │   ├── dft2_type3_zz1.RData
 │   │   ├── dft3_dt_comments_m.RData
 │   │   ├── dft3_type1_zz_combined.RData
 │   │   └── type1_zz_combined_round_2_3.RData
