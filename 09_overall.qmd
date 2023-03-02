@@ -4,9 +4,7 @@ Once you have finished with the analysis and reports of round 3, this page will 
 
 ## Update summary image {#sec-update-summary-image}
 
-> TODO: upate path for png
-
--   [ ] Update the image for the executive summary in the `./texts_intro/delphiFT_Overall_FigureFlow.pptx` provided with the details pertaining to your project and save it as `ExecutiveSummary_figure-Flow.png` in the `./analysis/overall/` folder
+-   [ ] Update the image for the executive summary in the `./texts_intro/delphiFT_Overall_FigureFlow.pptx` provided with the details pertaining to your project and save it as `./analysis/overall/ExecutiveSummary_figure-Flow.png` 
 
 It summarizes the process with dates, number of experts (participants) and number of statements. See @fig-exec-steps below for an example of this figure using data from the pilot study provided in the demo data (in French).
 
@@ -22,7 +20,7 @@ It summarizes the process with dates, number of experts (participants) and numbe
 
 -   [ ] Open the code `./code/000_parameters.R`
 
--   [ ] Check and modify if necessary `title_overall`, `subtitle_overall` and `authors_text` 
+-   [ ] Check and modify if necessary `title_overall`, `subtitle_overall` and `authors_text`
 
 -   [ ] In section 4 at the end of the code, update the `statement_numbers_in_dft2_to_keep_for_execsummary` (statements numbers like in the chunk below from the demo) that had reached consensual agreement by the end of round 2. They were not re-submitted to participants in round 3, but still need to appear in the executive summary report combining results from round 2 and 3.
 
