@@ -2,37 +2,37 @@
 
 > **WORK in PROGRESS -** check **TODO**s
 
-## Purpose
+## Purpose {#sec-purpose .unnumbered}
 
-This guide gives an overview of the toolkit to conduct a Delphi fast track study (DelphiFT) and the steps for the analysis.
+This guide gives an overview of the toolkit to conduct a *fast-track Delphi* process (DelphiFT) and the steps for the analysis.
 
-We suggest you first discover the demo to understand what you will produce, using the [Delphi Fast Track : code with demo data and results](https://github.com/Unisante) available on GitHub.
+::: callout-tip
+The `fast-track Delphi` is a process developed by [Unisanté](https://www.unisante.ch/), aiming to rapidly build consensus among scientific experts on a topical issue in order to support political decisions in a context of public health crisis.
 
-To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
+The process consists in three rounds of consultation of experts. The participants are brought together in a first round during which a series of topics/questions/statements are collected and prioritized using an adapted version of the nominal group technique (NGT). The participants then express their opinion on these statements by responding individually to questions in the second and third rounds using an online questionnaire build with [**`REDCap`**](https://projectredcap.org/). Rational for the methodology and detailed results of the testing phase can be found in [publications](#sec-publications).
 
-The `Delphi fast-track` was developed by [Unisanté](https://www.unisante.ch/) to provide consensus information for political decisions in context of public health crisis.
-
-Rational for the methodology and details of the results of the testing phase can be found in the [publications](#sec-publications).
-
-The process consists in three rounds of consultation. The participants will be brought together in a first round during which a series of topics/questions/statements will be collected using a nominal group technique (NGT). The participants will then respond individually to questions in the second and third rounds using an online questionnaire build with [**`REDCap`**](https://projectredcap.org/).
-
-In order to produce results in a very short time frame, we use an [R project](https://r4ds.had.co.nz/workflow-projects.html) to analyse the results and produce **editable word documents** :
+In order to produce results in a very short time frame, we developed an [R project](https://r4ds.had.co.nz/workflow-projects.html) that connects with [**`REDCap`**](https://projectredcap.org/) to download and process the data, and produce result reports in an **editable word document** format:
 
 -   a generic report and individualised reports for the second round (dft2)
 
 -   a generic report and individualised reports for the third round (dft3)
 
 -   an overall executive summary
+:::
+
+We suggest you first discover the demo to understand what you will produce, using the [fast-track Delphi: code with demo data and results](https://github.com/Unisante) available on GitHub (see also @sec-demo)
+
+To start your own project, download the [fast-track Delphi: code only](https://github.com/Unisante) available on GitHub and follow this user guide.
 
 ## Softwares and packages {#sec-software-and-packages}
 
--   interface and language : [**`RStudio`**](https://www.rstudio.com/) and [**`R Statistical Software`**](https://www.r-project.org/)
+-   Interface and language: [**`RStudio`**](https://www.rstudio.com/) and [**`R Statistical Software`**](https://www.r-project.org/)
 
--   obtain data : [**`REDCapR`**](https://ouhscbbmc.github.io/REDCapR/) (not necessary for the demo)
+-   Obtain data: [**`REDCapR`**](https://ouhscbbmc.github.io/REDCapR/) (not necessary for the demo)
 
--   data management, analysis and visualisation : mainly [**`data.table`**](https://rdatatable.gitlab.io/data.table/), with some [**`tidyverse`**](https://www.tidyverse.org/) and other packages. Regex expressions are sometimes used.
+-   Data management, analysis and visualisation: mainly [**`data.table`**](https://rdatatable.gitlab.io/data.table/), with some [**`tidyverse`**](https://www.tidyverse.org/) and other packages. Regex expressions are sometimes used.
 
--   reports : [**`officedown`**](https://ardata-fr.github.io/officeverse/officedown-for-word.html) which builds on [**`bookdown`**](https://pkgs.rstudio.com/bookdown/), and [**`flextable`**](https://davidgohel.github.io/flextable/) from the [**`officeverse`**](https://ardata-fr.github.io/officeverse/index.html)
+-   Reports: [**`officedown`**](https://ardata-fr.github.io/officeverse/officedown-for-word.html) which builds on [**`bookdown`**](https://pkgs.rstudio.com/bookdown/), and [**`flextable`**](https://davidgohel.github.io/flextable/) from the [**`officeverse`**](https://ardata-fr.github.io/officeverse/index.html)
 
 ## Conventions {#sec-conventions}
 
@@ -44,51 +44,49 @@ In order to produce results in a very short time frame, we use an [R project](ht
 
 -   Functions are followed by a () : `fs::dir_tree()`
 
--   Actions you need to take to prepare your own project are preceded by a ticking box (not interactive):
+-   [ ] [.]{style="color:white;"} Run this code ... Actions you need to take to prepare your own project are preceded by a ticking box (not interactive)
 
--   [ ] run this code ...
+The table below summarizes the conventions used in the names of tables and variables.
 
-The table below summarises the conventions used in the names of tables and variables.
-
-| Word used     | Example as part of name | Example inside a word document | What it means                                         |
-|---------------|-------------------------|--------------------------------|-------------------------------------------------------|
-| dt            | dt\_                    | \-                             | a data.table                                          |
-| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                    |
-| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic |
-| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                      |
-| type          | \_type1                 | type 1                         | type of variable (3 sorts here, see below)            |
+| Word used     | Example as part of name | Example inside a word document | What it means                                                           |
+|------------------|------------------|------------------|-------------------|
+| dt            | dt\_                    | \-                             | a data.table                                                            |
+| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                                      |
+| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic                   |
+| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                                        |
+| type          | \_type1                 | type 1                         | type of question (3 sorts here, see @sec-understand-type-of-questions ) |
 
 ::: callout-tip
 The easiest way to understand the process and see the output is to download the [demo](https://github.com/Unisante/delphi_ft_demo) and explore it (see @sec-demo).
 :::
 
-# Acknowledgements
+# Acknowledgements {#sec-acknowledgements}
 
-We want to thank the following for their contributions, support and feedback :
+We want to thank the following people for their contributions, support and feedback (by alphabetical order) :
 
-> ***TODO** : to be completed*
+Alexia Fournier-Fall, Alexandre Dubuis, Antoine Flahault, Arlette Closuit, Aude Gendre, Aurélie Berthet, Barbara Broers, Barbara Ducry, Bernard Burnand, Camille Robert, Carine Lehmann, Carole Clair, Claudia Künzli, Emmanuelle Mudry-Mentha, Eric Masserey, Evelyne Laszlo, Grégoire Vittoz, Isabelle Jacot-Sadowski, Jacques Cornuz, Jean-François Etter, Karin Zürcher, Kevin Selby, Luc Lebon, Luciano Ruggia, Martial Pasquier, Murielle Bochud, Myriam Pasche, Nolwenn Bühler, Pascal Diethelm, Reto Auer, Romane Kolly, Semira Gonseth Nussle, Sylvie Bonjour, Thomas Beutler, Valérie Pittet, Vincent Faivre, Virginie Bréhier.
 
-# Credits
+# Credits {#sec-credits}
 
 This manual is a [`quarto book`](https://quarto.org/docs/books/).
 
 We want to warmly thank all the people who developed the libraries we used for this work.
 
-# Funding
+# Funding {#sec-funding}
 
-This project was funded by ...
-
-> ***TODO** : to be completed*
+This project was funded by internal research funds.
 
 # Publications {#sec-publications}
 
 1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Nouvelles cigarettes électroniques jetables « puffs » : consensus d'expert-e-s sur leur réglementation. Revue Médicale Suisse. 2023;19(812):181‑5. DOI:[10.53738/REVMED.2023.19.812.181](https://doi.org/10.53738/revmed.2023.19.812.181)
 
-2.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. (in preparation)
+2.  Lebon L, Velarde Crézé C. Cigarettes électroniques jetables « puffs » : premiers chiffres romands et consensus d'expert-e-s sur leur règlementation \[Internet\]. Presentation at: Conférence annuelle de l'Association suisse pour la prévention du tabagisme (AT); 2022 Nov 24; Bern, Switzerland. Available from: <https://www.at-schweiz.ch/fr>
 
-> ***TODO** : add presentations and posters in congresses*
+3.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Cigarettes électroniques jetables de type puffs : consensus d'expert-e-s sur leur réglementation \[Internet\]. Poster presented at: 16e Congrès de la Société Francophone de Tabacologie; 2022 Nov 24-25; Dijon, France. Available from: <http://csft2022.fr/>
 
-# Licence
+4.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. 2023. (in preparation)
+
+# Licence {#sec-licence}
 
 © 2023 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
@@ -96,6 +94,8 @@ This project was funded by ...
 
 > ***TODO** : add DOI*
 
-# Citation
+# Citation {#sec-citation}
 
-Duperrex O and Velarde Crézé C. Delphi fast-track : user guide. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. https://github.com/Unisante/
+Please use the following to cite our work:
+
+Duperrex O and Velarde Crézé C. The *fast-track Delphi* process: user guide. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. https://github.com/Unisante/
