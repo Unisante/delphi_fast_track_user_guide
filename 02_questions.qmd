@@ -1,21 +1,59 @@
-## Type of questions {#sec-understand-type-of-questions}
+# Types of questions {#sec-understand-type-of-questions}
 
+There are three types of questions in a *fast-track Delphi* process. Their structure and implications for the recoding and analysis are described below. Round 2 (dft2) will include all three types of question, while round 3 (dft3) should in principle include only type 1 questions. Rationale for the methodology can be found in [publications](#sec-publications).
 
-> **TODO** : describe the type of questions and the implications for the recoding and the analysis
+We suggest you read the following paragraphs to understand the outputs that will be produced for each type of question, before going further in your project.
 
+## Type 1 question {#sec-type-1-question}
 
+Type 1 questions aim at gathering the opinion of the experts.
 
-## Type 1 question
+-   They are Likert questions. Experts express their opinion by rating their level of agreement with an affirmative statement on a scale from 1 (complete disagreement) to 9 (complete agreement).
 
-![Type 1 question - individualised result](_img/screenshot_individual_fr.png){#fig-dft2-type1 fig-align="center"}
+-   For each statement, the code produces a statistical (median, interquartile \[IQR\] and minimum-maximum ranges) and graphical (barplot and boxplot) summary. The number of respondents is also indicated (with percent of total respondents).
 
+-   A green tick indicates that an agreement and/or a consensus was reached at the group level.
 
-## Type 2 question
+-   For individualised result reports, the expert's answer is displayed in digits (column 'your answers') and on the graphical summary of group response distribution.
 
-![Type 2 question - individualised result](\_img\dft2_question_type2.jpg){#fig-dft2-type2 fig-align="center"}
+-   All type 1 questions of a given section are summarised in one unique table. Below is an example (in French) of the output for one statement of one individualised result report.
 
-## Type 3 question
+![Example of a type 1 question - caption from an individualised result report](_img/Ex_type1question_dft2-s16.png){#fig-dft2-type1 fig-align="center"}
 
+## Type 2 question {#sec-type-2-question}
 
+Type 2 questions aim at clarifying experts' topical propositions and orienting future statements.
 
-![Type 3 question - individualised result](\_img\dft2_question_type3.jpg){#fig-dft2-type3 fig-align="center"}
+-   They are multiple choice questions with one possible response. "No opinion" is always proposed as a choice option.
+
+-   For each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.
+
+-   A green tick indicates that an agreement was reached for one or several particular answer options.
+
+-   Answer options are automatically sorted by descending frequency of responses ("No opinion" always appearing at the bottom).
+
+-   For individualised result reports, the expert's answer is indicated by a red cross (column 'your answer').
+
+-   Each type 2 question is summarised in a table. Below is an example (in French) of the output for one type 2 question of one individualised result report.
+
+![Example of a type 2 question - caption from an individualised result report](_img/Ex_type2question_dft2-s19.png){#fig-dft2-type2 fig-align="center"}
+
+## Type 3 question {#sec-type-3-question}
+
+Type 3 questions aim at precising experts' topical propositions and orienting future statements.
+
+-   They are multiple choice questions with up to three answer options. "No opinion" is always proposed as a choice option.
+
+-   For each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.
+
+-   A green tick indicates that an agreement was reached for one or several particular answer options. Answer options are automatically sorted by descending frequency of responses ("No opinion" always appearing at the bottom).
+
+-   For individualised result reports, the expert's answers are indicated by red crosses (column 'your answers').
+
+-   Each type 3 question is summarised in a particular table. Below is an example (in French) of the output for one type 3 question of one individualised result report.
+
+![Example of a type 3 question - caption from an individualised result report](_img/Ex_type3question_dft2-s9.png){#fig-dft2-type3 fig-align="center"}
+
+## Comments {#sec-comments}
+
+Participants can leave comments after each question. They are very useful to prepare reformulations for round 3 and refine recommandations at the end of round 3.
