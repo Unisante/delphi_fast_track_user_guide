@@ -24,21 +24,21 @@ This code will connect to the corresponding [**`REDCap`**](https://projectredcap
 
 This code will process the raw data and the metadata downloaded in @sec-update-data-round2, in order to create the "clean" data and metadata tables. In particular, it will:
 
-- correct labeling errors, typos, etc.
+-   correct labeling errors, typos, etc.
 
-- simplify labeling
+-   simplify labeling
 
-- define the lists of variables by type of questions (1, 2, 3)
+-   define the lists of variables by type of questions (1, 2, 3)
 
-- do a conditional deduplication (in case one or several participants have filled in several REDCap records per person =\> keep the *latest chosen answer option* and *all comments*)
+-   do a conditional deduplication (in case one or several participants have filled in several REDCap records per person =\> keep the *latest chosen answer option* and *all comments*)
 
-- save clean data and metadata in RData format
+-   save clean data and metadata in RData format
 
 ::: column-margin
 ![dft2_a\_s6_type1.png (statement 6 in section A of round 2)](_img/dft2_a_s6_type1.png){#fig-dft2-type1 fig-align="center"}
 :::
 
-- create visuals (\*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft2-type1
+-   create visuals (\*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft2-type1
 
 ### Detail of outputs
 
@@ -81,21 +81,10 @@ This code updates the local directory of texts used in the introduction of the r
 
 ## Publish the generic report {#sec-publish-generic-report-round2}
 
-The number of each type of questions will vary between projects.
+The number of sections and of each type of questions in them will vary between projects.
 
-The code will deal automatically with type 1 questions.
+The list of sections need to be defined manually in `000_parameters.R`.
 
-You will very likely need to recode manually type 2 and 3 questions.
-
--   [ ] Update the following files in `./analysis/dft2/` so they correspond to your project:
-
-    -   `dft2_child_section_Z.Rmd` \[Preamble\]
-
-    -   `dft2_child_section_A.Rmd`
-
-    -   `dft2_child_section_B.Rmd`
-
-    -   `dft2_child_section_C.Rmd`
 
 -   [ ] Publish the generic report by running the lines below in `0_run_ME_dft2.R`
 
@@ -112,11 +101,9 @@ You will very likely need to recode manually type 2 and 3 questions.
       output_file = output_file)
     ```
 
-This code will create the word document ("generic report") inserting the introductory texts (updated in @sec-update-introductory-texts-round2) and the results tables (created in @sec-prepare-tables-without-participant-id-round2), based on a reference word template.
+This code will create the word document ("generic report") by inserting the introductory texts (updated in @sec-update-introductory-texts-round2) and the results tables (created in @sec-prepare-tables-without-participant-id-round2), based on a reference word template.
 
-It automatically calls `./code/dft2/01c_dft2_define_cols.R.`
-
-It will then automatically call one `*.Rmd` per section, which themselves will call two codes:
+It automatically calls `./code/dft2/01c_dft2_define_cols.R` and for each section `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:
 
 -   `./code/03a_create_flextable_results_type_1_generic.R` : creates the result table for type 1 statements in the section and for their comments
 
@@ -146,13 +133,13 @@ This code will create the word document for each participant ("individualized re
 ![dft2_a\_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)](_img/dft2_a_s6_type1_participantX.png){#fig-dft2-type1-participantX fig-align="center"}
 :::
 
-The code `./analysis/dft2/dft2_report_per_participant.Rmd` (automatically called within `./code/dft2/05_dft2_to_render_individual_reports.R`) functions as an iterative loop and creates the individualized result report for each participant by calling automatically:
+The code `./analysis/dft2/dft2_report_per_participant.Rmd` (automatically called within `./code/dft2/05_dft2_to_render_individual_reports.R`) uses an iterative loop to create the individualized result report for each participant by calling automatically:
 
 -   `./code/dft2/01c_dft2_define_cols.R` and
 
 -   `./code/dft2/02b_dft2_prepare_tables_participants.R` : adds results of the participant to the generic table, and includes plots like @fig-dft2-type1-participantX.
 
-It will then call one `\*.Rmd` file per section (same files as for the generic report), which themselves call two codes:
+It will then call for each section `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes: 
 
 -   `./code/04a_create_flextable_results_type_1_participants.R` : creates the result table for type 1 statements with individual answers in the section and for their comments
 

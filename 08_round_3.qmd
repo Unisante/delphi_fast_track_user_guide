@@ -103,9 +103,7 @@ In round 3, you should have only type 1 questions so you do not need to recode m
 
 This code will create the word document ("generic report") inserting the introductory texts (updated in @sec-update-introductory-texts-round3) and the results tables (created in @sec-prepare-tables-without-participant-id-round3), based on a reference word template.
 
-It automatically calls `./code/dft3/01c_dft3_define_cols.R.`
-
-It will then call one `*.Rmd` per section, which themselves will call one code:
+It automatically calls `./code/dft3/01c_dft3_define_cols.R.` and for each section `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running one code:
 
 -   `./code/03a_create_flextable_results_type_1_generic.R` : creates the result table for type 1 statements in the section and for their comments
 
@@ -135,7 +133,7 @@ The code `./analysis/dft3/dft3_report_per_participant.Rmd` (automatically called
 
 -   `./code/dft3/02b_dft3_prepare_tables_participants.R` : adds results of the participant to the generic table
 
-It will then call one `*.Rmd` per section (same as for the generic report), which themselves call one code:
+It will then call for each section `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running one code:
 
 -   `./code/04a_create_flextable_results_type_1_participants.R` : creates the result table for type 1 statements with individual answers in the section and for their comments
 
