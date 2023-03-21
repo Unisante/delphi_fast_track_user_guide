@@ -58,7 +58,7 @@ Type 3 questions aim at precising experts' topical propositions and orienting fu
 
 Participants can leave comments after each question. They are very useful to prepare reformulations for round 3 and refine recommandations at the end of round 3.
 
-## Agreement and consensus
+## Agreement and consensus thresholds
 
 We define the following thresholds in `000_parameters.R`.
 
