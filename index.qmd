@@ -49,7 +49,7 @@ To start your own project, download the [fast-track Delphi: code only](https://g
 The table below summarizes the conventions used in the names of tables and variables.
 
 | Word used     | Example as part of name | Example inside a word document | What it means                                                           |
-|------------------|------------------|------------------|-------------------|
+|---------------|-------------------------|--------------------------------|-------------------------------------------------------------------------|
 | dt            | dt\_                    | \-                             | a data.table                                                            |
 | current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                                      |
 | section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic                   |
