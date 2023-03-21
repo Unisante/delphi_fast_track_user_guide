@@ -19,18 +19,12 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 ├── analysis
 │   ├── 00_child_intro_method.Rmd
 │   ├── dft2
-│   │   ├── dft2_child_section_A.Rmd
-│   │   ├── dft2_child_section_B.Rmd
-│   │   ├── dft2_child_section_C.Rmd
-│   │   ├── dft2_child_section_Z.Rmd
+│   │   ├── dft2_child_section.Rmd
 │   │   ├── dft2_report_generic.Rmd
 │   │   ├── dft2_report_per_participant.Rmd
 │   │   └── template-bookdown.docx
 │   ├── dft3
-│   │   ├── dft3_child_section_A.Rmd
-│   │   ├── dft3_child_section_B.Rmd
-│   │   ├── dft3_child_section_C.Rmd
-│   │   ├── dft3_child_section_Z.Rmd
+│   │   ├── dft3_child_section.Rmd
 │   │   ├── dft3_report_generic.Rmd
 │   │   ├── dft3_report_per_participant.Rmd
 │   │   └── template-bookdown.docx
