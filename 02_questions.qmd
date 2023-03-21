@@ -57,3 +57,17 @@ Type 3 questions aim at precising experts' topical propositions and orienting fu
 ## Comments {#sec-comments}
 
 Participants can leave comments after each question. They are very useful to prepare reformulations for round 3 and refine recommandations at the end of round 3.
+
+## Agreement and consensus
+
+We define the following thresholds in `000_parameters.R`.
+
+-   For type 1 questions
+
+    -   agreement is considered reached when the median is ≥ 7 out of 10 (≤ 3 out of 10 for disagreement considered reached)
+
+    -   consensus is reached when the range of the interquartile range does not exceed 3 scale points.
+
+-   For type 2 and 3 questions
+
+    -   agreement is reached when the answer has been selected by at least two thirds of the respondents.
