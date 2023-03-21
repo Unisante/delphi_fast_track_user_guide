@@ -4,7 +4,7 @@ Once you have finished with the analysis and reports of round 3, this page will 
 
 ## Update summary image {#sec-update-summary-image}
 
--   [ ] Update the image for the executive summary in the `./texts_intro/delphiFT_Overall_FigureFlow.pptx` provided with the details pertaining to your project and save it as `./analysis/overall/ExecutiveSummary_figure-Flow.png` 
+-   [ ] Update the image for the executive summary in the `./texts_intro/delphiFT_Overall_FigureFlow.pptx` provided with the details pertaining to your project and save it as `./analysis/overall/ExecutiveSummary_figure-Flow.png`
 
 It summarizes the process with dates, number of experts (participants) and number of statements. See @fig-exec-steps below for an example of this figure using data from the pilot study provided in the demo data (in French).
 
@@ -22,17 +22,6 @@ It summarizes the process with dates, number of experts (participants) and numbe
 
 -   [ ] Check and modify if necessary `title_overall`, `subtitle_overall` and `authors_text`
 
--   [ ] In section 4 at the end of the code, update the `statement_numbers_in_dft2_to_keep_for_execsummary` (statements numbers like in the chunk below from the demo) that had reached consensual agreement by the end of round 2. They were not re-submitted to participants in round 3, but still need to appear in the executive summary report combining results from round 2 and 3.
-
-    ```{r}
-
-    ## 4. elements for executive summary --------------------------------
-    ## . statement_numbers_in_dft2_to_keep_for_execsummary ----
-    ## some of the statements of round 2 have been refined in dft3, so are not kept in executive summary
-    ## update this line after round 2 is finished
-    statement_numbers_in_dft2_to_keep_for_execsummary <- c(4, 11, 18)
-
-    ```
 
 ## Publish overall report {#sec-publish-overall-report}
 
@@ -52,6 +41,8 @@ Here are a few tips to be done manually (directly in your Word software) to impr
 
 -   [ ] Open the summary report using the Word software
 
+-   [ ] Add page numbers (still an unsolved problem - see [Stackoverflow question](https://stackoverflow.com/questions/75410413/rmarkdown-officedown-block-landscape-no-page-number))
+
 -   [ ] Add the text 'Key messages'
 
 -   [ ] Add the "target" images (`*.png`) in the table headers
@@ -63,6 +54,8 @@ Here are a few tips to be done manually (directly in your Word software) to impr
 -   [ ] Adjust the height of the table rows
 
 -   [ ] Delete the table 'Consensual disagreement reached' if none of your statements have reached a consensual disagreement
+
+
 
 ::: callout-tip
 If table captions and/or tables are on next page, it is probably because of paragraph formatting:
