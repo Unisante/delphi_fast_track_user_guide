@@ -30,10 +30,6 @@ If you choose to modify the structure of the project, you will need to revise ev
 
 -   [ ] Open `./code/000_parameters.R` and update as necessary
 
-::: callout-note
-In section 4 at the end of the code, `statement_numbers_in_dft2_to_keep_for_execsummary` cannot be updated at this stage. It will be done after round 3 for the Executive Summary report (overall)
-:::
-
 ## Update the word templates {#sec-update-word-templates}
 
 This project uses `MS Word` templates in order to build the reports. The autonumbering will be created by [`bookdown`](https://pkgs.rstudio.com/bookdown/).
