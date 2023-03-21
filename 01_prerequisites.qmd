@@ -10,7 +10,7 @@ To start using the toolkit for your *fast--track Delphi* project, you will need 
 
 ## Get some packages {#sec-get-some-packages}
 
-You will need to run the following *chunks*
+You will need to run the following *chunks (lines of executable code)*
 
 -   [ ] Install pacman unless you already have it : simpler to call libraries and keep them up-to-date
 
