@@ -60,10 +60,11 @@ format:
     theme: cosmo
     code-copy: true
     code-link: true
-  docx: 
-    reference-doc: _templates/template-bookdown.docx
   epub:
     toc: true
+  docx: 
+    reference-doc: _templates/template-bookdown.docx
+
 
 editor: visual
 
