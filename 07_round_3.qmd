@@ -2,7 +2,7 @@
 
 ## E-questionnaire management through REDCap {#sec-e-questionnaire-management-through-redcap-round3}
 
-Round 2 is over; you have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.
+Round 2 is over. You have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.
 
 ::: {.callout-note appearance="minimal"}
 There should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.
@@ -10,11 +10,11 @@ There should be only type 1 questions in this round. The code is therefore simpl
 
 The following steps should be done in 1 day:
 
--   [ ] Within your [**`REDCap`**](https://projectredcap.org/) "round 3" project: **replace all "xxx" with the texts of your actual statements**. Each statement header should also indicate reference(s) to the question(s) in round 2 from which it was derived. Duplicate type 1 questions' "skeleton" based on your needs, i.e., the number of questions per section that you wish to include in this e-questionnaire
+-   [ ] Within your `round 3 REDCap project`: **replace all "xxx" with the texts of your actual statements**. Each statement header should also indicate reference(s) to the question(s) in round 2 from which it was derived. Duplicate type 1 questions' "skeleton" based on your needs, i.e., the number of questions per section that you wish to include in this e-questionnaire
 
 -   [ ] Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs
 
--   [ ] Move this "round 3" REDCap project into production mode - talk with your REDCap Admin if necessary
+-   [ ] Move this `round 3 REDCap project` into production mode - talk with your REDCap Admin if necessary
 
 -   [ ] Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion ; together with this hyperlink, send their individualized result report from round 2 (output of @sec-detail-of-outputs-individualized-round2)
 

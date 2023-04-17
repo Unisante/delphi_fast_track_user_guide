@@ -2,22 +2,22 @@
 
 ## E-questionnaire management through REDCap {#sec-e-questionnaire-management-through-redcap-round2}
 
-Round 1 (*experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see [publications](#sec-publications) for more details*) is over; experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see @sec-understand-type-of-questions).
+Round 1 (*experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see [publications](#sec-publications) for more details*) is over. Experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see @sec-understand-type-of-questions).
 
 The following steps should be done in 1 day:
 
--   [ ] Within your [**`REDCap`**](https://projectredcap.org/) "round 2" project: **replace all "xxx" with the texts of your actual statements and answer options**. Duplicate type 1, 2 and/or 3 questions' "skeleton" based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire
+-   [ ] Within your `round 2 REDCap project`: **replace all "xxx" with the texts of your actual statements and answer options**. Duplicate type 1, 2 and/or 3 questions' "skeleton" based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire
 
--   [ ] Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs 
+-   [ ] Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs
 
--   [ ] Move this "round 2" REDCap project into production mode - talk with your REDCap Admin if necessary
+-   [ ] Move this `round 2 REDCap project` into production mode - talk with your REDCap Admin if necessary
 
 -   [ ] Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion
 
 You can now relax during 3-4 days, until the deadline is over.
 
 ::: callout-tip
-Data collection can be observed in real time by accessing the 'Dashboard' Menu in [**`REDCap`**](https://projectredcap.org/). When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
+Data collection can be observed in real time by accessing the 'Dashboard' Menu in your `round 2 REDCap project`. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
 :::
 
 Once data collection for round 2 is over, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.

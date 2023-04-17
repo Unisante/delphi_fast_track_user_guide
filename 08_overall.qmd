@@ -6,7 +6,7 @@ Once you have finished with the analysis and reports of round 3, this page will 
 
 -   [ ] Update the image for the executive summary in the `./texts_intro/delphiFT_Overall_FigureFlow.pptx` provided with the details pertaining to your project and save it as `./analysis/overall/ExecutiveSummary_figure-Flow.png`
 
-It summarizes the process with dates, number of experts (participants) and number of statements. See @fig-exec-steps below for an example of this figure using data from the pilot study provided in the demo data (in French).
+It summarises the process with dates, number of experts (participants) and number of statements. See @fig-exec-steps below for an example of this figure using data from the pilot study provided in the demo data (in French).
 
 ![Overview of the steps for the pilot study of the *fast-track Delphi* process](_img/ExecutiveSummary_figure-Flow.png){#fig-exec-steps fig-align="center"}
 
@@ -14,15 +14,16 @@ It summarizes the process with dates, number of experts (participants) and numbe
 
 -   [ ] Update the introductory texts on the server
 
--   [ ] Run `00_update_texts_intro.R` one more time to update the `*.docx` files in your local directory
+-   [ ] Run `./code/00_update_texts_intro.R` one more time to update the `*.docx` files in your local directory
 
 ## Modify executive summary report titles and details {#sec-modify-executive-summary-report-title}
 
--   [ ] Open the code `./code/000_parameters.R`
+-   [ ] Open the code `./code/000_parameters.R` and go to section 4
 
 -   [ ] Check and modify if necessary `title_overall`, `subtitle_overall` and `authors_text`
 
-> TODO: add the instruction to modify 000_parameters.R (which code line ???) to indicate which statements from round 2 should be included in the executive summary
+-   [ ] Update the list of statements from round 2 that you want to keep in the overall report : `statement_numbers_in_dft2_to_keep_for_execsummary` (some statements might have been reformulated despite reaching agreement and consensus)
+
 
 ## Publish overall report {#sec-publish-overall-report}
 
@@ -32,20 +33,20 @@ This code will:
 
 -   update the introductory texts by running `./code/00_update_texts_intro.R`
 
--   prepare the result tables (only type 1 questions) with combined round 2 and 3 by running `06_prepare_tables_combined_round_2_3.R`
+-   prepare the result tables (only type 1 questions) with combined round 2 and 3 by running `./code/06_prepare_tables_combined_round_2_3.R`
 
--   create \*.xlsx tables for quick checks, if necessary
+-   create `\*.xlsx` tables for quick checks, if necessary
 
 -   publish the overall report (called **Executive summary**) by running `./analysis/overall/overall_executive_summary.Rmd`
 
 ### Detail of outputs
 
-| Folder             | Output file                        | Description                                         |
+| Folder                      | Output file                                     | Description                                            |
 |------------------|--------------------|----------------------------------|
-| `./output/checks/` | `chk_recode_exec_summary.xlsx`      | Quick check table                                  |
-| `./output/checks/` | `type1_zz_combined_round_2_3.xlsx`  | Quick check table                                  |
-| `./output/RData/`  | `type1_zz_combined_round_2_3.RData` | Clean data for all type 1 questions from round 2 and 3  |
-| `./output/reports/overall/` | `dft_overall_executive_summary_YYYY_MM_DD.docx`  | **Executive summary**  |
+| `./output/checks/`          | `chk_recode_exec_summary.xlsx`                  | Quick check table                                      |
+| `./output/checks/`          | `type1_zz_combined_round_2_3.xlsx`              | Quick check table                                      |
+| `./output/RData/`           | `type1_zz_combined_round_2_3.RData`             | Clean data for all type 1 questions from round 2 and 3 |
+| `./output/reports/overall/` | `dft_overall_executive_summary_YYYY_MM_DD.docx` | **Executive summary**                                  |
 
 ## Finalise overall report {#sec-finalize-overall-report}
 
@@ -55,9 +56,9 @@ Here are a few tips to be done manually (directly in your Word software) to impr
 
 -   [ ] Add page numbers (still an unsolved problem - see [Stackoverflow question](https://stackoverflow.com/questions/75410413/rmarkdown-officedown-block-landscape-no-page-number))
 
--   [ ] Add the text 'Key messages'
+-   [ ] Add your 'Key messages'
 
--   [ ] Add the "target" images (available in `./_img/` as `*.png` files) in the table headers
+-   [ ] Add the "target" images (available in `./_img/` as `*.png` files) in the table headers (we had trouble doing by code)
 
 -   [ ] If necessary, rearrange the order of the statements within the tables (example: first, statement that have reached consensual agreement by the end of round 2, then those having reached consensual agreement in round 3)
 
