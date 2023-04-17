@@ -62,6 +62,8 @@ format:
     code-link: true
   docx: 
     reference-doc: _templates/template-bookdown.docx
+  epub:
+    toc: true
 
 editor: visual
 
