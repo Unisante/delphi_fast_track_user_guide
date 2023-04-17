@@ -1,12 +1,16 @@
 # Pre-requisites {#sec-pre-requisites}
 
-To start using the toolkit for your *fast--track Delphi* project, you will need to:
+To start using the toolkit for your *fast-track Delphi* project, you will need to:
 
 -   install RStudio and R - see [Hands-On Programming with R - Appendix A](https://jjallaire.github.io/hopr/a1-starting.html)
 
--   get some packages
+-   get some packages - see below
 
--   get a token for your REDCap project if you are using one, and update some files (not necessary to explore the demo)
+-   create a [**`REDCap`**](https://projectredcap.org/) project and the token to access it through the R project - see @sec-instructions-for-redcap
+
+::: callout-tip
+We strongly suggest you also go through @sec-understand-type-of-questions to understand the structure of the types of questions and how they are considered by the code for analysis and reporting. The demo we offer with this user guide (see @sec-demo) is also useful to explore before starting your own project.
+:::
 
 ## Get some packages {#sec-get-some-packages}
 
@@ -58,27 +62,3 @@ You will need to run the following *chunks (lines of executable code)*
       or
     remotes::install_github("Unisante/delphiFT") 
     ```
-
-## Token to access your REDCap Project *(not for the demo)* {#sec-token-to-access-your-redcap-project}
-
-The steps below will allow the codes to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the two rounds (dft2 and dft3), whilst avoiding sharing them.
-
--   [ ] Obtain your tokens from the API Menu in [**`REDCap`**](https://projectredcap.org/) - talk with your REDCAp Admin if necessary
-
--   [ ] Create a local file **outside** the RStudio project, so no one else can use it, and give it a name *token_delphi_ft_projectname.R* (replace *projectname* by your project name)
-
--   [ ] Copy-paste the following lines in this new local file:
-
-    ``` r
-    uri_redcap_your_institution <- "<https://XXXXXXXXX>" 
-    token_dft2_your_project <- "YYYYYYYYYYYYYYYY"
-    token_dft3_your_project <- "ZZZZZZZZZZZZZZZZ"
-    ```
-
--   [ ] Replace *your_institution* by your institution name, *your_project* by a short project name, and update *XXX*, *YYY* and *ZZZ* with your details from the API Menu in [**`REDCap`**](https://projectredcap.org/)
-
--   [ ] Open the file `./code/dft2/000_parameters.R` and update the following lines in **0. general elements**:
-
-    1.  Replace `path/to/your/token_file.R` with the actual path to your token file and
-
-    2.  Replace *uri_redcap_your_institution* and *token_dft2_project_name* with your institution and short project name (same as previous point).
