@@ -1,4 +1,20 @@
-# Understand the structure {#sec-understand-the-structure}
+# Start your project {#sec-start-your-project}
+
+## Pre-requisites {#sec-pre-requisites-start}
+
+-   [ ] To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
+
+-   [ ] Make sure you have done the steps presented in @sec-pre-requisites:
+
+    -   install RStudio and R - see Hands-On Programming with R
+
+    -   get some packages
+
+-   [ ] Make sure you went through and understood @sec-understand-type-of-questions
+
+-   [ ] Make sure you have prepared the structure of your projects in [**`REDCap`**](https://projectredcap.org/) and got a token to access them according to the instructions in @sec-instructions-for-redcap
+
+## Understand the structure {#sec-understand-the-structure-start}
 
 You are now ready to start your own project. Below you will find the detail of the structure - folders, subfolders and files - when you start your project, and what will be added by the end. The demo you have been through in @sec-demo shows a project when it is finished.
 
@@ -6,7 +22,7 @@ You are now ready to start your own project. Below you will find the detail of t
 You can use [`fs::dir_tree()`](https://fs.r-lib.org/reference/dir_tree.html) to see the structure at any time.
 :::
 
-## At the begining
+### At the begining {#sec-at-the-begining}
 
 When you start your project (i.e., when downloading the [fast-track Delphi: code only](https://github.com/Unisante) on GitHub), you will have the following structure:
 
@@ -62,7 +78,7 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 └── delphi_ft.Rproj
 ```
 
-## At the end
+### At the end {#sec-at-the-end}
 
 The following will appear during the analysis and report production.
 
@@ -111,3 +127,49 @@ The following will appear during the analysis and report production.
 .
 .
 ```
+
+## Create the structure of your project {#sec-create-structure-project}
+
+-   [ ] Run `00_run_ME_once_to_create_structure.R`
+
+This will create the predefined set of folders and subfolders - detailed above in @sec-understand-the-structure-start - within your main project folder.
+
+::: callout-warning
+We strongly advise keeping this predefined structure as it is. If you still choose to modify it, you will need to revise every path in the `*.R` and `*.Rmd` files.
+:::
+
+## Update parameters {#sec-update-parameters}
+
+-   [ ] Open `./code/000_parameters.R` and update with your topical inputs, as necessary
+
+## Update the word templates {#sec-update-word-templates}
+
+This project uses `MS Word` templates in order to build the generic and individualized reports. The autonumbering will be created by [`bookdown`](https://pkgs.rstudio.com/bookdown/).
+
+-   [ ] Update the templates to suit your needs in each subfolder :
+
+    -   `./analysis/dft2/template-bookdown.docx`
+
+    -   `./analysis/dft3/template-bookdown.docx`
+
+    -   `./analysis/doverall/template_exec_summary_bookdown.docx`
+
+Please refer to the [Officeverse manual](https://ardata-fr.github.io/officeverse/) to see how to do it.
+
+## Update introductory texts {#sec-update-texts-introduction}
+
+These texts are word documents with one or two paragraphs, sometimes images that will be inserted at the beginning of the reports. They will be updated in several steps, once some of the results are available.
+
+-   [ ] Prepare the word documents in advance to gain time
+
+::: {.callout-caution appearance="simple"}
+-   Do not leave a blank line at the beginning of the text, nor at the end
+
+-   Headers are not needed in these texts as they will be provided in Rmd files
+:::
+
+-   [ ] Store them on the server in the folder defined in `./code/000_parameters.R` (called `path_texts_intro_server`).
+
+-   [ ] Run `./code/00_update_texts_intro.R`
+
+Congratulations: **you are now ready** to conduct round 1 (expert meeting following an adapted Nominal Group Technique (NGT) procedure - not detailed in this userguide) and round 2 with your panel of experts!

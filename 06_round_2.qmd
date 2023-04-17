@@ -1,14 +1,34 @@
-# Round 2
+# Round 2 {#sec-round-2}
 
-Once the round 2 is finished in REDCap, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run.
+## E-questionnaire management through REDCap {#sec-e-questionnaire-management-through-redcap-round2}
+
+Round 1 (*experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see [publications](#sec-publications) for more details*) is over; experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see @sec-understand-type-of-questions).
+
+The following steps should be done in 1 day:
+
+-   [ ] Within your [**`REDCap`**](https://projectredcap.org/) "round 2" project: **replace all "xxx" with the texts of your actual statements and answer options**. Duplicate type 1, 2 and/or 3 questions' "skeleton" based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire
+
+-   [ ] Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs 
+
+-   [ ] Move this "round 2" REDCap project into production mode - talk with your REDCap Admin if necessary
+
+-   [ ] Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion
+
+You can now relax during 3-4 days, until the deadline is over.
+
+::: callout-tip
+Data collection can be observed in real time by accessing the 'Dashboard' Menu in [**`REDCap`**](https://projectredcap.org/). When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
+:::
+
+Once data collection for round 2 is over, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.
 
 ## Update data {#sec-update-data-round2}
 
 -   [ ] Run `./code/dft2/01a_dft2_update_data_with_REDCapR.R`
 
-This code will connect to the corresponding [**`REDCap`**](https://projectredcap.org/) project using the token, downloads the raw data and metadata from the project, and save them as \*.RData files. It also creates xlsx tables by type of question (1, 2 and 3, see @sec-understand-type-of-questions) with the raw data, which can be used for quick checks, if necessary.
+This code will connect to the corresponding [**`REDCap`**](https://projectredcap.org/) project using the token, downloads the raw data and metadata from the project, and save them as \*.RData files. It also creates \*.xlsx tables by type of question (1, 2 and 3, see @sec-understand-type-of-questions) with the raw data, which can be used for quick checks, if necessary.
 
-### Detail of outputs
+### Detail of outputs {#sec-detail-of-outputs-update-round2}
 
 | Folder                    | Output file                   | Description                                          |
 |-------------------|---------------------|--------------------------------|
@@ -40,7 +60,7 @@ This code will process the raw data and the metadata downloaded in @sec-update-d
 
 -   create visuals (\*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft2-type1
 
-### Detail of outputs
+### Detail of outputs {#sec-detail-of-outputs-recode-round2}
 
 | Folder          | Output file                            | Description                                                                |
 |------------------|--------------------|----------------------------------|
@@ -57,9 +77,9 @@ This code will analyse the "clean" data (generated in @sec-recode-data-round2) t
 
 It automatically calls code `./code/dft2/01c_dft2_define_cols.R`.
 
-It also creates and saves in xlsx format tables containing only the "no opinion" responses, allowing a quick check if necessary.
+It also creates and saves in \*.xlsx format tables containing only the "no opinion" responses, allowing a quick check if necessary.
 
-### Detail of outputs
+### Detail of outputs {#sec-detail-of-outputs-tables-round2}
 
 | Folder            | Output file                      | Description                                                      |
 |------------------|-----------------------|-------------------------------|
@@ -81,10 +101,9 @@ This code updates the local directory of texts used in the introduction of the r
 
 ## Publish the generic report {#sec-publish-generic-report-round2}
 
-The number of sections and of each type of questions in them will vary between projects.
+The number of sections and the number of each type of questions within these sections will vary between projects.
 
-The list of sections need to be defined manually in `000_parameters.R`.
-
+The list of sections needs to be defined manually in `000_parameters.R`.
 
 -   [ ] Publish the generic report by running the lines below in `0_run_ME_dft2.R`
 
@@ -103,13 +122,13 @@ The list of sections need to be defined manually in `000_parameters.R`.
 
 This code will create the word document ("generic report") by inserting the introductory texts (updated in @sec-update-introductory-texts-round2) and the results tables (created in @sec-prepare-tables-without-participant-id-round2), based on a reference word template.
 
-It automatically calls `./code/dft2/01c_dft2_define_cols.R` and for each section `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:
+It automatically calls `./code/dft2/01c_dft2_define_cols.R` and `./analysis/00_child_intro_method.Rmd`. Then, for each section, it calls `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional *for loop*), by running two codes:
 
 -   `./code/03a_create_flextable_results_type_1_generic.R` : creates the result table for type 1 statements in the section and for their comments
 
 -   `./code/03b_create_flextable_results_type_2_3_generic.R` : creates the result tables for type 2 and 3 statements in the section and for their comments
 
-### Detail of outputs
+### Detail of outputs {#sec-detail-of-outputs-generic-round2}
 
 | Folder                  | Output file                                | Description              |
 |-------------------|---------------------------------|--------------------|
@@ -117,7 +136,7 @@ It automatically calls `./code/dft2/01c_dft2_define_cols.R` and for each section
 
 ## Publish all individualized reports {#sec-publish-individualized-reports-round2}
 
--   [ ] Publish individual reports by running the lines below in `0_run_ME_dft2.R`
+-   [ ] Publish individualized reports - one for each respondent of round 2 - by running the lines below in `0_run_ME_dft2.R`
 
     ``` r
 
@@ -127,7 +146,7 @@ It automatically calls `./code/dft2/01c_dft2_define_cols.R` and for each section
            encoding = 'UTF-8')
     ```
 
-This code will create the word document for each participant ("individualized report"), based on a word template, by inserting the email of the participant, the introductory texts (updated in @sec-update-introductory-texts-round2), as well as the group result tables with individual answers for each statement.
+This code will create the word document for each expert participant ("individualized report"), based on a word template, by inserting the email of the expert, the introductory texts (updated in @sec-update-introductory-texts-round2), as well as the group result tables with individual answers for each statement.
 
 ::: column-margin
 ![dft2_a\_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)](_img/dft2_a_s6_type1_participantX.png){#fig-dft2-type1-participantX fig-align="center"}
@@ -139,14 +158,16 @@ The code `./analysis/dft2/dft2_report_per_participant.Rmd` (automatically called
 
 -   `./code/dft2/02b_dft2_prepare_tables_participants.R` : adds results of the participant to the generic table, and includes plots like @fig-dft2-type1-participantX.
 
-It will then call for each section `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes: 
+It will then call `./analysis/00_child_intro_method.Rmd` as well as, for each section, `./analysis/dft2/dft2_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional *for loop*), by running two codes:
 
 -   `./code/04a_create_flextable_results_type_1_participants.R` : creates the result table for type 1 statements with individual answers in the section and for their comments
 
 -   `./code/04b_create_flextable_results_type_2_3_participants.R` : creates the result table for type 2 and 3 statements with individual answers in the section and for their comments
 
-### Detail of outputs
+### Detail of outputs {#sec-detail-of-outputs-individualized-round2}
 
 | Folder                                        | Output file                                 | Description                                            |
 |----------------------------|--------------------------|------------------|
 | `/output/reports/dft2/report_by_participant/` | `dft2_report_participant_X_YYYY-MM-DD.docx` | Individualized reports (one per participant) with date |
+
+Congratulations: **you are now ready** to conduct round 3!

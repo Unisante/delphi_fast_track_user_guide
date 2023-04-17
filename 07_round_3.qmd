@@ -1,27 +1,41 @@
-# Round 3
+# Round 3 {#sec-round-3}
 
-## Prepare question for round 3 {#sec-prepare-questions-round3}
+## E-questionnaire management through REDCap {#sec-e-questionnaire-management-through-redcap-round3}
 
--   [ ] Reformulate type 1 questions which did not reach consensual agreement by using the comments or split them into different questions
-
--   [ ] Create new type 1 questions from the responses to type 2 and 3 questions
+Round 2 is over; you have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.
 
 ::: {.callout-note appearance="minimal"}
 There should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.
 :::
 
-## Update data {#sec-update-data-round3}
+The following steps should be done in 1 day:
 
-Once the round 3 is finished in REDCap, you can open `0_run_ME_dft3.R`. It will show you the order of files to update and run.
+-   [ ] Within your [**`REDCap`**](https://projectredcap.org/) "round 3" project: **replace all "xxx" with the texts of your actual statements**. Each statement header should also indicate reference(s) to the question(s) in round 2 from which it was derived. Duplicate type 1 questions' "skeleton" based on your needs, i.e., the number of questions per section that you wish to include in this e-questionnaire
+
+-   [ ] Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs
+
+-   [ ] Move this "round 3" REDCap project into production mode - talk with your REDCap Admin if necessary
+
+-   [ ] Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion ; together with this hyperlink, send their individualized result report from round 2 (output of @sec-detail-of-outputs-individualized-round2)
+
+You can now relax during 3-4 days, until the deadline is over.
+
+::: callout-tip
+Data collection can be observed in real time by accessing the 'Dashboard' Menu in [**`REDCap`**](https://projectredcap.org/). When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
+:::
+
+Once data collection for round 3 is over, you can open `0_run_ME_dft3.R`. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.
+
+## Update data {#sec-update-data-round3}
 
 -   [ ] Run `./code/dft3/01a_dft3_update_data_with_REDCapR.R`
 
-This code will connect to the corresponding [**`REDCap`**](https://projectredcap.org/) project using the token, downloads the raw data and metadata from the project, and save them as \*.RData files. It also creates one xlsx table with the raw data, which can be used for quick checks.
+This code will connect to the corresponding [**`REDCap`**](https://projectredcap.org/) project using the token, downloads the raw data and metadata from the project, and save them as \*.RData files. It also creates one \*.xlsx table with the raw data, which can be used for quick checks.
 
 ### Detail of outputs
 
 | Folder                    | Output file                   | Description                                          |
-|-------------------|---------------------|--------------------------------|
+|------------------|--------------------|----------------------------------|
 | `./data/redcap_data_raw/` | `dft3_metadata.RData`         | Raw metadata                                         |
 | `./data/redcap_data_raw/` | `dft3_data_redcapr_raw.RData` | Raw data                                             |
 | `./output/check/`         | `chk_dft3_type1_raw.xlsx`     | Quick check table with raw data for type 1 questions |
@@ -51,7 +65,7 @@ This code will process the raw data and the metadata downloaded in @sec-update-d
 ### Detail of outputs
 
 | Folder          | Output file               | Description                      |
-|------------------|--------------------------|----------------------------|
+|------------------|------------------------|------------------------------|
 | `./data/dft3/`  | `dft3_data_clean.RData`   | Clean data                       |
 | `./data/dft3/`  | `dft3_lookup_final.RData` | Clean lookup table (metadata)    |
 | `./output/png/` | `dft3_*_s*_type1.png`     | Visuals for all type 1 questions |
@@ -64,12 +78,12 @@ This code will analyse the "clean" data (generated in @sec-recode-data-round3) t
 
 It automatically calls code `./code/dft3/01c_dft3_define_cols.R.`
 
-It also creates and saves in xlsx format tables containing only the "no opinion" responses, allowing a quick check if necessary.
+It also creates and saves in \*.xlsx format the table containing only the "no opinion" responses, allowing a quick check if necessary.
 
 ### Detail of outputs
 
 | Folder            | Output file                      | Description                                 |
-|------------------|----------------------|--------------------------------|
+|------------------|------------------------|------------------------------|
 | `./output/RData/` | `dft3_type1_zz_combined.RData`   | Table with results of all type 1 questions  |
 | `./output/RData/` | `dft3_dt_comments_m.RData`       | Table with all comments                     |
 | `./output/check/` | `dft3_type1_zz0_no_opinion.xlsx` | Quick check table of 'no opinion' responses |
@@ -84,7 +98,9 @@ This code updates the local directory of texts used in the introduction of the r
 
 ## Publish the generic report {#sec-create-generic-report-round3}
 
-In round 3, you should have only type 1 questions so you do not need to recode manually.
+The number of sections and the number of questions (all type 1) within these sections will vary between projects.
+
+The list of sections needs to be defined manually in `000_parameters.R`.
 
 -   [ ] Publish the generic report by running the lines below in `0_run_ME_dft3.R`
 
@@ -103,7 +119,7 @@ In round 3, you should have only type 1 questions so you do not need to recode m
 
 This code will create the word document ("generic report") inserting the introductory texts (updated in @sec-update-introductory-texts-round3) and the results tables (created in @sec-prepare-tables-without-participant-id-round3), based on a reference word template.
 
-It automatically calls `./code/dft3/01c_dft3_define_cols.R.` and for each section `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running one code:
+It automatically calls `./code/dft3/01c_dft3_define_cols.R.` and `./analysis/00_child_intro_method.Rmd`. Then, for each section, it calls `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for all questions (type 1) that are in the section (conditional *for loop*), by running one code:
 
 -   `./code/03a_create_flextable_results_type_1_generic.R` : creates the result table for type 1 statements in the section and for their comments
 
@@ -115,7 +131,7 @@ It automatically calls `./code/dft3/01c_dft3_define_cols.R.` and for each sectio
 
 ## Publish all individualized reports {#sec-publish-individualized-reports}
 
--   [ ] Publish individual reports by running the lines below in `0_run_ME_dft3.R`
+-   [ ] Publish individualized reports - one for each respondent of round 3 - by running the lines below in `0_run_ME_dft3.R`
 
     ``` r
 
@@ -127,18 +143,20 @@ It automatically calls `./code/dft3/01c_dft3_define_cols.R.` and for each sectio
 
 This code will create the word document for each participant ("individualized report"), based on a word template, by inserting the email of the participant, the introductory texts (updated in @sec-update-introductory-texts-round3), as well as the group result tables with individual answers for each statement.
 
-The code `./analysis/dft3/dft3_report_per_participant.Rmd` (automatically called within `./code/dft3/05_dft3_to_render_individual_reports.R`) functions as an iterative loop and creates the individualized report for each participant by calling automatically:
+The code `./analysis/dft3/dft3_report_per_participant.Rmd` (automatically called within `./code/dft3/05_dft3_to_render_individual_reports.R`) uses an iterative loop to create the individualized report for each participant by calling automatically:
 
 -   `./code/dft3/01c_dft3_define_cols.R` and
 
 -   `./code/dft3/02b_dft3_prepare_tables_participants.R` : adds results of the participant to the generic table
 
-It will then call for each section `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for each type of questions that are in the section (conditional for loop), by running one code:
+It will then call `./analysis/00_child_intro_method.Rmd` as well as, for each section, `./analysis/dft3/dft3_child_section.Rmd`, which will create tables for all questions (type 1) that are in the section (conditional *for loop*), by running one code:
 
 -   `./code/04a_create_flextable_results_type_1_participants.R` : creates the result table for type 1 statements with individual answers in the section and for their comments
 
 ### Detail of outputs
 
 | Folder                                        | Output file                                 | Description                                            |
-|----------------------------|--------------------------|------------------|
+|-----------------------|----------------------|---------------------------|
 | `/output/reports/dft3/report_by_participant/` | `dft3_report_participant_X_YYYY-MM-DD.docx` | Individualized reports (one per participant) with date |
+
+Congratulations: **you are now ready** to create your overall synthesis report! Individualized reports created in @sec-publish-individualized-reports can be sent to participants for their information.

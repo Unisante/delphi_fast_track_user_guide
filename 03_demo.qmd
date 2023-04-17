@@ -32,9 +32,9 @@ Our [fast-track Delphi: code with demo data and results](https://github.com/Unis
 
 In `./output/reports/`, you will find the reports which are **editable word documents**:
 
--   one generic report and x individualized reports - one for each expert - for the second round (dft2)
+-   one generic report and one individualized report per expert - for the second round (dft2)
 
--   one generic report and x individualized reports - one for each expert - for the third round (dft3)
+-   one generic report and one individualized report per expert - for the third round (dft3)
 
 -   an overall executive summary synthesizing results from the second and third rounds
 
@@ -52,7 +52,7 @@ In `./output/reports/`, you will find the reports which are **editable word docu
 
 -   `data`: data and metadata **RData files** for the raw data and in subfolders for each round (dft2, dft3)
 
--   `output`: subfolders `checks`, `png`, `RData`, `reports`. Final reports in an editable word format are located in the subfolder `reports` (generic and individualized result reports).
+-   `output`: subfolders `checks`, `png`, `RData`, `reports`. **Final reports** in an editable word format are located in the subfolder `reports` (generic and individualized result reports).
 
 -   `texts_intro`: **docx** with separate introductory texts that will be 'imported' into the reports
 

@@ -22,6 +22,7 @@ It summarizes the process with dates, number of experts (participants) and numbe
 
 -   [ ] Check and modify if necessary `title_overall`, `subtitle_overall` and `authors_text`
 
+> TODO: add the instruction to modify 000_parameters.R (which code line ???) to indicate which statements from round 2 should be included in the executive summary
 
 ## Publish overall report {#sec-publish-overall-report}
 
@@ -33,7 +34,18 @@ This code will:
 
 -   prepare the result tables (only type 1 questions) with combined round 2 and 3 by running `06_prepare_tables_combined_round_2_3.R`
 
--   publish the overall report (called **Executive summary**) by running `./analysis/overall/overall_executive_summary.Rmd` and saving it as `./output/reports/overall/dft_overall_executive_summary_YYYY-MM-DD.docx`
+-   create \*.xlsx tables for quick checks, if necessary
+
+-   publish the overall report (called **Executive summary**) by running `./analysis/overall/overall_executive_summary.Rmd`
+
+### Detail of outputs
+
+| Folder             | Output file                        | Description                                         |
+|------------------|--------------------|----------------------------------|
+| `./output/checks/` | `chk_recode_exec_summary.xlsx`      | Quick check table                                  |
+| `./output/checks/` | `type1_zz_combined_round_2_3.xlsx`  | Quick check table                                  |
+| `./output/RData/`  | `type1_zz_combined_round_2_3.RData` | Clean data for all type 1 questions from round 2 and 3  |
+| `./output/reports/overall/` | `dft_overall_executive_summary_YYYY_MM_DD.docx`  | **Executive summary**  |
 
 ## Finalise overall report {#sec-finalize-overall-report}
 
@@ -45,7 +57,7 @@ Here are a few tips to be done manually (directly in your Word software) to impr
 
 -   [ ] Add the text 'Key messages'
 
--   [ ] Add the "target" images (`*.png`) in the table headers
+-   [ ] Add the "target" images (available in `./_img/` as `*.png` files) in the table headers
 
 -   [ ] If necessary, rearrange the order of the statements within the tables (example: first, statement that have reached consensual agreement by the end of round 2, then those having reached consensual agreement in round 3)
 
@@ -54,8 +66,6 @@ Here are a few tips to be done manually (directly in your Word software) to impr
 -   [ ] Adjust the height of the table rows
 
 -   [ ] Delete the table 'Consensual disagreement reached' if none of your statements have reached a consensual disagreement
-
-
 
 ::: callout-tip
 If table captions and/or tables are on next page, it is probably because of paragraph formatting:
