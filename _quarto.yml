@@ -36,21 +36,18 @@ book:
       chapters:
         - 01_prerequisites.qmd
         - 02_questions.qmd
-        - 03_instructions_REDCap.qmd
     - part: "Explore the demo"
       chapters:
-        - 04_demo.qmd
+        - 03_demo.qmd
     - part: "Create your own project"
       chapters: 
-        - 05_structure.qmd
-        - 06_start_your_project.qmd
-        - 07_round_2.qmd
-        - 08_round_3.qmd
-        - 09_overall.qmd
-    - references.qmd
+        - 04_REDCap.qmd
+        - 05_start_your_project.qmd
+        - 06_round_2.qmd
+        - 07_round_3.qmd
+        - 08_overall.qmd
   appendices:
     - resources.qmd
-  cover-image: _img/Ex_type1question_dft2-s16_NoHeader.png
   page-footer: 
     left: "Fast-track Delphi: user guide - version 0.3 - March 2023"
     center: "![](_img/logo_unisante_footer.png){width=50%}"
