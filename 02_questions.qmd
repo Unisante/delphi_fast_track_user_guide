@@ -1,73 +1,101 @@
 # Types of questions {#sec-understand-type-of-questions}
 
-There are three types of questions in a *fast-track Delphi* process. Their structure and implications for the recoding and analysis are described below. Round 2 (dft2) will include all three types of question, while round 3 (dft3) should in principle include only type 1 questions. Rationale for the methodology can be found in [publications](#sec-publications).
+There are three types of questions in a *fast-track Delphi* process. Their structure and implications for the analysis and reporting are described below. Round 2 (dft2) will include all three types of question, while round 3 (dft3) should in principle include only type 1 questions.
+
+Detailed rationale for the methodology can be found in [publications](#sec-publications).
 
 We suggest you read the following paragraphs to understand the outputs that will be produced for each type of question, before going further in your project.
 
 ## Type 1 question {#sec-type-1-question}
 
-Type 1 questions aim at gathering the opinion of the experts.
+They are Likert questions. Experts express their opinion by rating their level of agreement with an affirmative statement on a scale from 1 (complete disagreement) to 9 (complete agreement).
 
--   They are Likert questions. Experts express their opinion by rating their level of agreement with an affirmative statement on a scale from 1 (complete disagreement) to 9 (complete agreement).
+![Example of a type 1 question (statement #3) as structured in the REDCap e-questionnaire (in French) - @sec-instructions-for-redcap will guide you through the creation of this type of question within your REDCap project.](_img/Question_type1_redcap.jpg){#fig-redcap-type1 fig-align="center"}
 
--   For each statement, the code produces a statistical (median, interquartile \[IQR\] and minimum-maximum ranges) and graphical (barplot and boxplot) summary. The number of respondents is also indicated (with percent of total respondents).
+-   For each statement, the code produces a statistical (median, interquartile \[IQR\] and minimum-maximum ranges) and a graphical (barplot and boxplot) summary. The number of respondents is also indicated, with percent of total respondents.
 
--   A green tick indicates that an agreement and/or a consensus was reached at the group level.
+-   A green tick indicates that an agreement and/or a consensus was reached at the group level (see thresholds in @sec-agreement-and-consensus-thresholds).
 
 -   For individualised result reports, the expert's answer is displayed in digits (column 'your answers') and on the graphical summary of group response distribution.
 
 -   All type 1 questions of a given section are summarised in one unique table. Below is an example (in French) of the output for one statement of one individualised result report.
 
-![Example of a type 1 question - caption from an individualised result report](_img/Ex_type1question_dft2-s16.png){#fig-dft2-type1 fig-align="center"}
+![Output examplar for a type 1 question - caption from an individualised result report](_img/Ex_type1question_dft2-s16.png){#fig-dft2-type1 fig-align="center"}
 
 ## Type 2 question {#sec-type-2-question}
 
-Type 2 questions aim at clarifying experts' topical propositions and orienting future statements.
+They are multiple choice questions with one possible response, that aim at clarifying experts' topical propositions and orienting future statements. "No opinion" is always proposed as a choice option.
 
--   They are multiple choice questions with one possible response. "No opinion" is always proposed as a choice option.
+![Example of a type 2 question (statement #14) as structured in the REDCap e-questionnaire (in French) - @sec-instructions-for-redcap will guide you through the creation of this type of question within your REDCap project.](_img/Question_type2_redcap.jpg){#fig-redcap-type2 fig-align="center"}
 
 -   For each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.
 
--   A green tick indicates that an agreement was reached for one or several particular answer options.
+-   A green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in @sec-agreement-and-consensus-thresholds).
 
 -   Answer options are automatically sorted by descending frequency of responses ("No opinion" always appearing at the bottom).
 
 -   For individualised result reports, the expert's answer is indicated by a red cross (column 'your answer').
 
--   Each type 2 question is summarised in a table. Below is an example (in French) of the output for one type 2 question of one individualised result report.
+-   Each type 2 question is summarised in a separate table. Below is an example (in French) of the output for one type 2 question of one individualised result report.
 
-![Example of a type 2 question - caption from an individualised result report](_img/Ex_type2question_dft2-s19.png){#fig-dft2-type2 fig-align="center"}
+![Output examplar for a type 2 question - caption from an individualised result report](_img/Ex_type2question_dft2-s19.png){#fig-dft2-type2 fig-align="center"}
 
 ## Type 3 question {#sec-type-3-question}
 
-Type 3 questions aim at precising experts' topical propositions and orienting future statements.
+They are multiple choice questions with up to three answer options, that aim at precising experts' topical propositions and orienting future statements. "No opinion" is always proposed as a choice option.
 
--   They are multiple choice questions with up to three answer options. "No opinion" is always proposed as a choice option.
+![Example of a type 3 question (statement #2) as structured in the REDCap e-questionnaire (in French) - @sec-instructions-for-redcap will guide you through the creation of this type of question within your REDCap project.](_img/Question_type3_redcap.jpg){#fig-redcap-type3 fig-align="center"}
 
 -   For each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.
 
--   A green tick indicates that an agreement was reached for one or several particular answer options. Answer options are automatically sorted by descending frequency of responses ("No opinion" always appearing at the bottom).
+-   A green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in @sec-agreement-and-consensus-thresholds). Answer options are automatically sorted by descending frequency of responses ("No opinion" always appearing at the bottom).
 
 -   For individualised result reports, the expert's answers are indicated by red crosses (column 'your answers').
 
 -   Each type 3 question is summarised in a particular table. Below is an example (in French) of the output for one type 3 question of one individualised result report.
 
-![Example of a type 3 question - caption from an individualised result report](_img/Ex_type3question_dft2-s9.png){#fig-dft2-type3 fig-align="center"}
+![Output examplar for a type 3 question - caption from an individualised result report](_img/Ex_type3question_dft2-s9.png){#fig-dft2-type3 fig-align="center"}
 
 ## Comments {#sec-comments}
 
-Participants can leave comments after each question. They are very useful to prepare reformulations for round 3 and refine recommandations at the end of round 3.
+Participants can leave comments after each question (for all types). They are very useful to prepare statement reformulations for round 3 and refine key messages at the end of round 3.
 
-## Agreement and consensus thresholds
+## Agreement and consensus thresholds {#sec-agreement-and-consensus-thresholds}
 
-We define the following thresholds in `000_parameters.R`.
+We defined the following thresholds based on the literature and a pragmatic approach. These thresholds can be modified in `000_parameters.R`.
 
 -   For type 1 questions
 
-    -   agreement is considered reached when the median is ≥ 7 out of 10 (≤ 3 out of 10 for disagreement considered reached)
+    -   Agreement is defined by the center value of the data (median), and is considered reached when the median is ≥ 7 out of 10 (≤ 3 out of 10 for disagreement considered reached)
 
-    -   consensus is reached when the range of the interquartile range does not exceed 3 scale points.
+    -   Consensus is defined by the dispersion of the data (interquartile range, IQR), and is considered reached when the IQR does not exceed 3 scale points.
 
 -   For type 2 and 3 questions
 
-    -   agreement is reached when the answer has been selected by at least two thirds of the respondents.
+    -   Agreement is reached when the answer has been selected by ≥ 66% of the respondents.
+
+## Conventions {#sec-conventions}
+
+-   Comments in the R code are preceded by \##
+
+-   Filenames and paths are in `typewriter style`
+
+-   Packages are in **bold** : **data.table**
+
+-   Functions are followed by a () : `fs::dir_tree()`
+
+-   [ ] [.]{style="color:white;"} Run this code ... : actions you need to take to prepare your own project are preceded by a ticking box (not interactive)
+
+The table below summarizes the conventions used in the names of tables and variables.
+
+| Word used     | Example as part of name | Example inside a word document | What it means                                                           |
+|----------------|----------------|----------------|------------------------|
+| dt            | dt\_                    | \-                             | a data.table                                                            |
+| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                                      |
+| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic                   |
+| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                                        |
+| type          | \_type1                 | type 1                         | type of question |
+
+::: callout-tip
+The easiest way to understand the process and see the output is to download the [demo](https://github.com/Unisante/delphi_ft_demo) and explore it (see @sec-demo).
+:::
