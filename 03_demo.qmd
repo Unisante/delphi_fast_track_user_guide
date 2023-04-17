@@ -15,7 +15,7 @@ Sometimes the code might not run smoothly if one of the packages (or R) has been
 
 Should this occur, you can :
 
--   run the code from the beginning so the variables and .RData files have the most recent format
+-   re-run all the code from the beginning so the variables and .RData files have the most recent format
 
 -   look on [Stackoverflow](https://www.stackoverflow.com) if someone had the same problem
 
@@ -54,7 +54,7 @@ In `./output/reports/`, you will find the reports which are **editable word docu
 
 -   `output`: subfolders `checks`, `png`, `RData`, `reports`. **Final reports** in an editable word format are located in the subfolder `reports` (generic and individualized result reports).
 
--   `texts_intro`: **docx** with separate introductory texts that will be 'imported' into the reports
+-   `texts_intro`: editable **docx** with separate introductory texts that will be inserted into the reports
 
 ### Files to run
 
@@ -80,4 +80,4 @@ They will produce :
 
 We chose to keep the functions used in these analyses in a R file because it is easier to toy with.
 
-We strongly recommend that you become familiar with the functions developed for this analysis in code `./code/00_functions.R`. This code will also run each time `./code/000_parameters.R`.
+We strongly recommend that you become familiar with the functions developed for this analysis in code `./code/00_functions.R`. This code will also run each time `./code/000_parameters.R` is sourced.
