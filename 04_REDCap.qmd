@@ -1,0 +1,79 @@
+# Instructions for REDCap {#sec-instructions-for-redcap}
+
+[**`REDCap`**](https://projectredcap.org/) is a secure online survey management platform.
+
+For the *fast-track Delphi* process, both e-questionnaires of rounds 2 and 3 are administered with REDCap using two separate 'REDCap projects'. Data are collected and stored within the corresponding REDCap project.
+
+The structure of both e-questionnaires in [**`REDCap`**](https://projectredcap.org/) should follow a particular "skeleton" - explanations provided below - to ensure comprehensive and automatic reading of the data by the R code. Be sure you have read and understood @sec-understand-type-of-questions explaining the various types of question that are used in a *fast-track Delphi* process.
+
+The steps below will guide you through the creation of your two REDCap projects (one for round 2 and a separate one for round 3).
+
+::: callout-tip
+The idea is for you to familiarize with the structure and parameters of the REDCap project **ahead of conducting the *fast-track Delphi* process itself**, so that you only have to feed the project with your statement *texts* during rush periods.
+
+**To this end, we strongly suggest creating both REDCap projects in advance**.
+:::
+
+## Create the "skeleton" of your REDCap projects {#sec-create-the-skeleton-of-your-redcap-projects}
+
+We have created a *fast-track Delphi* REDCap "skeleton" project including all survey parameters and structured exemplar items for type 1, 2 and 3 questions. These parameters are stored in an `*.xml` file available in the folder `./_REDCap/`. There are two `*.xml` files - one for the 'round 2' REDCap project and one for the 'round 3' REDCap project. 
+
+-   [ ] Create two new separate REDCap projects on your institutional REDCap platform by importing these `*.xml` files into blank projects - talk with your REDCAp Admin if necessary. You should do this twice (once for each round)
+
+-   [ ] Give a name to your projects: *DelphiFT project_name round 2* and *DelphiFT project_name round 3*, respectively (replace *project_name* by your project name)
+
+-   [ ] Within each of these REDCap projects, manage the access rights to suit your team's needs by modifying access parameters on the 'Users Rights' Menu (left side on your REDCap project page)
+
+You should then **familiarize with the proposed structure**, which is the following:
+
+-   For round 2:
+
+    -   One foreword section containing 6 fields aiming at describing your panel of experts (the email field is MANDATORY - do not remove or modify it!)
+    -   One 'preamble' section (Z) containing **one type 1 question** (4 fields), **one type 2 question** (2 fields) and **one type 3 question** (6 fields)
+    -   Three sections (A, B and C) containing each **two questions of each type**
+
+-   For round 3:
+
+    -   One foreword section containing 1 field aiming at collecting experts' email (MANDATORY - do not remove it!)
+    -   One 'preamble' section (Z) containing **three type 1 question**
+    -   Three sections (A, B and C) containing each **three type 1 question**
+
+This structure is of course subject to modifications to suit your needs in due time, i.e., when you have created the statement content of the e-questionnaire based on the results of the previous round (see the start of @sec-round-2 and @sec-round-3 for REDCap management during rush periods of rounds 2 and 3, respectively).
+
+::: callout-tip
+We strongly suggest you try duplicating any type 1, 2 and 3 question in your REDCap project, and test the e-questionnaire, so you are prepared doing it efficiently in a rush period.
+
+When duplicating a question, **you must duplicate ALL fields that belong to this question - and update their variable name and branching logic accordingly**:
+
+-   A type 1 question contains 4 fields (one matrix field, one simple field, one embedding field, and one field for comments)
+
+-   A type 2 question contains 2 fields (one simple field, and one field for comments)
+
+-   A type 3 question contains 6 fields (two simple fields, one embedding field, two fields for message parameters, and one field for comments)
+:::
+
+## Token to access your REDCap projects {#sec-token-to-access-your-redcap-project}
+
+The R code can automatically access the data stored within the corresponding REDCap project through a *token (a string of letters and digits that functions as a unique identifier for your project).*
+
+The steps below will allow the codes to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the two rounds (dft2 and dft3), whilst avoiding sharing them.
+
+-   [ ] Obtain your tokens from the 'API' Menu in [**`REDCap`**](https://projectredcap.org/) - talk with your REDCAp Admin if necessary
+
+-   [ ] Create a local file **outside** your R code folder, so no one else can use it, and give it a name *token_delphi_ft_projectname.R* (replace *projectname* by your project name)
+
+-   [ ] Copy-paste the following lines in this new local file:
+
+    ``` r
+    uri_redcap_your_institution <- "<https://XXXXXXXXX/api/>" 
+    token_dft2_your_project <- "YYYYYYYYYYYYYYYY"
+    token_dft3_your_project <- "ZZZZZZZZZZZZZZZZ"
+    ```
+
+-   [ ] Replace *your_institution* by your institution name, *your_project* by a short project name, and update *XXX*, *YYY* and *ZZZ* with your details from the 'API' Menu in [**`REDCap`**](https://projectredcap.org/)
+
+-   [ ] Open the file `./code/dft2/000_parameters.R` and update the following lines in **0. general elements**:
+
+    1.  Replace `path/to/your/token_file.R` with the actual path to your token file
+
+    2.  Replace *uri_redcap_your_institution* and *token_dft2_project_name* with your institution and short project name (same as previous point).

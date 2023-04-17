@@ -1,3 +1,0 @@
-# Instructions for REDCap {#sec-instructions-for-redcap}
-
-> TODO : complete and prepare xml
