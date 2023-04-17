@@ -32,6 +32,9 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 ├── 0_run_ME_dft2.R
 ├── 0_run_ME_dft3.R
 ├── 0_run_ME_overall.R
+├── _xml_for_redcap
+│   ├── DelphiFTTemplateRound_2.REDCap.xml
+│   ├── DelphiFTTemplateRound_3.REDCap.xml
 ├── analysis
 │   ├── 00_child_intro_method.Rmd
 │   ├── dft2
@@ -45,6 +48,7 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 │   │   ├── dft3_report_per_participant.Rmd
 │   │   └── template-bookdown.docx
 │   └── overall
+│       ├── delphiFT_Overall_FigureFlow.pptx
 │       ├── ExecutiveSummary_figure_Target-Consensus.png
 │       ├── ExecutiveSummary_figure_Target-NoConsensus.png
 │       ├── overall_executive_summary.Rmd
@@ -73,7 +77,6 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 │       ├── 02b_dft3_prepare_tables_participants.R
 │       └── 05_dft3_to_render_individual_reports.R
 ├── texts_intro
-│   ├── delphiFT_Overall_FigureFlow.pptx
 │   ├── .. several *.docx files
 └── delphi_ft.Rproj
 ```
