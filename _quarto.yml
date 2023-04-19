@@ -27,9 +27,8 @@ book:
     - ref: unisante
   date: today
   search: true
-  repo-url: https://github.com/Unisante/
+  repo-url: https://github.com/Unisante/delphi-fast-track-user-guide
   downloads: [pdf, epub]
-  sharing: [facebook, linkedin]
   chapters:
     - index.qmd
     - part: "Get ready"
@@ -49,7 +48,7 @@ book:
   appendices:
     - resources.qmd
   page-footer: 
-    left: "Fast-track Delphi: user guide - version 0.3 - March 2023"
+    left: "Fast-track Delphi: user guide - v0.4 - April 2023"
     center: "![](_img/logo_unisante_footer.png){width=50%}"
 
 citation: true
@@ -60,8 +59,6 @@ format:
     theme: cosmo
     code-copy: true
     code-link: true
-  epub:
-    toc: true
   docx: 
     reference-doc: _templates/template-bookdown.docx
 
