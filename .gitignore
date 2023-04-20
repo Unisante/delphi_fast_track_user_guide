@@ -3,12 +3,10 @@
 .RData
 .Ruserdata
 /.quarto/
-_book
+
 _flow_charts.html
 _flow_charts_files
-_templates
-_img
+
 _extensions
 *.html
 00b_questions_files
-_REDCap
