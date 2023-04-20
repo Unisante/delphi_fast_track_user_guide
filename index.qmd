@@ -4,7 +4,7 @@
 
 This guide gives an overview of the toolkit to conduct a *fast-track Delphi* process (DelphiFT) and the steps for the analysis.
 
-::: callout-tip
+::: callout-note
 The `fast-track Delphi` is a process developed by [Unisanté](https://www.unisante.ch/), aiming to rapidly build consensus among scientific experts on a topical issue in order to support political decisions in a context of public health crisis.
 
 The process consists in three rounds of consultation of experts. The experts (participants) are brought together in a first round during which a series of topics/questions/statements are collected and prioritized using an adapted version of the nominal group technique (NGT). The experts then express their opinion on these statements by responding individually to questions in the second and third rounds using an online questionnaire built with [**`REDCap`**](https://projectredcap.org/). Rational for the methodology and detailed results of the testing phase can be found in [publications](#sec-publications).
@@ -18,9 +18,9 @@ In order to produce results in a very short time frame, we developed an [R proje
 -   an overall executive summary
 :::
 
-We suggest you first discover the demo to understand what you will produce, using the [fast-track Delphi: code with demo data and results](https://github.com/Unisante) available on GitHub (see also @sec-demo)
+We suggest you first discover the demo to understand what you will produce, using the [fast-track Delphi: code with demo data and results](https://github.com/Unisante/delphi-fast-track-demo) available on GitHub (see also @sec-demo)
 
-To start your own project, download the [fast-track Delphi: code only](https://github.com/Unisante) available on GitHub and follow this user guide.
+To start your own project, download the [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track) available on GitHub and follow this user guide.
 
 ## Softwares and packages {#sec-software-and-packages}
 
@@ -31,6 +31,24 @@ To start your own project, download the [fast-track Delphi: code only](https://g
 -   Data management, analysis and visualisation: mainly [**`data.table`**](https://rdatatable.gitlab.io/data.table/), with some [**`tidyverse`**](https://www.tidyverse.org/) and other packages. Regex expressions are sometimes used.
 
 -   Reports: [**`officedown`**](https://ardata-fr.github.io/officeverse/officedown-for-word.html) which builds on [**`bookdown`**](https://pkgs.rstudio.com/bookdown/), and [**`flextable`**](https://davidgohel.github.io/flextable/) from the [**`officeverse`**](https://ardata-fr.github.io/officeverse/index.html)
+
+# Fast-track Delphi Toolkit
+
+This document is part of a toolkit:
+
+- Code only
+
+    Duperrex O and Velarde Crézé C. Fast-track Delphi: code only. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: [https://github.com/Unisante/delphi-fast-track](https://github.com/Unisante/delphi-fast-track)
+
+- Demonstration set (code, anonymized dataset and outputs)
+
+    Duperrex O and Velarde Crézé C. Fast-track Delphi: code with demo data and results. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: [https://github.com/Unisante/delphi-fast-track-demo](https://github.com/Unisante/delphi-fast-track-demo)
+
+- User guide
+
+    Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>
+
+
 
 # Acknowledgements {#sec-acknowledgements}
 
@@ -48,9 +66,10 @@ We want to warmly thank all the people who developed the libraries we used for t
 
 This project was funded by internal research funds (Unisanté).
 
+
 # Publications {#sec-publications}
 
-1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Nouvelles cigarettes électroniques jetables « puffs » : consensus d'expert-e-s sur leur réglementation. Revue Médicale Suisse. 2023;19(812):181‑5. DOI:[10.53738/REVMED.2023.19.812.181](https://doi.org/10.53738/revmed.2023.19.812.181)
+1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Nouvelles cigarettes électroniques jetables « puffs » : consensus d'expert-e-s sur leur réglementation. Revue Médicale Suisse. 2023;19(812):181‑5. DOI: [10.53738/REVMED.2023.19.812.181](https://doi.org/10.53738/revmed.2023.19.812.181)
 
 2.  Lebon L, Velarde Crézé C. Cigarettes électroniques jetables « puffs » : premiers chiffres romands et consensus d'expert-e-s sur leur règlementation. Presentation at: Conférence annuelle de l'Association suisse pour la prévention du tabagisme (AT); 2022 Nov 24; Bern, Switzerland. Available from: <https://www.at-schweiz.ch/fr>
 
@@ -58,16 +77,17 @@ This project was funded by internal research funds (Unisanté).
 
 4.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. (in preparation)
 
+
+
+
+# Citation {#sec-citation}
+
+Please use the following to cite this document :
+
+Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>
+
 # Licence {#sec-licence}
 
 © 2023 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png){fig-align="left"}
-
-> ***TODO** : add DOI*
-
-# Citation {#sec-citation}
-
-Please use the following to cite our work:
-
-Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: https://github.com/Unisante/
