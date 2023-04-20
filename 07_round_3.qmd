@@ -4,7 +4,7 @@
 
 Round 2 is over. You have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.
 
-::: {.callout-note appearance="minimal"}
+::: callout-note
 There should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.
 :::
 
