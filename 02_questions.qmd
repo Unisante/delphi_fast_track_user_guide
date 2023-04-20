@@ -88,14 +88,14 @@ We defined the following thresholds based on the literature and a pragmatic appr
 
 The table below summarizes the conventions used in the names of tables and variables.
 
-| Word used     | Example as part of name | Example inside a word document | What it means                                                           |
-|----------------|----------------|----------------|------------------------|
-| dt            | dt\_                    | \-                             | a data.table                                                            |
-| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                                      |
-| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic                   |
-| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                                        |
-| type          | \_type1                 | type 1                         | type of question |
+| Word used     | Example as part of name | Example inside a word document | What it means                                         |
+|-----------------|-----------------|-----------------|----------------------|
+| dt            | dt\_                    | \-                             | a data.table                                          |
+| current_round | dft2\_ , dft3\_         | \-                             | round 2 or round 3                                    |
+| section       | \_a\_                   | Section A                      | sections correspond to different aspects of the topic |
+| statement     | \_s1\_                  | Statement 1                    | statement followed by its number                      |
+| type          | \_type1                 | type 1                         | type of question                                      |
 
 ::: callout-tip
-The easiest way to understand the process and see the output is to download the [demo](https://github.com/Unisante/delphi_ft_demo) and explore it (see @sec-demo).
+The easiest way to understand the process and see the output is to download the [demo](https://github.com/Unisante/delphi-ft-demo) and explore it (see @sec-demo).
 :::

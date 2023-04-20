@@ -53,12 +53,11 @@ You will need to run the following *chunks (lines of executable code)*
     remotes::install_github("OuhscBbmc/OuhscMunge")
     ```
 
--   [ ] Install delphiFT
+-   [ ] Install [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track)
 
-    > ***TODO** : NOT READY YET, but will need to add instructions and make sure it works*
 
     ``` r
     Download as a zip file (click on green button Code), and unzip locally
       or
-    remotes::install_github("Unisante/delphiFT") 
+    remotes::install_github("Unisante/delphi-fast-track") 
     ```

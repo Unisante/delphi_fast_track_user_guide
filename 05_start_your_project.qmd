@@ -2,7 +2,7 @@
 
 ## Pre-requisites {#sec-pre-requisites-start}
 
--   [ ] To start your own project, download the [Delphi Fast Track : code only](https://github.com/Unisante) available on GitHub.
+-   [ ] To start your own project, download the [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track) available on GitHub.
 
 -   [ ] Make sure you have done the steps presented in @sec-pre-requisites:
 
@@ -24,7 +24,7 @@ You can use [`fs::dir_tree()`](https://fs.r-lib.org/reference/dir_tree.html) to 
 
 ### At the begining {#sec-at-the-begining}
 
-When you start your project (i.e., when downloading the [fast-track Delphi: code only](https://github.com/Unisante) on GitHub), you will have the following structure:
+When you start your project (i.e., when downloading the [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track) on GitHub), you will have the following structure:
 
 ``` r
 ├── 000_READ_ME_first.md

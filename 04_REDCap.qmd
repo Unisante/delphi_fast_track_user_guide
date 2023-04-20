@@ -18,7 +18,7 @@ The idea is for you to familiarize with the structure and parameters of the REDC
 
 We created a *fast-track Delphi* REDCap "skeleton" projects including all survey parameters and structured example items for type 1, 2 and 3 questions and saved as `*.xml`, for round 2 and round 3.
 
-Once you have downloaded the [Delphi Fast Track : code only](https://github.com/Unisante){style="font-size: 11pt;"} (see @sec-start-your-project), you will find these parameters files in the folder `delphi_ft/_xml_for_redcap/`. 
+Once you have downloaded the [Fast-track Delphi : code only](https://github.com/Unisante/delphi-fast-track){style="font-size: 11pt;"} (see @sec-start-your-project), you will find these `*.xml` files in the folder `delphi_ft/_xml_for_redcap/`.
 
 -   [ ] Create two new separate REDCap projects on your institutional REDCap platform by importing these `*.xml` files into blank projects - talk with your REDCAp Admin if necessary. You should do this twice (once for each round)
 
