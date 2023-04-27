@@ -1,5 +1,8 @@
 # Fast-track Delphi: user guide
 
+Olivier Duperrex <a href="https://orcid.org/0000-0002-0932-6846"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>, 
+Camille Velarde Crézé <a href=" https://orcid.org/0000-0002-4686-9401"><img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" width="16" height="16" /></a>,
+Unisanté, Lausanne
 
 ## Purpose
 
@@ -14,24 +17,18 @@ Please download this repository and open on your machine the `_book\index.html` 
 
 This document is part of a toolkit:
 
-- Code only
+-   Code only [![](https://img.shields.io/badge/doi-10.16909/dataset/40-blue.svg)](https://doi.org/10.16909/dataset/40)
 
-    Duperrex O and Velarde Crézé C. Fast-track Delphi: code only. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: [https://github.com/Unisante/delphi-fast-track](https://github.com/Unisante/delphi-fast-track)
+-   Demonstration set (code, anonymized dataset and outputs) [![](https://img.shields.io/badge/doi-10.16909/dataset/41-blue.svg)](https://doi.org/10.16909/dataset/41)
 
-- Demonstration set (code, anonymized dataset and outputs)
-
-    Duperrex O and Velarde Crézé C. Fast-track Delphi: code with demo data and results. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: [https://github.com/Unisante/delphi-fast-track-demo](https://github.com/Unisante/delphi-fast-track-demo)
-
-- User guide
-
-    Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>
+-   User guide [![](https://img.shields.io/badge/doi-10.16909/dataset/39-blue.svg)](https://doi.org/10.16909/dataset/39)
 
 
 ## Citation {#sec-citation}
 
 Please use the following to cite this document :
 
-Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>
+Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. DOI: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
 
 ## Licence {#sec-licence}
 
