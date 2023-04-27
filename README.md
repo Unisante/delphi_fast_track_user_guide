@@ -24,13 +24,13 @@ This document is part of a toolkit:
 -   User guide [![](https://img.shields.io/badge/doi-10.16909/dataset/39-blue.svg)](https://doi.org/10.16909/dataset/39)
 
 
-## Citation {#sec-citation}
+## Citation
 
 Please use the following to cite this document :
 
 Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. DOI: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
 
-## Licence {#sec-licence}
+## Licence
 
 © 2023 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
