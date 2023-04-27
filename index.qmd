@@ -36,11 +36,11 @@ To start your own project, download the [fast-track Delphi: code only](https://g
 
 This document is part of a toolkit:
 
--   Code only [doi: 10.16909/dataset/40](https://doi.org/10.16909/dataset/40)
+-   Code only [![](https://img.shields.io/badge/doi-10.16909/dataset/40-blue.svg)](https://doi.org/10.16909/dataset/40)
 
--   Demonstration set (code, anonymized dataset and outputs) [doi: 10.16909/dataset/41](https://doi.org/10.16909/dataset/41)
+-   Demonstration set (code, anonymized dataset and outputs) [![](https://img.shields.io/badge/doi-10.16909/dataset/41-blue.svg)](https://doi.org/10.16909/dataset/41)
 
--   User guide [doi: 10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
+-   User guide [![](https://img.shields.io/badge/doi-10.16909/dataset/39-blue.svg)](https://doi.org/10.16909/dataset/39)
 
 # Acknowledgements {#sec-acknowledgements}
 
@@ -60,25 +60,23 @@ This project was funded by internal research funds (Unisanté).
 
 # Conferences {#sec-publications}
 
-1.  Lebon L, Velarde Crézé C. Cigarettes électroniques jetables « puffs » : premiers chiffres romands et consensus d'expert-e-s sur leur règlementation. Presentation at: Conférence annuelle de l'Association suisse pour la prévention du tabagisme (AT); 2022 Nov 24; Bern, Switzerland. Available from: <https://www.at-schweiz.ch/fr>
+1.  Lebon L, Velarde Crézé C. Cigarettes électroniques jetables « puffs » : premiers chiffres romands et consensus d'expert-e-s sur leur règlementation. Presentation at: Conférence annuelle de l'Association suisse pour la prévention du tabagisme (AT); 2022 Nov 24; Bern, Switzerland. Available from: <https://www.at-schweiz.ch/fr>
 
-1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Cigarettes électroniques jetables de type puffs : consensus d'expert-e-s sur leur réglementation. Poster presented at: 16e Congrès de la Société Francophone de Tabacologie; 2022 Nov 24-25; Dijon, France. Available from: <http://csft2022.fr/>
+2.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Cigarettes électroniques jetables de type puffs : consensus d'expert-e-s sur leur réglementation. Poster presented at: 16e Congrès de la Société Francophone de Tabacologie; 2022 Nov 24-25; Dijon, France. Available from: <http://csft2022.fr/>
 
-1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Puff-like disposable electronic cigarettes – Expert consensus on their regulation using a fast-track Delphi process. Presentation at: Congrès de printemps de la Société Suisse de Médecine Interne Générale;2023 May 10-12; Basel, Switzerland. Available from:  <https://congress.sgaim.ch/fr/congres-de-printemps> 
+3.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Puff-like disposable electronic cigarettes -- Expert consensus on their regulation using a fast-track Delphi process. Presentation at: Congrès de printemps de la Société Suisse de Médecine Interne Générale;2023 May 10-12; Basel, Switzerland. Available from: <https://congress.sgaim.ch/fr/congres-de-printemps>
 
-
-# Publications {#sec-publications}
+# Publications
 
 1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Nouvelles cigarettes électroniques jetables « puffs » : consensus d'expert-e-s sur leur réglementation. Revue Médicale Suisse. 2023;19(812):181‑5. DOI: [10.53738/REVMED.2023.19.812.181](https://doi.org/10.53738/revmed.2023.19.812.181)
 
-
-1.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. (in preparation)
+2.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. (in preparation)
 
 # Citation {#sec-citation}
 
 Please use the following to cite this document :
 
-Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. doi: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
+Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.4. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. DOI: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
 
 # Licence {#sec-licence}
 
