@@ -27,6 +27,7 @@ book:
     - ref: unisante
   date: today
   search: true
+  doi: "10.16909/dataset/39"
   repo-url: https://github.com/Unisante/delphi-fast-track-user-guide
   downloads: [pdf, epub]
   chapters:
@@ -51,7 +52,9 @@ book:
     left: "Fast-track Delphi: user guide - v0.4 - April 2023"
     center: "![](_img/logo_unisante_footer.png){width=50%}"
 
+
 citation: true
+
 bibliography: references.bib
 
 format:
