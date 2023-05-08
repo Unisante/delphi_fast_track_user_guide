@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.267">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A user guide for the fast-track Delphi toolkit.">
+
+<title>Fast-track Delphi: user guide - 8&nbsp; Overall</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./resources.html" rel="next">
+<link href="./07_round_3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Overall</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Fast-track Delphi: user guide</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Unisante/delphi-fast-track-user-guide" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Get ready</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_questions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of questions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Explore the demo</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_demo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Demo</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Create your own project</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_REDCap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Instructions for REDCap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_start_your_project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Start your project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_round_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_round_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Round 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_overall.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Overall</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-update-summary-image" id="toc-sec-update-summary-image" class="nav-link active" data-scroll-target="#sec-update-summary-image"><span class="toc-section-number">8.1</span>  Update summary image</a></li>
+  <li><a href="#sec-update-introductory-texts-for-the-executive-summary" id="toc-sec-update-introductory-texts-for-the-executive-summary" class="nav-link" data-scroll-target="#sec-update-introductory-texts-for-the-executive-summary"><span class="toc-section-number">8.2</span>  Update introductory texts for the executive summary</a></li>
+  <li><a href="#sec-modify-executive-summary-report-title" id="toc-sec-modify-executive-summary-report-title" class="nav-link" data-scroll-target="#sec-modify-executive-summary-report-title"><span class="toc-section-number">8.3</span>  Modify executive summary report titles and details</a></li>
+  <li><a href="#sec-publish-overall-report" id="toc-sec-publish-overall-report" class="nav-link" data-scroll-target="#sec-publish-overall-report"><span class="toc-section-number">8.4</span>  Publish overall report</a>
+  <ul class="collapse">
+  <li><a href="#detail-of-outputs" id="toc-detail-of-outputs" class="nav-link" data-scroll-target="#detail-of-outputs"><span class="toc-section-number">8.4.1</span>  Detail of outputs</a></li>
+  </ul></li>
+  <li><a href="#sec-finalize-overall-report" id="toc-sec-finalize-overall-report" class="nav-link" data-scroll-target="#sec-finalize-overall-report"><span class="toc-section-number">8.5</span>  Finalise overall report</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Overall</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Once you have finished with the analysis and reports of round 3, this page will guide you through the steps to publish the final overall report which synthesizes results from round 2 and 3 (statistical and graphical summaries).</p>
+<section id="sec-update-summary-image" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-update-summary-image"><span class="header-section-number">8.1</span> Update summary image</h2>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">Update the image for the executive summary in the <code>./analysis/overall/delphiFT_Overall_FigureFlow.pptx</code> provided with the details pertaining to your project and save it as <code>./analysis/overall/ExecutiveSummary_figure-Flow.png</code></li>
+</ul>
+<p>It summarises the process with dates, number of experts (participants) and number of statements. See <a href="#fig-exec-steps">Figure&nbsp;<span>8.1</span></a> below for an example of this figure using data from the pilot study provided in the demo data (in French).</p>
+<div id="fig-exec-steps" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="_img/ExecutiveSummary_figure-Flow.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8.1: Overview of the steps for the pilot study of the <em>fast-track Delphi</em> process</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-update-introductory-texts-for-the-executive-summary" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-update-introductory-texts-for-the-executive-summary"><span class="header-section-number">8.2</span> Update introductory texts for the executive summary</h2>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="">Update the introductory texts on the server</p></li>
+<li><p><input type="checkbox" disabled="">Run <code>./code/00_update_texts_intro.R</code> one more time to update the <code>*.docx</code> files in your local directory</p></li>
+</ul>
+</section>
+<section id="sec-modify-executive-summary-report-title" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-modify-executive-summary-report-title"><span class="header-section-number">8.3</span> Modify executive summary report titles and details</h2>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="">Open the code <code>./code/000_parameters.R</code> and go to section 4</p></li>
+<li><p><input type="checkbox" disabled="">Check and modify if necessary <code>title_overall</code>, <code>subtitle_overall</code> and <code>authors_text</code></p></li>
+<li><p><input type="checkbox" disabled="">Update the list of type 1 statements from round 2 that you want to keep in the overall report : <code>statement_numbers_in_dft2_to_keep_for_execsummary</code> (some statements might have been reformulated despite reaching agreement and consensus)</p></li>
+</ul>
+</section>
+<section id="sec-publish-overall-report" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-publish-overall-report"><span class="header-section-number">8.4</span> Publish overall report</h2>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">Run <code>0_run_ME_overall.R</code></li>
+</ul>
+<p>This code will:</p>
+<ul>
+<li><p>update the introductory texts by running <code>./code/00_update_texts_intro.R</code></p></li>
+<li><p>prepare the result tables (only type 1 questions) with combined round 2 and 3 by running <code>./code/06_prepare_tables_combined_round_2_3.R</code></p></li>
+<li><p>create <code>\*.xlsx</code> tables for quick checks, if necessary</p></li>
+<li><p>publish the overall report (called <strong>Executive summary</strong>) by running <code>./analysis/overall/overall_executive_summary.Rmd</code></p></li>
+</ul>
+<section id="detail-of-outputs" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="detail-of-outputs"><span class="header-section-number">8.4.1</span> Detail of outputs</h3>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 27%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Output file</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>./output/checks/</code></td>
+<td><code>chk_recode_exec_summary.xlsx</code></td>
+<td>Quick check table</td>
+</tr>
+<tr class="even">
+<td><code>./output/checks/</code></td>
+<td><code>type1_zz_combined_round_2_3.xlsx</code></td>
+<td>Quick check table</td>
+</tr>
+<tr class="odd">
+<td><code>./output/RData/</code></td>
+<td><code>type1_zz_combined_round_2_3.RData</code></td>
+<td>Clean data for all type 1 questions from round 2 and 3</td>
+</tr>
+<tr class="even">
+<td><code>./output/reports/overall/</code></td>
+<td><code>dft_overall_executive_summary_YYYY_MM_DD.docx</code></td>
+<td><strong>Executive summary</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sec-finalize-overall-report" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-finalize-overall-report"><span class="header-section-number">8.5</span> Finalise overall report</h2>
+<p>Here are a few tips to be done manually (directly in your Word software) to improve the look and comprehensiveness of your executive summary:</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="">Open the summary report using the Word software</p></li>
+<li><p><input type="checkbox" disabled="">Add page numbers (still an unsolved problem - see <a href="https://stackoverflow.com/questions/75410413/rmarkdown-officedown-block-landscape-no-page-number">Stackoverflow question</a>)</p></li>
+<li><p><input type="checkbox" disabled="">Add your ‘Key messages’</p></li>
+<li><p><input type="checkbox" disabled="">Add the “target” images (available in <code>./_img/</code> as <code>*.png</code> files) in the table headers (sorry, we had trouble doing it by code)</p></li>
+<li><p><input type="checkbox" disabled="">If necessary, rearrange the order of the statements within the tables (example: first, statement that have reached consensual agreement by the end of round 2, then those having reached consensual agreement in round 3)</p></li>
+<li><p><input type="checkbox" disabled="">Delete the ‘section’ column</p></li>
+<li><p><input type="checkbox" disabled="">Adjust the height of the table rows</p></li>
+<li><p><input type="checkbox" disabled="">Delete the table ‘Consensual disagreement reached’ if none of your statements have reached a consensual disagreement</p></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If table captions and/or tables are on next page, it is probably because of paragraph formatting:</p>
+<ul>
+<li><p>select caption or table and go to Paragraph &gt; Line and Page Breaks tab (Enchaînements in french)</p></li>
+<li><p>uncheck <strong>Widow/Orphan control</strong> (Eviter veuves et orphelins) and <strong>Page break before</strong> (Paragraphes solidaires)</p></li>
+</ul>
+</div>
+</div>
+<p>… et voilà !</p>
+<p>Congratulations for going through all steps of the <em>fast-track Delphi</em> process. You are now ready to spread the consensual messages that have been reached by your expert participants. Good luck and enjoy the communication part!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07_round_3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Round 3</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Resources</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Fast-track Delphi: user guide - v0.5 - May 2023</div>   
+      <div class="nav-footer-center"><img src="_img/logo_unisante_footer.png" class="img-fluid" style="width:50.0%"></div>
+  </div>
+</footer>
+
+
+
+</body></html>
