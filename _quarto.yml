@@ -65,7 +65,6 @@ format:
   docx: 
     reference-doc: _templates/template-bookdown.docx
 
-
 editor: visual
 
 
