@@ -49,7 +49,7 @@ book:
   appendices:
     - resources.qmd
   page-footer: 
-    left: "Fast-track Delphi: user guide - v0.4 - April 2023"
+    left: "Fast-track Delphi: user guide - v0.5 - May 2023"
     center: "![](_img/logo_unisante_footer.png){width=50%}"
 
 
@@ -64,7 +64,10 @@ format:
     code-link: true
   docx: 
     reference-doc: _templates/template-bookdown.docx
-
+  epub:
+    cover-image: _img/logo_unisante_RVB_2lignes.png
+    toc: true
+    
 editor: visual
 
 
