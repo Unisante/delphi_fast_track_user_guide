@@ -26,7 +26,7 @@ book:
     affiliations:
     - ref: unisante
   date: last-modified
-  date-format: "[Last Updated on] MMMM, YYYY"
+  date-format: "[Last Updated in] MMMM, YYYY"
   search: true
   doi: "10.16909/dataset/39"
   repo-url: https://github.com/Unisante/delphi-fast-track-user-guide

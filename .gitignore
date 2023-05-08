@@ -3,10 +3,9 @@
 .RData
 .Ruserdata
 /.quarto/
-
 _flow_charts.html
 _flow_charts_files
-
 _extensions
 *.html
 00b_questions_files
+nul
