@@ -78,6 +78,7 @@ When you start your project (i.e., when downloading the [fast-track Delphi: code
 │       └── 05_dft3_to_render_individual_reports.R
 ├── texts_intro
 │   ├── .. several *.docx files
+├── token_delphi_ft_this_project.R.example
 └── delphi_ft.Rproj
 ```
 
