@@ -4,11 +4,7 @@
 
 -   [ ] To start your own project, download the [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track) available on GitHub.
 
--   [ ] Make sure you have done the steps presented in @sec-pre-requisites:
-
-    -   install RStudio and R - see Hands-On Programming with R
-
-    -   get some packages
+-   [ ] Make sure you have done the steps presented in @sec-pre-requisites (install RStudio and R + get some packages)
 
 -   [ ] Make sure you went through and understood @sec-understand-type-of-questions
 
