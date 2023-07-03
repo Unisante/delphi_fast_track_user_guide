@@ -64,18 +64,16 @@ The steps below will allow the codes to automatically retrieve your personal tok
 
 -   [ ] Open *token_delphi_ft_this_project.R.example* and save it as 'token_delphi_ft_this_project.R'
 
--   [ ] Update the lines below with your details from the ‘API’ Menu in REDCap and save it again:
+-   [ ] Update the lines below with your details from the 'API' Menu in REDCap and save it again:
 
     ``` r
-    redcap_uri <- "<https://XXXXXXXXX/api/>" 
+    redcap_uri <- "https://XXXXXXXXX/api/" 
     token_dft2 <- "YYYYYYYYYYYYYYYY"
     token_dft3 <- "ZZZZZZZZZZZZZZZZ"
     ```
 
 ::: callout-note
-
 . 'token_delphi_ft_this_project.R' has been added to *.gitgnore* to avoid transmitting the data to a git depot
 
 . if you use other means to share your work, alway delete the files containing your details to login into your redcap server
-
 :::
