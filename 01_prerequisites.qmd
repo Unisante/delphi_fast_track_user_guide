@@ -2,7 +2,7 @@
 
 To start using the toolkit for your *fast-track Delphi* project, you will need to:
 
--   install RStudio and R - see [Hands-On Programming with R - Appendix A](https://jjallaire.github.io/hopr/a1-starting.html)
+-   install RStudio and R - see Appendix A in [Hands-On Programming with R](https://jjallaire.github.io/hopr/a1-starting.html) by Garrett Grolemund
 
 -   get some packages - see below
 
@@ -55,9 +55,28 @@ You will need to run the following *chunks (lines of executable code)*
 
 -   [ ] Install [fast-track Delphi: code only](https://github.com/Unisante/delphi-fast-track)
 
-
     ``` r
     Download as a zip file (click on green button Code), and unzip locally
       or
     remotes::install_github("Unisante/delphi-fast-track") 
     ```
+
+## Our preferred options for RStudio
+
+### Workspace 
+
+- Never restore or save the RData into the workspace
+
+![](_img/RStudio_options_workspace.jpg)
+
+### Appearance 
+
+- We like _Lucida console_ and _Crimson editor_
+
+![](_img/RStudio_options_appearance.jpg)
+
+### Pane layout 
+
+- We like to have more space for the source to the left
+
+![](_img/RStudio_options_pane_layout.jpg)
