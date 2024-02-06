@@ -17,22 +17,24 @@ Please download this repository and open on your machine the `_book\index.html` 
 
 This document is part of a toolkit:
 
+-   User guide [![](https://img.shields.io/badge/doi-10.16909/dataset/39-blue.svg)](https://doi.org/10.16909/dataset/39)
+
 -   Code only [![](https://img.shields.io/badge/doi-10.16909/dataset/40-blue.svg)](https://doi.org/10.16909/dataset/40)
 
 -   Demonstration set (code, anonymized dataset and outputs) [![](https://img.shields.io/badge/doi-10.16909/dataset/41-blue.svg)](https://doi.org/10.16909/dataset/41)
 
--   User guide [![](https://img.shields.io/badge/doi-10.16909/dataset/39-blue.svg)](https://doi.org/10.16909/dataset/39)
+
 
 
 ## Citation
 
 Please use the following to cite this document :
 
-Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.5. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. DOI: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
+Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.6. 2024. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: <https://github.com/Unisante/delphi-fast-track-user-guide>. DOI: [10.16909/dataset/39](https://doi.org/10.16909/dataset/39)
 
 ## Licence
 
-© 2023 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+© 2023-24 by Olivier Duperrex is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png){fig-align="left"}
 
