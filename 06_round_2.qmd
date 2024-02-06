@@ -20,7 +20,9 @@ You can now relax during 3-4 days, until the deadline is over.
 Data collection can be observed in real time by accessing the 'Dashboard' Menu in your `round 2 REDCap project`. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
 :::
 
-Once data collection for round 2 is over, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.
+## `0_run_ME_dft2.R` - Overview of steps {#sec-run-me-dft2}
+
+Once data collection for round 2 is over, you can open `0_run_ME_dft2.R`. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports.
 
 ## Update data {#sec-update-data-round2}
 
@@ -30,13 +32,10 @@ This code will connect to the corresponding [**`REDCap`**](https://projectredcap
 
 ### Detail of outputs {#sec-detail-of-outputs-update-round2}
 
-| Folder                    | Output file                   | Description                                          |
-|-------------------|---------------------|--------------------------------|
-| `./data/redcap_data_raw/` | `dft2_metadata.RData`         | Raw metadata                                         |
-| `./data/redcap_data_raw/` | `dft2_data_redcapr_raw.RData` | Raw data                                             |
-| `./output/check/`         | `chk_dft2_type1_raw.xlsx`     | Quick check table with raw data for type 1 questions |
-| `./output/check/`         | `chk_dft2_type2_raw.xlsx`     | Quick check table with raw data for type 2 questions |
-| `./output/check/`         | `chk_dft2_type3_raw.xlsx`     | Quick check table with raw data for type 3 questions |
+| Folder                    | Output file                   | Description  |
+|---------------------------|-------------------------------|--------------|
+| `./data/redcap_data_raw/` | `dft2_metadata.RData`         | Raw metadata |
+| `./data/redcap_data_raw/` | `dft2_data_redcapr_raw.RData` | Raw data     |
 
 ## Recode data {#sec-recode-data-round2}
 
@@ -55,19 +54,20 @@ This code will process the raw data and the metadata downloaded in @sec-update-d
 -   save clean data and metadata in RData format
 
 ::: column-margin
-![dft2_a\_s6_type1.png (statement 6 in section A of round 2)](_img/dft2_a_s6_type1.png){#fig-dft2-type1 fig-align="center"}
+![dft2_a_s6_type1.png (statement 6 in section A of round 2)](_img/dft2_a_s6_type1.png){#fig-dft2-type1 fig-align="center"}
 :::
 
 -   create visuals (\*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft2-type1
 
 ### Detail of outputs {#sec-detail-of-outputs-recode-round2}
 
-| Folder          | Output file                            | Description                                                                |
+| Folder            | Output file                            | Description                                                                |
 |------------------|--------------------|----------------------------------|
-| `./data/dft2/`  | `dft2_data_clean.RData`                | Clean data                                                                 |
-| `./data/dft2/`  | `dft2_lookup_final.RData`              | Clean lookup table (metadata)                                              |
-| `./data/dft2/`  | `dft2_lookup_value_labels_final.RData` | Clean lookup table (metadata) with value labels for type 1 and 2 questions |
-| `./output/png/` | `dft2_*_s*_type1.png`                  | Visuals for all type 1 questions                                           |
+| `./data/dft2/`    | `dft2_data_clean.RData`                | Clean data                                                                 |
+| `./data/dft2/`    | `dft2_lookup_final.RData`              | Clean lookup table (metadata)                                              |
+| `./data/dft2/`    | `dft2_lookup_value_labels_final.RData` | Clean lookup table (metadata) with value labels for type 1 and 2 questions |
+| `./output/check/` | `*.xlsx`                                | Various xlsx files that can be used for checks or sharing                  |
+| `./output/png/`   | `dft2_*_s*_type1.png`                  | Visuals for all type 1 questions                                           |
 
 ## Prepare tables without participant id {#sec-prepare-tables-without-participant-id-round2}
 
@@ -81,15 +81,14 @@ It also creates and saves in \*.xlsx format tables containing only the "no opini
 
 ### Detail of outputs {#sec-detail-of-outputs-tables-round2}
 
-| Folder            | Output file                      | Description                                                      |
+| Folder            | Output file                      | Description                                                        |
 |------------------|-----------------------|-------------------------------|
-| `./output/RData/` | `dft2_type0_zz1.RData`           | Table with characteristics of participants                       |
-| `./output/RData/` | `dft2_type1_zz_combined.RData`   | Table with results of all type 1 questions                       |
-| `./output/RData/` | `dft2_type2_zz1.RData`           | Table with results of all type 2 questions                       |
-| `./output/RData/` | `dft2_type3_zz1.RData`           | Table with results of all type 3 questions                       |
-| `./output/RData/` | `dft2_dt_comments_m.RData`       | Table with all comments                                          |
-| `./output/check/` | `dft2_type1_zz0_no_opinion.xlsx` | Quick check table of 'no opinion' responses for type 1 questions |
-| `./output/check/` | `dft2_type3_zz0_no_opinion.xlsx` | Quick check table of 'no opinion' responses for type 3 questions |
+| `./output/RData/` | `dft2_type0_zz1.RData`           | Table with characteristics of participants                         |
+| `./output/RData/` | `dft2_type1_zz_combined.RData`   | Table with results of all type 1 questions                         |
+| `./output/RData/` | `dft2_type2_zz1.RData`           | Table with results of all type 2 questions                         |
+| `./output/RData/` | `dft2_type3_zz1.RData`           | Table with results of all type 3 questions                         |
+| `./output/RData/` | `dft2_dt_comments_m.RData`       | Table with all comments                                            |
+| `./output/check/` | `dft2_type*_zz0_no_opinion.xlsx` | Quick check table of 'no opinion' responses for type \* questions  |
 
 ## Update introductory texts {#sec-update-introductory-texts-round2}
 
@@ -149,7 +148,7 @@ It automatically calls `./code/dft2/01c_dft2_define_cols.R` and `./analysis/00_c
 This code will create the word document for each expert participant ("individualized report"), based on a word template, by inserting the email of the expert, the introductory texts (updated in @sec-update-introductory-texts-round2), as well as the group result tables with individual answers for each statement.
 
 ::: column-margin
-![dft2_a\_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)](_img/dft2_a_s6_type1_participantX.png){#fig-dft2-type1-participantX fig-align="center"}
+![dft2_a_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)](_img/dft2_a_s6_type1_participantX.png){#fig-dft2-type1-participantX fig-align="center"}
 :::
 
 The code `./analysis/dft2/dft2_report_per_participant.Rmd` (automatically called within `./code/dft2/05_dft2_to_render_individual_reports.R`) uses an iterative loop to create the individualized result report for each participant by calling automatically:

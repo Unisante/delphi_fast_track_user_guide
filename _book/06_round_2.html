@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.267">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,9 +18,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,43 +48,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -121,7 +92,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -132,11 +104,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_REDCap.html">Create your own project</a></li><li class="breadcrumb-item"><a href="./06_round_2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -144,123 +121,139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fast-track Delphi: user guide</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/Unisante/delphi-fast-track-user-guide" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
+    <a href="https://github.com/Unisante/delphi-fast-track-user-guide" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Fast-track-Delphi--user-guide.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Get ready</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Get ready</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_prerequisites.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></a>
+  <a href="./01_prerequisites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_questions.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of questions</span></a>
+  <a href="./02_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of questions</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Explore the demo</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Explore the demo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_demo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Demo</span></a>
+  <a href="./03_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Demo</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Create your own project</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Create your own project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_REDCap.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Instructions for REDCap</span></a>
+  <a href="./04_REDCap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Instructions for REDCap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_start_your_project.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Start your project</span></a>
+  <a href="./05_start_your_project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Start your project</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_round_2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></a>
+  <a href="./06_round_2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_round_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Round 3</span></a>
+  <a href="./07_round_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Round 3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_overall.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Overall</span></a>
+  <a href="./08_overall.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Overall</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Resources</span></a>
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -268,33 +261,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-e-questionnaire-management-through-redcap-round2" id="toc-sec-e-questionnaire-management-through-redcap-round2" class="nav-link active" data-scroll-target="#sec-e-questionnaire-management-through-redcap-round2"><span class="toc-section-number">6.1</span>  E-questionnaire management through REDCap</a></li>
-  <li><a href="#sec-update-data-round2" id="toc-sec-update-data-round2" class="nav-link" data-scroll-target="#sec-update-data-round2"><span class="toc-section-number">6.2</span>  Update data</a>
+  <li><a href="#sec-e-questionnaire-management-through-redcap-round2" id="toc-sec-e-questionnaire-management-through-redcap-round2" class="nav-link active" data-scroll-target="#sec-e-questionnaire-management-through-redcap-round2"><span class="header-section-number">6.1</span> E-questionnaire management through REDCap</a></li>
+  <li><a href="#sec-run-me-dft2" id="toc-sec-run-me-dft2" class="nav-link" data-scroll-target="#sec-run-me-dft2"><span class="header-section-number">6.2</span> <code>0_run_ME_dft2.R</code> - Overview of steps</a></li>
+  <li><a href="#sec-update-data-round2" id="toc-sec-update-data-round2" class="nav-link" data-scroll-target="#sec-update-data-round2"><span class="header-section-number">6.3</span> Update data</a>
   <ul class="collapse">
-  <li><a href="#sec-detail-of-outputs-update-round2" id="toc-sec-detail-of-outputs-update-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-update-round2"><span class="toc-section-number">6.2.1</span>  Detail of outputs</a></li>
+  <li><a href="#sec-detail-of-outputs-update-round2" id="toc-sec-detail-of-outputs-update-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-update-round2"><span class="header-section-number">6.3.1</span> Detail of outputs</a></li>
   </ul></li>
-  <li><a href="#sec-recode-data-round2" id="toc-sec-recode-data-round2" class="nav-link" data-scroll-target="#sec-recode-data-round2"><span class="toc-section-number">6.3</span>  Recode data</a>
+  <li><a href="#sec-recode-data-round2" id="toc-sec-recode-data-round2" class="nav-link" data-scroll-target="#sec-recode-data-round2"><span class="header-section-number">6.4</span> Recode data</a>
   <ul class="collapse">
-  <li><a href="#sec-detail-of-outputs-recode-round2" id="toc-sec-detail-of-outputs-recode-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-recode-round2"><span class="toc-section-number">6.3.1</span>  Detail of outputs</a></li>
+  <li><a href="#sec-detail-of-outputs-recode-round2" id="toc-sec-detail-of-outputs-recode-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-recode-round2"><span class="header-section-number">6.4.1</span> Detail of outputs</a></li>
   </ul></li>
-  <li><a href="#sec-prepare-tables-without-participant-id-round2" id="toc-sec-prepare-tables-without-participant-id-round2" class="nav-link" data-scroll-target="#sec-prepare-tables-without-participant-id-round2"><span class="toc-section-number">6.4</span>  Prepare tables without participant id</a>
+  <li><a href="#sec-prepare-tables-without-participant-id-round2" id="toc-sec-prepare-tables-without-participant-id-round2" class="nav-link" data-scroll-target="#sec-prepare-tables-without-participant-id-round2"><span class="header-section-number">6.5</span> Prepare tables without participant id</a>
   <ul class="collapse">
-  <li><a href="#sec-detail-of-outputs-tables-round2" id="toc-sec-detail-of-outputs-tables-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-tables-round2"><span class="toc-section-number">6.4.1</span>  Detail of outputs</a></li>
+  <li><a href="#sec-detail-of-outputs-tables-round2" id="toc-sec-detail-of-outputs-tables-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-tables-round2"><span class="header-section-number">6.5.1</span> Detail of outputs</a></li>
   </ul></li>
-  <li><a href="#sec-update-introductory-texts-round2" id="toc-sec-update-introductory-texts-round2" class="nav-link" data-scroll-target="#sec-update-introductory-texts-round2"><span class="toc-section-number">6.5</span>  Update introductory texts</a></li>
-  <li><a href="#sec-publish-generic-report-round2" id="toc-sec-publish-generic-report-round2" class="nav-link" data-scroll-target="#sec-publish-generic-report-round2"><span class="toc-section-number">6.6</span>  Publish the generic report</a>
+  <li><a href="#sec-update-introductory-texts-round2" id="toc-sec-update-introductory-texts-round2" class="nav-link" data-scroll-target="#sec-update-introductory-texts-round2"><span class="header-section-number">6.6</span> Update introductory texts</a></li>
+  <li><a href="#sec-publish-generic-report-round2" id="toc-sec-publish-generic-report-round2" class="nav-link" data-scroll-target="#sec-publish-generic-report-round2"><span class="header-section-number">6.7</span> Publish the generic report</a>
   <ul class="collapse">
-  <li><a href="#sec-detail-of-outputs-generic-round2" id="toc-sec-detail-of-outputs-generic-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-generic-round2"><span class="toc-section-number">6.6.1</span>  Detail of outputs</a></li>
+  <li><a href="#sec-detail-of-outputs-generic-round2" id="toc-sec-detail-of-outputs-generic-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-generic-round2"><span class="header-section-number">6.7.1</span> Detail of outputs</a></li>
   </ul></li>
-  <li><a href="#sec-publish-individualized-reports-round2" id="toc-sec-publish-individualized-reports-round2" class="nav-link" data-scroll-target="#sec-publish-individualized-reports-round2"><span class="toc-section-number">6.7</span>  Publish all individualized reports</a>
+  <li><a href="#sec-publish-individualized-reports-round2" id="toc-sec-publish-individualized-reports-round2" class="nav-link" data-scroll-target="#sec-publish-individualized-reports-round2"><span class="header-section-number">6.8</span> Publish all individualized reports</a>
   <ul class="collapse">
-  <li><a href="#sec-detail-of-outputs-individualized-round2" id="toc-sec-detail-of-outputs-individualized-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-individualized-round2"><span class="toc-section-number">6.7.1</span>  Detail of outputs</a></li>
+  <li><a href="#sec-detail-of-outputs-individualized-round2" id="toc-sec-detail-of-outputs-individualized-round2" class="nav-link" data-scroll-target="#sec-detail-of-outputs-individualized-round2"><span class="header-section-number">6.8.1</span> Detail of outputs</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -304,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-round-2" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></span></h1>
+<h1 class="title"><span id="sec-round-2" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Round 2</span></span></h1>
 </div>
 
 
@@ -324,18 +319,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Round 1 (<em>experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see <a href="index.html#sec-publications">publications</a> for more details</em>) is over. Experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see <a href="02_questions.html"><span>Chapter&nbsp;2</span></a>).</p>
 <p>The following steps should be done in 1 day:</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="">Within your <code>round 2 REDCap project</code>: <strong>replace all “xxx” with the texts of your actual statements and answer options</strong>. Duplicate type 1, 2 and/or 3 questions’ “skeleton” based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire</p></li>
-<li><p><input type="checkbox" disabled="">Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs</p></li>
-<li><p><input type="checkbox" disabled="">Move this <code>round 2 REDCap project</code> into production mode - talk with your REDCap Admin if necessary</p></li>
-<li><p><input type="checkbox" disabled="">Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion</p></li>
+<li><p><input type="checkbox">Within your <code>round 2 REDCap project</code>: <strong>replace all “xxx” with the texts of your actual statements and answer options</strong>. Duplicate type 1, 2 and/or 3 questions’ “skeleton” based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire</p></li>
+<li><p><input type="checkbox">Test the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs</p></li>
+<li><p><input type="checkbox">Move this <code>round 2 REDCap project</code> into production mode - talk with your REDCap Admin if necessary</p></li>
+<li><p><input type="checkbox">Send the hyperlink to experts (participants) with a deadline for e-questionnaire completion</p></li>
 </ul>
 <p>You can now relax during 3-4 days, until the deadline is over.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -343,21 +338,24 @@ Tip
 <p>Data collection can be observed in real time by accessing the ‘Dashboard’ Menu in your <code>round 2 REDCap project</code>. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.</p>
 </div>
 </div>
-<p>Once data collection for round 2 is over, you can open <code>0_run_ME_dft2.R</code>. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.</p>
 </section>
-<section id="sec-update-data-round2" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sec-update-data-round2"><span class="header-section-number">6.2</span> Update data</h2>
+<section id="sec-run-me-dft2" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-run-me-dft2"><span class="header-section-number">6.2</span> <code>0_run_ME_dft2.R</code> - Overview of steps</h2>
+<p>Once data collection for round 2 is over, you can open <code>0_run_ME_dft2.R</code>. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports.</p>
+</section>
+<section id="sec-update-data-round2" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-update-data-round2"><span class="header-section-number">6.3</span> Update data</h2>
 <ul class="task-list">
-<li><input type="checkbox" disabled="">Run <code>./code/dft2/01a_dft2_update_data_with_REDCapR.R</code></li>
+<li><input type="checkbox">Run <code>./code/dft2/01a_dft2_update_data_with_REDCapR.R</code></li>
 </ul>
 <p>This code will connect to the corresponding <a href="https://projectredcap.org/"><strong><code>REDCap</code></strong></a> project using the token, downloads the raw data and metadata from the project, and save them as *.RData files. It also creates *.xlsx tables by type of question (1, 2 and 3, see <a href="02_questions.html"><span>Chapter&nbsp;2</span></a>) with the raw data, which can be used for quick checks, if necessary.</p>
-<section id="sec-detail-of-outputs-update-round2" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-detail-of-outputs-update-round2"><span class="header-section-number">6.2.1</span> Detail of outputs</h3>
+<section id="sec-detail-of-outputs-update-round2" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-detail-of-outputs-update-round2"><span class="header-section-number">6.3.1</span> Detail of outputs</h3>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 29%">
-<col style="width: 44%">
+<col style="width: 37%">
+<col style="width: 43%">
+<col style="width: 19%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -377,31 +375,16 @@ Tip
 <td><code>dft2_data_redcapr_raw.RData</code></td>
 <td>Raw data</td>
 </tr>
-<tr class="odd">
-<td><code>./output/check/</code></td>
-<td><code>chk_dft2_type1_raw.xlsx</code></td>
-<td>Quick check table with raw data for type 1 questions</td>
-</tr>
-<tr class="even">
-<td><code>./output/check/</code></td>
-<td><code>chk_dft2_type2_raw.xlsx</code></td>
-<td>Quick check table with raw data for type 2 questions</td>
-</tr>
-<tr class="odd">
-<td><code>./output/check/</code></td>
-<td><code>chk_dft2_type3_raw.xlsx</code></td>
-<td>Quick check table with raw data for type 3 questions</td>
-</tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="sec-recode-data-round2" class="level2 page-columns page-full" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="sec-recode-data-round2"><span class="header-section-number">6.3</span> Recode data</h2>
+<section id="sec-recode-data-round2" class="level2 page-columns page-full" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-recode-data-round2"><span class="header-section-number">6.4</span> Recode data</h2>
 <ul class="task-list">
-<li><input type="checkbox" disabled="">Update as required and run <code>./code/dft2/01b_dft2_recode_data.R</code></li>
+<li><input type="checkbox">Update as required and run <code>./code/dft2/01b_dft2_recode_data.R</code></li>
 </ul>
-<p>This code will process the raw data and the metadata downloaded in <a href="#sec-update-data-round2"><span>Section&nbsp;6.2</span></a>, in order to create the “clean” data and metadata tables. In particular, it will:</p>
+<p>This code will process the raw data and the metadata downloaded in <a href="#sec-update-data-round2"><span>Section&nbsp;6.3</span></a>, in order to create the “clean” data and metadata tables. In particular, it will:</p>
 <ul>
 <li><p>correct labeling errors, typos, etc.</p></li>
 <li><p>simplify labeling</p></li>
@@ -414,14 +397,14 @@ Tip
 <div id="fig-dft2-type1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="_img/dft2_a_s6_type1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.1: dft2_a_s6_type1.png (statement 6 in section A of round 2)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6.1: dft2_a_s6_type1.png (statement 6 in section A of round 2)</figcaption>
 </figure>
 </div>
 </div></div><ul>
 <li>create visuals (*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see <a href="#fig-dft2-type1">Figure&nbsp;<span>6.1</span></a></li>
 </ul>
-<section id="sec-detail-of-outputs-recode-round2" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-detail-of-outputs-recode-round2"><span class="header-section-number">6.3.1</span> Detail of outputs</h3>
+<section id="sec-detail-of-outputs-recode-round2" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-detail-of-outputs-recode-round2"><span class="header-section-number">6.4.1</span> Detail of outputs</h3>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -452,6 +435,11 @@ Tip
 <td>Clean lookup table (metadata) with value labels for type 1 and 2 questions</td>
 </tr>
 <tr class="even">
+<td><code>./output/check/</code></td>
+<td><code>*.xlsx</code></td>
+<td>Various xlsx files that can be used for checks or sharing</td>
+</tr>
+<tr class="odd">
 <td><code>./output/png/</code></td>
 <td><code>dft2_*_s*_type1.png</code></td>
 <td>Visuals for all type 1 questions</td>
@@ -460,16 +448,16 @@ Tip
 </table>
 </section>
 </section>
-<section id="sec-prepare-tables-without-participant-id-round2" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="sec-prepare-tables-without-participant-id-round2"><span class="header-section-number">6.4</span> Prepare tables without participant id</h2>
+<section id="sec-prepare-tables-without-participant-id-round2" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="sec-prepare-tables-without-participant-id-round2"><span class="header-section-number">6.5</span> Prepare tables without participant id</h2>
 <ul class="task-list">
-<li><input type="checkbox" disabled="">Run <code>./code/dft2/02a_dft2_prepare_tables_without_participant_id.R</code></li>
+<li><input type="checkbox">Run <code>./code/dft2/02a_dft2_prepare_tables_without_participant_id.R</code></li>
 </ul>
-<p>This code will analyse the “clean” data (generated in <a href="#sec-recode-data-round2"><span>Section&nbsp;6.3</span></a>) to create the group result tables (= statistical and graphical summaries).</p>
+<p>This code will analyse the “clean” data (generated in <a href="#sec-recode-data-round2"><span>Section&nbsp;6.4</span></a>) to create the group result tables (= statistical and graphical summaries).</p>
 <p>It automatically calls code <code>./code/dft2/01c_dft2_define_cols.R</code>.</p>
 <p>It also creates and saves in *.xlsx format tables containing only the “no opinion” responses, allowing a quick check if necessary.</p>
-<section id="sec-detail-of-outputs-tables-round2" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-detail-of-outputs-tables-round2"><span class="header-section-number">6.4.1</span> Detail of outputs</h3>
+<section id="sec-detail-of-outputs-tables-round2" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="sec-detail-of-outputs-tables-round2"><span class="header-section-number">6.5.1</span> Detail of outputs</h3>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -511,32 +499,28 @@ Tip
 </tr>
 <tr class="even">
 <td><code>./output/check/</code></td>
-<td><code>dft2_type1_zz0_no_opinion.xlsx</code></td>
-<td>Quick check table of ‘no opinion’ responses for type 1 questions</td>
-</tr>
-<tr class="odd">
-<td><code>./output/check/</code></td>
-<td><code>dft2_type3_zz0_no_opinion.xlsx</code></td>
-<td>Quick check table of ‘no opinion’ responses for type 3 questions</td>
+<td><code>dft2_type*_zz0_no_opinion.xlsx</code></td>
+<td>Quick check table of ‘no opinion’ responses for type * questions</td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="sec-update-introductory-texts-round2" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="sec-update-introductory-texts-round2"><span class="header-section-number">6.5</span> Update introductory texts</h2>
+<section id="sec-update-introductory-texts-round2" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-update-introductory-texts-round2"><span class="header-section-number">6.6</span> Update introductory texts</h2>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="">Update the content of your introductory texts (*.docx) if needed, as indicated in the <a href="05_start_your_project.html#sec-update-texts-introduction"><span>Section&nbsp;5.6</span></a>.</p></li>
-<li><p><input type="checkbox" disabled="">Run <code>./code/00_update_texts_intro.R</code></p></li>
+<li><p><input type="checkbox">Update the content of your introductory texts (*.docx) if needed, as indicated in the <a href="05_start_your_project.html#sec-update-texts-introduction"><span>Section&nbsp;5.6</span></a>.</p></li>
+<li><p><input type="checkbox">Run <code>./code/00_update_texts_intro.R</code></p></li>
 </ul>
 <p>This code updates the local directory of texts used in the introduction of the report sections (from the available and up-to-date directory on the server).</p>
 </section>
-<section id="sec-publish-generic-report-round2" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="sec-publish-generic-report-round2"><span class="header-section-number">6.6</span> Publish the generic report</h2>
+<section id="sec-publish-generic-report-round2" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="sec-publish-generic-report-round2"><span class="header-section-number">6.7</span> Publish the generic report</h2>
 <p>The number of sections and the number of each type of questions within these sections will vary between projects.</p>
 <p>The list of sections needs to be defined manually in <code>000_parameters.R</code>.</p>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="">Publish the generic report by running the lines below in <code>0_run_ME_dft2.R</code></p><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### . publish Rmd ----</span></span>
+<li><p><input type="checkbox">Publish the generic report by running the lines below in <code>0_run_ME_dft2.R</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### . publish Rmd ----</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">### .. dft2_report_generic.Rmd ----</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>input <span class="ot">&lt;-</span>  <span class="st">"analysis/dft2/dft2_report_generic.Rmd"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -547,14 +531,14 @@ Tip
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">input =</span> input,</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> output_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<p>This code will create the word document (“generic report”) by inserting the introductory texts (updated in <a href="#sec-update-introductory-texts-round2"><span>Section&nbsp;6.5</span></a>) and the results tables (created in <a href="#sec-prepare-tables-without-participant-id-round2"><span>Section&nbsp;6.4</span></a>), based on a reference word template.</p>
+<p>This code will create the word document (“generic report”) by inserting the introductory texts (updated in <a href="#sec-update-introductory-texts-round2"><span>Section&nbsp;6.6</span></a>) and the results tables (created in <a href="#sec-prepare-tables-without-participant-id-round2"><span>Section&nbsp;6.5</span></a>), based on a reference word template.</p>
 <p>It automatically calls <code>./code/dft2/01c_dft2_define_cols.R</code> and <code>./analysis/00_child_intro_method.Rmd</code>. Then, for each section, it calls <code>./analysis/dft2/dft2_child_section.Rmd</code>, which will create tables for each type of questions that are in the section (conditional <em>for loop</em>), by running two codes:</p>
 <ul>
 <li><p><code>./code/03a_create_flextable_results_type_1_generic.R</code> : creates the result table for type 1 statements in the section and for their comments</p></li>
 <li><p><code>./code/03b_create_flextable_results_type_2_3_generic.R</code> : creates the result tables for type 2 and 3 statements in the section and for their comments</p></li>
 </ul>
-<section id="sec-detail-of-outputs-generic-round2" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="sec-detail-of-outputs-generic-round2"><span class="header-section-number">6.6.1</span> Detail of outputs</h3>
+<section id="sec-detail-of-outputs-generic-round2" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="sec-detail-of-outputs-generic-round2"><span class="header-section-number">6.7.1</span> Detail of outputs</h3>
 <table class="table">
 <colgroup>
 <col style="width: 26%">
@@ -578,22 +562,23 @@ Tip
 </table>
 </section>
 </section>
-<section id="sec-publish-individualized-reports-round2" class="level2 page-columns page-full" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="sec-publish-individualized-reports-round2"><span class="header-section-number">6.7</span> Publish all individualized reports</h2>
+<section id="sec-publish-individualized-reports-round2" class="level2 page-columns page-full" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="sec-publish-individualized-reports-round2"><span class="header-section-number">6.8</span> Publish all individualized reports</h2>
 <ul class="task-list">
-<li><p><input type="checkbox" disabled="">Publish individualized reports - one for each respondent of round 2 - by running the lines below in <code>0_run_ME_dft2.R</code></p><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<li><p><input type="checkbox">Publish individualized reports - one for each respondent of round 2 - by running the lines below in <code>0_run_ME_dft2.R</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">### .. 05_dft2_to_render_individual_reports.R ------------------------------</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">### TAKES time ... have a coffee, a walk, a nice chat with someone ...</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'code'</span>, <span class="st">'dft2'</span>, <span class="st">'05_dft2_to_render_individual_reports.R'</span>),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">encoding =</span> <span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<p>This code will create the word document for each expert participant (“individualized report”), based on a word template, by inserting the email of the expert, the introductory texts (updated in <a href="#sec-update-introductory-texts-round2"><span>Section&nbsp;6.5</span></a>), as well as the group result tables with individual answers for each statement.</p>
+<p>This code will create the word document for each expert participant (“individualized report”), based on a word template, by inserting the email of the expert, the introductory texts (updated in <a href="#sec-update-introductory-texts-round2"><span>Section&nbsp;6.6</span></a>), as well as the group result tables with individual answers for each statement.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-dft2-type1-participantX" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="_img/dft2_a_s6_type1_participantX.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6.2: dft2_a_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6.2: dft2_a_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)</figcaption>
 </figure>
 </div>
 </div></div><p>The code <code>./analysis/dft2/dft2_report_per_participant.Rmd</code> (automatically called within <code>./code/dft2/05_dft2_to_render_individual_reports.R</code>) uses an iterative loop to create the individualized result report for each participant by calling automatically:</p>
@@ -606,8 +591,8 @@ Tip
 <li><p><code>./code/04a_create_flextable_results_type_1_participants.R</code> : creates the result table for type 1 statements with individual answers in the section and for their comments</p></li>
 <li><p><code>./code/04b_create_flextable_results_type_2_3_participants.R</code> : creates the result table for type 2 and 3 statements with individual answers in the section and for their comments</p></li>
 </ul>
-<section id="sec-detail-of-outputs-individualized-round2" class="level3" data-number="6.7.1">
-<h3 data-number="6.7.1" class="anchored" data-anchor-id="sec-detail-of-outputs-individualized-round2"><span class="header-section-number">6.7.1</span> Detail of outputs</h3>
+<section id="sec-detail-of-outputs-individualized-round2" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="sec-detail-of-outputs-individualized-round2"><span class="header-section-number">6.8.1</span> Detail of outputs</h3>
 <table class="table">
 <colgroup>
 <col style="width: 38%">
@@ -663,9 +648,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -730,6 +729,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -784,8 +869,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Fast-track Delphi: user guide - v0.5 - May 2023</div>   
-      <div class="nav-footer-center"><img src="_img/logo_unisante_footer.png" class="img-fluid" style="width:50.0%"></div>
+    <div class="nav-footer-left">Fast-track Delphi: user guide - v0.6 - Feb 2024</div>   
+    <div class="nav-footer-center"><img src="_img/logo_unisante_footer.png" class="img-fluid" style="width:25.0%"></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

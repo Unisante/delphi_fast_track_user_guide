@@ -24,7 +24,10 @@ You can now relax during 3-4 days, until the deadline is over.
 Data collection can be observed in real time by accessing the 'Dashboard' Menu in [**`REDCap`**](https://projectredcap.org/). When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.
 :::
 
-Once data collection for round 3 is over, you can open `0_run_ME_dft3.R`. It will show you the order of files to update and run in order to upload, process and analyse the data and to create reports.
+
+## `0_run_ME_dft3.R` - Overview of steps  {#sec-run-me-dft2}
+
+Once data collection for round 3 is over, you can open `0_run_ME_dft3.R`. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports.
 
 ## Update data {#sec-update-data-round3}
 
@@ -38,7 +41,6 @@ This code will connect to the corresponding [**`REDCap`**](https://projectredcap
 |------------------|--------------------|----------------------------------|
 | `./data/redcap_data_raw/` | `dft3_metadata.RData`         | Raw metadata                                         |
 | `./data/redcap_data_raw/` | `dft3_data_redcapr_raw.RData` | Raw data                                             |
-| `./output/check/`         | `chk_dft3_type1_raw.xlsx`     | Quick check table with raw data for type 1 questions |
 
 ## Recode data {#sec-recode-data-round3}
 
@@ -57,7 +59,7 @@ This code will process the raw data and the metadata downloaded in @sec-update-d
 -   save clean data and metadata in RData format
 
 ::: column-margin
-![dft3_z\_s4_type1.png (for the statement 4 in preamble of round 3)](_img/dft3_z_s4_type1.png){#fig-dft3-type1 fig-align="center"}
+![dft3_z_s4_type1.png (for the statement 4 in preamble of round 3)](_img/dft3_z_s4_type1.png){#fig-dft3-type1 fig-align="center"}
 :::
 
 -   create visuals (\*.png) for all type 1 questions, showing the distribution of answers on a 1 to 9 scale and a boxplot - see @fig-dft3-type1
@@ -68,6 +70,7 @@ This code will process the raw data and the metadata downloaded in @sec-update-d
 |------------------|------------------------|------------------------------|
 | `./data/dft3/`  | `dft3_data_clean.RData`   | Clean data                       |
 | `./data/dft3/`  | `dft3_lookup_final.RData` | Clean lookup table (metadata)    |
+| `./output/check/` | `*.xlsx` | Various xlsx files that can be used for checks or sharing     
 | `./output/png/` | `dft3_*_s*_type1.png`     | Visuals for all type 1 questions |
 
 ## Prepare tables without participant id {#sec-prepare-tables-without-participant-id-round3}
