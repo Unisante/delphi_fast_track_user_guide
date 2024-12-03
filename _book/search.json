@@ -4,314 +4,568 @@
     "href": "index.html",
     "title": "Fast-track Delphi: user guide",
     "section": "",
-    "text": "Preface\nThis document is part of a toolkit:\nWe thank the following people for their contributions, support and feedback on the fast-track Delphi process (by alphabetical order) :\nAlexia Fournier-Fall, Alexandre Dubuis, Antoine Flahault, Arlette Closuit, Aude Gendre, Aurélie Berthet, Barbara Broers, Barbara Ducry, Bernard Burnand, Camille Robert, Carine Lehmann, Carole Clair, Claudia Künzli, Emmanuelle Mudry-Mentha, Eric Masserey, Evelyne Laszlo, Grégoire Vittoz, Isabelle Jacot-Sadowski, Jacques Cornuz, Jean-François Etter, Karin Zürcher, Kevin Selby, Luc Lebon, Luciano Ruggia, Martial Pasquier, Murielle Bochud, Myriam Pasche, Nolwenn Bühler, Pascal Diethelm, Reto Auer, Romane Kolly, Semira Gonseth Nussle, Sylvie Bonjour, Thomas Beutler, Valérie Pittet, Vincent Faivre, Virginie Bréhier.\nThis manual is a quarto book.\nWe want to warmly thank all the people who developed the libraries we used for this work.\nThis project was funded by internal research funds (Unisanté).\nPlease use the following to cite this document :\nDuperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.5. 2023. Département Promotion de la santé et préventions, Unisanté, Lausanne, Suisse. Available from: https://github.com/Unisante/delphi-fast-track-user-guide. DOI: 10.16909/dataset/39\n© 2023 by Olivier Duperrex is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+    "text": "Preface",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#sec-purpose",
     "href": "index.html#sec-purpose",
     "title": "Fast-track Delphi: user guide",
     "section": "Purpose",
-    "text": "Purpose\nThis guide gives an overview of the toolkit to conduct a fast-track Delphi process (DelphiFT) and the steps for the analysis.\n\n\n\n\n\n\nNote\n\n\n\nThe fast-track Delphi is a process developed by Unisanté, aiming to rapidly build consensus among scientific experts on a topical issue in order to support political decisions in a context of public health crisis.\nThe process consists in three rounds of consultation of experts. The experts (participants) are brought together in a first round during which a series of topics/questions/statements are collected and prioritized using an adapted version of the nominal group technique (NGT). The experts then express their opinion on these statements by responding individually to questions in the second and third rounds using an online questionnaire built with REDCap. Rational for the methodology and detailed results of the testing phase can be found in publications.\nIn order to produce results in a very short time frame, we developed an R project that connects with REDCap to download and process the data, and produce result reports in an editable word document format:\n\na generic report and individualised reports for the second round (dft2)\na generic report and individualised reports for the third round (dft3)\nan overall executive summary\n\n\n\nWe suggest you first discover the demo to understand what you will produce, using the fast-track Delphi: code with demo data and results available on GitHub (see also Chapter 3)\nTo start your own project, download the fast-track Delphi: code only available on GitHub and follow this user guide."
+    "text": "Purpose\nThis guide gives an overview of the toolkit to conduct a fast-track Delphi process (DelphiFT) and the steps for the analysis.\n\n\n\n\n\n\nNote\n\n\n\nThe fast-track Delphi is a process developed by Unisanté, aiming to rapidly build consensus among scientific experts on a topical issue in order to support political decisions in a context of public health crisis.\nThe process consists in three rounds of consultation of experts. The experts (participants) are brought together in a first round during which a series of topics/questions/statements are collected and prioritized using an adapted version of the nominal group technique (NGT). The experts then express their opinion on these statements by responding individually to questions in the second and third rounds using an online questionnaire built with REDCap. Rational for the methodology and detailed results of the testing phase can be found in publications.\nIn order to produce results in a very short time frame, we developed an R project that connects with REDCap to download and process the data, and produce result reports in an editable word document format:\n\na generic report and individualised reports for the second round (dft2)\na generic report and individualised reports for the third round (dft3)\nan overall executive summary\n\n\n\nWe suggest you first discover the demo to understand what you will produce, using the fast-track Delphi: code with demo data and results available on GitHub (see also 3  Demo)\nTo start your own project, download the fast-track Delphi: code only available on GitHub and follow this user guide.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#sec-software-and-packages",
     "href": "index.html#sec-software-and-packages",
     "title": "Fast-track Delphi: user guide",
     "section": "Softwares and packages",
-    "text": "Softwares and packages\n\nInterface and language: RStudio and R Statistical Software\nObtain data: REDCapR (not necessary for the demo)\nData management, analysis and visualisation: mainly data.table, with some tidyverse and other packages. Regex expressions are sometimes used.\nReports: officedown which builds on bookdown, and flextable from the officeverse"
+    "text": "Softwares and packages\n\nInterface and language: RStudio and R Statistical Software\nObtain data: REDCapR (not necessary for the demo)\nData management, analysis and visualisation: mainly data.table, with some tidyverse and other packages. Regex expressions are sometimes used.\nReports: officedown which builds on bookdown, and flextable from the officeverse",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "01_prerequisites.html",
+    "href": "01_prerequisites.html",
+    "title": "1  Pre-requisites",
+    "section": "",
+    "text": "1.1 Get some packages\nYou will need to run the following chunks (lines of executable code)",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pre-requisites</span>"
+    ]
   },
   {
     "objectID": "01_prerequisites.html#sec-get-some-packages",
     "href": "01_prerequisites.html#sec-get-some-packages",
     "title": "1  Pre-requisites",
-    "section": "1.1 Get some packages",
-    "text": "1.1 Get some packages\nYou will need to run the following chunks (lines of executable code)\n\nInstall pacman unless you already have it : simpler to call libraries and keep them up-to-date\n## install it if not already there\nif (!require(\"pacman\")) install.packages(\"pacman\") \nLoad the following packages with pacman::p_load (it will 1. install package if not installed and keep it up-to-date, 2. call the library)\npacman::p_load(\n    bookdown,\n    crayon,\n    data.table,\n    flextable,\n    formattable,\n    fs,\n    ftExtra,\n    ggplot2,\n    haven,\n    here,\n    magrittr,\n    officedown,\n    patchwork,\n    purrr,\n    REDCapR,\n    sjlabelled,\n    sjmisc,\n    sjPlot,\n    stringr,\n    tidyverse,\n    writexl)\n\n## install.packages(\"remotes\") ## If it's not already installed.\nremotes::install_github(\"OuhscBbmc/OuhscMunge\")\nInstall fast-track Delphi: code only\nDownload as a zip file (click on green button Code), and unzip locally\n  or\nremotes::install_github(\"Unisante/delphi-fast-track\")"
+    "section": "",
+    "text": "Install pacman unless you already have it : simpler to call libraries and keep them up-to-date\n## install it if not already there\nif (!require(\"pacman\")) install.packages(\"pacman\") \nLoad the following packages with pacman::p_load (it will 1. install package if not installed and keep it up-to-date, 2. call the library)\npacman::p_load(\n    bookdown,\n    crayon,\n    data.table,\n    flextable,\n    formattable,\n    fs,\n    ftExtra,\n    ggplot2,\n    haven,\n    here,\n    magrittr,\n    officedown,\n    patchwork,\n    purrr,\n    REDCapR,\n    sjlabelled,\n    sjmisc,\n    sjPlot,\n    stringr,\n    tidyverse,\n    writexl)\n\n## install.packages(\"remotes\") ## If it's not already installed.\nremotes::install_github(\"OuhscBbmc/OuhscMunge\")\nInstall fast-track Delphi: code only\nDownload as a zip file (click on green button Code), and unzip locally\n  or\nremotes::install_github(\"Unisante/delphi-fast-track\")",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pre-requisites</span>"
+    ]
   },
   {
     "objectID": "01_prerequisites.html#our-preferred-options-for-rstudio",
     "href": "01_prerequisites.html#our-preferred-options-for-rstudio",
     "title": "1  Pre-requisites",
     "section": "1.2 Our preferred options for RStudio",
-    "text": "1.2 Our preferred options for RStudio\n\n1.2.1 Workspace\n\nNever restore or save the RData into the workspace\n\n\n\n\n1.2.2 Appearance\n\nWe like Lucida console and Crimson editor\n\n\n\n\n1.2.3 Pane layout\n\nWe like to have more space for the source to the left"
+    "text": "1.2 Our preferred options for RStudio\n\n1.2.1 Workspace\n\nNever restore or save the RData into the workspace\n\n\n\n\n1.2.2 Appearance\n\nWe like Lucida console and Crimson editor\n\n\n\n\n1.2.3 Pane layout\n\nWe like to have more space for the source to the left",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Pre-requisites</span>"
+    ]
+  },
+  {
+    "objectID": "02_questions.html",
+    "href": "02_questions.html",
+    "title": "2  Types of questions",
+    "section": "",
+    "text": "2.1 Type 1 question\nThey are Likert questions. Experts express their opinion by rating their level of agreement with an affirmative statement on a scale from 1 (complete disagreement) to 9 (complete agreement).",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-type-1-question",
     "href": "02_questions.html#sec-type-1-question",
     "title": "2  Types of questions",
-    "section": "2.1 Type 1 question",
-    "text": "2.1 Type 1 question\nThey are Likert questions. Experts express their opinion by rating their level of agreement with an affirmative statement on a scale from 1 (complete disagreement) to 9 (complete agreement).\n\n\n\nFigure 2.1: Example of a type 1 question (statement #3) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\nFor each statement, the code produces a statistical (median, interquartile [IQR] and minimum-maximum ranges) and a graphical (barplot and boxplot) summary. The number of respondents is also indicated, with percent of total respondents.\nA green tick indicates that an agreement and/or a consensus was reached at the group level (see thresholds in Section 2.5).\nFor individualised result reports, the expert’s answer is displayed in digits (column ‘your answers’) and on the graphical summary of group response distribution.\nAll type 1 questions of a given section are summarised in one unique table. Below is an example (in French) of the output for one statement of one individualised result report.\n\n\n\n\nFigure 2.2: Output examplar for a type 1 question - caption from an individualised result report"
+    "section": "",
+    "text": "Figure 2.1: Example of a type 1 question (statement #3) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\n\nFor each statement, the code produces a statistical (median, interquartile [IQR] and minimum-maximum ranges) and a graphical (barplot and boxplot) summary. The number of respondents is also indicated, with percent of total respondents.\nA green tick indicates that an agreement and/or a consensus was reached at the group level (see thresholds in Section 2.5).\nFor individualised result reports, the expert’s answer is displayed in digits (column ‘your answers’) and on the graphical summary of group response distribution.\nAll type 1 questions of a given section are summarised in one unique table. Below is an example (in French) of the output for one statement of one individualised result report.\n\n\n\n\n\n\n\nFigure 2.2: Output examplar for a type 1 question - caption from an individualised result report",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-type-2-question",
     "href": "02_questions.html#sec-type-2-question",
     "title": "2  Types of questions",
     "section": "2.2 Type 2 question",
-    "text": "2.2 Type 2 question\nThey are multiple choice questions with one possible response, that aim at clarifying experts’ topical propositions and orienting future statements. “No opinion” is always proposed as a choice option.\n\n\n\nFigure 2.3: Example of a type 2 question (statement #14) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\nFor each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.\nA green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in Section 2.5).\nAnswer options are automatically sorted by descending frequency of responses (“No opinion” always appearing at the bottom).\nFor individualised result reports, the expert’s answer is indicated by a red cross (column ‘your answer’).\nEach type 2 question is summarised in a separate table. Below is an example (in French) of the output for one type 2 question of one individualised result report.\n\n\n\n\nFigure 2.4: Output examplar for a type 2 question - caption from an individualised result report"
+    "text": "2.2 Type 2 question\nThey are multiple choice questions with one possible response, that aim at clarifying experts’ topical propositions and orienting future statements. “No opinion” is always proposed as a choice option.\n\n\n\n\n\n\nFigure 2.3: Example of a type 2 question (statement #14) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\n\nFor each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.\nA green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in Section 2.5).\nAnswer options are automatically sorted by descending frequency of responses (“No opinion” always appearing at the bottom).\nFor individualised result reports, the expert’s answer is indicated by a red cross (column ‘your answer’).\nEach type 2 question is summarised in a separate table. Below is an example (in French) of the output for one type 2 question of one individualised result report.\n\n\n\n\n\n\n\nFigure 2.4: Output examplar for a type 2 question - caption from an individualised result report",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-type-3-question",
     "href": "02_questions.html#sec-type-3-question",
     "title": "2  Types of questions",
     "section": "2.3 Type 3 question",
-    "text": "2.3 Type 3 question\nThey are multiple choice questions with up to three answer options, that aim at precising experts’ topical propositions and orienting future statements. “No opinion” is always proposed as a choice option.\n\n\n\nFigure 2.5: Example of a type 3 question (statement #2) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\nFor each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.\nA green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in Section 2.5). Answer options are automatically sorted by descending frequency of responses (“No opinion” always appearing at the bottom).\nFor individualised result reports, the expert’s answers are indicated by red crosses (column ‘your answers’).\nEach type 3 question is summarised in a particular table. Below is an example (in French) of the output for one type 3 question of one individualised result report.\n\n\n\n\nFigure 2.6: Output examplar for a type 3 question - caption from an individualised result report"
+    "text": "2.3 Type 3 question\nThey are multiple choice questions with up to three answer options, that aim at precising experts’ topical propositions and orienting future statements. “No opinion” is always proposed as a choice option.\n\n\n\n\n\n\nFigure 2.5: Example of a type 3 question (statement #2) as structured in the REDCap e-questionnaire (in French) - Chapter 4 will guide you through the creation of this type of question within your REDCap project.\n\n\n\n\nFor each question, the code produces a statistical (number of responses for each option with percent of total respondents) and graphical display of group responses.\nA green tick indicates that an agreement was reached for one or several particular answer options (see thresholds in Section 2.5). Answer options are automatically sorted by descending frequency of responses (“No opinion” always appearing at the bottom).\nFor individualised result reports, the expert’s answers are indicated by red crosses (column ‘your answers’).\nEach type 3 question is summarised in a particular table. Below is an example (in French) of the output for one type 3 question of one individualised result report.\n\n\n\n\n\n\n\nFigure 2.6: Output examplar for a type 3 question - caption from an individualised result report",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-comments",
     "href": "02_questions.html#sec-comments",
     "title": "2  Types of questions",
     "section": "2.4 Comments",
-    "text": "2.4 Comments\nParticipants can leave comments after each question (for all types). They are very useful to prepare statement reformulations for round 3 and refine key messages at the end of round 3."
+    "text": "2.4 Comments\nParticipants can leave comments after each question (for all types). They are very useful to prepare statement reformulations for round 3 and refine key messages at the end of round 3.",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-agreement-and-consensus-thresholds",
     "href": "02_questions.html#sec-agreement-and-consensus-thresholds",
     "title": "2  Types of questions",
     "section": "2.5 Agreement and consensus thresholds",
-    "text": "2.5 Agreement and consensus thresholds\nWe defined the following thresholds based on the literature and a pragmatic approach. These thresholds can be modified in 000_parameters.R.\n\nFor type 1 questions\n\nAgreement is defined by the center value of the data (median), and is considered reached when the median is ≥ 7 out of 10 (≤ 3 out of 10 for disagreement considered reached)\nConsensus is defined by the dispersion of the data (interquartile range, IQR), and is considered reached when the IQR does not exceed 3 scale points.\n\nFor type 2 and 3 questions\n\nAgreement is reached when the answer has been selected by ≥ 66% of the respondents."
+    "text": "2.5 Agreement and consensus thresholds\nWe defined the following thresholds based on the literature and a pragmatic approach. These thresholds can be modified in 000_parameters.R.\n\nFor type 1 questions\n\nAgreement is defined by the center value of the data (median), and is considered reached when the median is ≥ 7 out of 10 (≤ 3 out of 10 for disagreement considered reached)\nConsensus is defined by the dispersion of the data (interquartile range, IQR), and is considered reached when the IQR does not exceed 3 scale points.\n\nFor type 2 and 3 questions\n\nAgreement is reached when the answer has been selected by ≥ 66% of the respondents.",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
     "objectID": "02_questions.html#sec-conventions",
     "href": "02_questions.html#sec-conventions",
     "title": "2  Types of questions",
     "section": "2.6 Conventions",
-    "text": "2.6 Conventions\n\nComments in the R code are preceded by ##\nFilenames and paths are in typewriter style\nPackages are in bold : data.table\nFunctions are followed by a () : fs::dir_tree()\n. Run this code … : actions you need to take to prepare your own project are preceded by a ticking box (not interactive)\n\nThe table below summarizes the conventions used in the names of tables and variables.\n\n\n\n\n\n\n\n\n\nWord used\nExample as part of name\nExample inside a word document\nWhat it means\n\n\n\n\ndt\ndt_\n-\na data.table\n\n\ncurrent_round\ndft2_ , dft3_\n-\nround 2 or round 3\n\n\nsection\n_a_\nSection A\nsections correspond to different aspects of the topic\n\n\nstatement\n_s1_\nStatement 1\nstatement followed by its number\n\n\ntype\n_type1\ntype 1\ntype of question\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe easiest way to understand the process and see the output is to download the demo and explore it (see Chapter 3)."
+    "text": "2.6 Conventions\n\nComments in the R code are preceded by ##\nFilenames and paths are in typewriter style\nPackages are in bold : data.table\nFunctions are followed by a () : fs::dir_tree()\n. Run this code … : actions you need to take to prepare your own project are preceded by a ticking box (not interactive)\n\nThe table below summarizes the conventions used in the names of tables and variables.\n\n\n\n\n\n\n\n\n\nWord used\nExample as part of name\nExample inside a word document\nWhat it means\n\n\n\n\ndt\ndt_\n-\na data.table\n\n\ncurrent_round\ndft2_ , dft3_\n-\nround 2 or round 3\n\n\nsection\n_a_\nSection A\nsections correspond to different aspects of the topic\n\n\nstatement\n_s1_\nStatement 1\nstatement followed by its number\n\n\ntype\n_type1\ntype 1\ntype of question\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe easiest way to understand the process and see the output is to download the demo and explore it (see Chapter 3).",
+    "crumbs": [
+      "Get ready",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of questions</span>"
+    ]
   },
   {
-    "objectID": "03_demo.html#download-the-demo",
-    "href": "03_demo.html#download-the-demo",
+    "objectID": "03_demo.html",
+    "href": "03_demo.html",
     "title": "3  Demo",
-    "section": "3.1 Download the demo",
-    "text": "3.1 Download the demo\nOur fast-track Delphi: code with demo data and results is available on GitHub."
+    "section": "",
+    "text": "3.1 Download the demo\nOur fast-track Delphi: code with demo data and results is available on GitHub.",
+    "crumbs": [
+      "Explore the demo",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Demo</span>"
+    ]
   },
   {
     "objectID": "03_demo.html#look-at-the-reports",
     "href": "03_demo.html#look-at-the-reports",
     "title": "3  Demo",
     "section": "3.2 Look at the reports",
-    "text": "3.2 Look at the reports\nIn ./output/reports/, you will find the reports which are editable word documents:\n\none generic report and one individualized report per expert - for the second round (dft2)\none generic report and one individualized report per expert - for the third round (dft3)\nan overall executive summary synthesizing results from the second and third rounds"
+    "text": "3.2 Look at the reports\nIn ./output/reports/, you will find the reports which are editable word documents:\n\none generic report and one individualized report per expert - for the second round (dft2)\none generic report and one individualized report per expert - for the third round (dft3)\nan overall executive summary synthesizing results from the second and third rounds",
+    "crumbs": [
+      "Explore the demo",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Demo</span>"
+    ]
   },
   {
     "objectID": "03_demo.html#understand-the-structure",
     "href": "03_demo.html#understand-the-structure",
     "title": "3  Demo",
     "section": "3.3 Understand the structure",
-    "text": "3.3 Understand the structure\n\n3.3.1 Folders content\n\nanalysis\n\nRmd files: one common for the introductory text for the method section and the others in subfolders for each round (dft2, dft3) and for the overall report\ndocx templates: one in each subfolder\n\ncode : R files that are common to both rounds and others in two subfolders for each round (dft2, dft3) - the numbers indicate the order in which they are run\ndata: data and metadata RData files for the raw data and in subfolders for each round (dft2, dft3)\noutput: subfolders checks, png, RData, reports. Final reports in an editable word format are located in the subfolder reports (generic and individualized result reports).\ntexts_intro: editable docx with separate introductory texts that will be inserted into the reports\n\n\n\n3.3.2 Files to run\n\n00_run_ME_once_to_create_structure.R: not needed for demo (the folder structure of the project is already created).\n\nThe following files at root can be run one at a time:\n\n0_run_ME_dft2_demo.R\n0_run_ME_dft3_demo.R\n0_run_ME_overall_demo.R\n\nThey will produce :\n\nintermediate tables saved in ./output/RData/ and ./output/checks/\nminiplots saved in ./output/png/\nword reports saved in ./output/reports/"
+    "text": "3.3 Understand the structure\n\n3.3.1 Folders content\n\nanalysis\n\nRmd files: one common for the introductory text for the method section and the others in subfolders for each round (dft2, dft3) and for the overall report\ndocx templates: one in each subfolder\n\ncode : R files that are common to both rounds and others in two subfolders for each round (dft2, dft3) - the numbers indicate the order in which they are run\ndata: data and metadata RData files for the raw data and in subfolders for each round (dft2, dft3)\noutput: subfolders checks, png, RData, reports. Final reports in an editable word format are located in the subfolder reports (generic and individualized result reports).\ntexts_intro: editable docx with separate introductory texts that will be inserted into the reports\n\n\n\n3.3.2 Files to run\n\n00_run_ME_once_to_create_structure.R: not needed for demo (the folder structure of the project is already created).\n\nThe following files at root can be run one at a time:\n\n0_run_ME_dft2_demo.R\n0_run_ME_dft3_demo.R\n0_run_ME_overall_demo.R\n\nThey will produce :\n\nintermediate tables saved in ./output/RData/ and ./output/checks/\nminiplots saved in ./output/png/\nword reports saved in ./output/reports/",
+    "crumbs": [
+      "Explore the demo",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Demo</span>"
+    ]
   },
   {
     "objectID": "03_demo.html#sec-discover-functions",
     "href": "03_demo.html#sec-discover-functions",
     "title": "3  Demo",
     "section": "3.4 Discover the functions",
-    "text": "3.4 Discover the functions\nWe chose to keep the functions used in these analyses in a R file because it is easier to toy with.\nWe strongly recommend that you become familiar with the functions developed for this analysis in code ./code/00_functions.R. This code will also run each time ./code/000_parameters.R is sourced.\n\n\n\n\nVelarde Crézé, Camille, Luc Lebon, Olivier Duperrex, Vincent Faivre, Myriam Pasche, and Jacques Cornuz. 2023. “Nouvelles Cigarettes Électroniques Jetables « Puffs » : Consensus d’expert-e-s Sur Leur Réglementation.” Revue Médicale Suisse 19 (812): 181–85. https://doi.org/10.53738/REVMED.2023.19.812.181."
+    "text": "3.4 Discover the functions\nWe chose to keep the functions used in these analyses in a R file because it is easier to toy with.\nWe strongly recommend that you become familiar with the functions developed for this analysis in code ./code/00_functions.R. This code will also run each time ./code/000_parameters.R is sourced.\n\n\n\n\nVelarde Crézé, Camille, Luc Lebon, Olivier Duperrex, Vincent Faivre, Myriam Pasche, and Jacques Cornuz. 2023. “Nouvelles Cigarettes Électroniques Jetables « Puffs » : Consensus d’expert-e-s Sur Leur Réglementation.” Revue Médicale Suisse 19 (812): 181–85. https://doi.org/10.53738/REVMED.2023.19.812.181.",
+    "crumbs": [
+      "Explore the demo",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Demo</span>"
+    ]
+  },
+  {
+    "objectID": "04_REDCap.html",
+    "href": "04_REDCap.html",
+    "title": "4  Instructions for REDCap",
+    "section": "",
+    "text": "4.1 Create the “skeleton” of your REDCap projects\nWe created a fast-track Delphi REDCap “skeleton” projects including all survey parameters and structured example items for type 1, 2 and 3 questions and saved as *.xml, for round 2 and round 3.\nOnce you have downloaded the Fast-track Delphi : code only (see Chapter 5), you will find these *.xml files in the folder delphi_ft/_xml_for_redcap/.\nYou should then familiarize with the proposed structure, which is the following:\nThis structure is of course subject to modifications to suit your needs in due time, i.e., when you have created the statement content of the e-questionnaire based on the results of the previous round (see the start of Chapter 6 and Chapter 7 for REDCap management during rush periods of rounds 2 and 3, respectively).",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Instructions for REDCap</span>"
+    ]
   },
   {
     "objectID": "04_REDCap.html#sec-create-the-skeleton-of-your-redcap-projects",
     "href": "04_REDCap.html#sec-create-the-skeleton-of-your-redcap-projects",
     "title": "4  Instructions for REDCap",
-    "section": "4.1 Create the “skeleton” of your REDCap projects",
-    "text": "4.1 Create the “skeleton” of your REDCap projects\nWe created a fast-track Delphi REDCap “skeleton” projects including all survey parameters and structured example items for type 1, 2 and 3 questions and saved as *.xml, for round 2 and round 3.\nOnce you have downloaded the Fast-track Delphi : code only (see Chapter 5), you will find these *.xml files in the folder delphi_ft/_xml_for_redcap/.\n\nCreate two new separate REDCap projects on your institutional REDCap platform by importing these *.xml files into blank projects - talk with your REDCAp Admin if necessary. You should do this twice (once for each round)\nGive a name to your projects: DelphiFT project_name round 2 and DelphiFT project_name round 3, respectively (replace project_name by your project name)\nWithin each of these REDCap projects, manage the access rights to suit your team’s needs by modifying access parameters on the ‘Users Rights’ Menu (left side on your REDCap project page)\n\nYou should then familiarize with the proposed structure, which is the following:\n\nFor round 2:\n\nOne foreword section containing 6 fields aiming at describing your panel of experts (the email field is MANDATORY - do not remove or modify it!)\nOne ‘preamble’ section (Z) containing one type 1 question (4 fields), one type 2 question (2 fields) and one type 3 question (6 fields)\nThree sections (A, B and C) containing each two questions of each type\n\nFor round 3:\n\nOne foreword section containing 1 field aiming at collecting experts’ email (MANDATORY - do not remove it!)\nOne ‘preamble’ section (Z) containing three type 1 question\nThree sections (A, B and C) containing each three type 1 question\n\n\nThis structure is of course subject to modifications to suit your needs in due time, i.e., when you have created the statement content of the e-questionnaire based on the results of the previous round (see the start of Chapter 6 and Chapter 7 for REDCap management during rush periods of rounds 2 and 3, respectively).\n\n\n\n\n\n\nTip\n\n\n\nWe strongly suggest you try duplicating any type 1, 2 and 3 question in your REDCap project, and test the e-questionnaire, so you are prepared doing it efficiently in a rush period.\nWhen duplicating a question, you must duplicate ALL fields that belong to this question - and update their variable name and branching logic accordingly:\n\nA type 1 question contains 4 fields (one matrix field, one simple field, one embedding field, and one field for comments)\nA type 2 question contains 2 fields (one simple field, and one field for comments)\nA type 3 question contains 6 fields (two simple fields, one embedding field, two fields for message parameters, and one field for comments)"
+    "section": "",
+    "text": "Create two new separate REDCap projects on your institutional REDCap platform by importing these *.xml files into blank projects - talk with your REDCAp Admin if necessary. You should do this twice (once for each round)\nGive a name to your projects: DelphiFT project_name round 2 and DelphiFT project_name round 3, respectively (replace project_name by your project name)\nWithin each of these REDCap projects, manage the access rights to suit your team’s needs by modifying access parameters on the ‘Users Rights’ Menu (left side on your REDCap project page)\n\n\n\nFor round 2:\n\nOne foreword section containing 6 fields aiming at describing your panel of experts (the email field is MANDATORY - do not remove or modify it!)\nOne ‘preamble’ section (Z) containing one type 1 question (4 fields), one type 2 question (2 fields) and one type 3 question (6 fields)\nThree sections (A, B and C) containing each two questions of each type\n\nFor round 3:\n\nOne foreword section containing 1 field aiming at collecting experts’ email (MANDATORY - do not remove it!)\nOne ‘preamble’ section (Z) containing three type 1 question\nThree sections (A, B and C) containing each three type 1 question\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nWe strongly suggest you try duplicating any type 1, 2 and 3 question in your REDCap project, and test the e-questionnaire, so you are prepared doing it efficiently in a rush period.\nWhen duplicating a question, you must duplicate ALL fields that belong to this question - and update their variable name and branching logic accordingly:\n\nA type 1 question contains 4 fields (one matrix field, one simple field, one embedding field, and one field for comments)\nA type 2 question contains 2 fields (one simple field, and one field for comments)\nA type 3 question contains 6 fields (two simple fields, one embedding field, two fields for message parameters, and one field for comments)",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Instructions for REDCap</span>"
+    ]
   },
   {
     "objectID": "04_REDCap.html#sec-token-to-access-your-redcap-project",
     "href": "04_REDCap.html#sec-token-to-access-your-redcap-project",
     "title": "4  Instructions for REDCap",
     "section": "4.2 Token to access your REDCap projects",
-    "text": "4.2 Token to access your REDCap projects\nThe R code can automatically access the data stored within the corresponding REDCap project through a token (a string of letters and digits that functions as a unique identifier for your project).\nThe steps below will allow the codes to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the two rounds (dft2 and dft3), whilst avoiding sharing them.\n\nObtain your tokens from the ‘API’ Menu in REDCap - talk with your REDCAp Admin if necessary\nOpen token_delphi_ft_this_project.R.example and save it as ‘token_delphi_ft_this_project.R’\nUpdate the lines below with your details from the ‘API’ Menu in REDCap and save it again:\nredcap_uri &lt;- \"https://XXXXXXXXX/api/\" \ntoken_dft2 &lt;- \"YYYYYYYYYYYYYYYY\"\ntoken_dft3 &lt;- \"ZZZZZZZZZZZZZZZZ\"\n\n\n\n\n\n\n\nNote\n\n\n\n. ‘token_delphi_ft_this_project.R’ has been added to .gitgnore to avoid transmitting the data to a git depot\n. if you use other means to share your work, alway delete the files containing your details to login into your redcap server"
+    "text": "4.2 Token to access your REDCap projects\nThe R code can automatically access the data stored within the corresponding REDCap project through a token (a string of letters and digits that functions as a unique identifier for your project).\nThe steps below will allow the codes to automatically retrieve your personal tokens corresponding to your REDCap project, for each of the two rounds (dft2 and dft3), whilst avoiding sharing them.\n\nObtain your tokens from the ‘API’ Menu in REDCap - talk with your REDCAp Admin if necessary\nOpen token_delphi_ft_this_project.R.example and save it as ‘token_delphi_ft_this_project.R’\nUpdate the lines below with your details from the ‘API’ Menu in REDCap and save it again:\nredcap_uri &lt;- \"https://XXXXXXXXX/api/\" \ntoken_dft2 &lt;- \"YYYYYYYYYYYYYYYY\"\ntoken_dft3 &lt;- \"ZZZZZZZZZZZZZZZZ\"\n\n\n\n\n\n\n\nNote\n\n\n\n. ‘token_delphi_ft_this_project.R’ has been added to .gitgnore to avoid transmitting the data to a git depot\n. if you use other means to share your work, alway delete the files containing your details to login into your redcap server",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Instructions for REDCap</span>"
+    ]
+  },
+  {
+    "objectID": "05_start_your_project.html",
+    "href": "05_start_your_project.html",
+    "title": "5  Start your project",
+    "section": "",
+    "text": "5.1 Pre-requisites",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-pre-requisites-start",
     "href": "05_start_your_project.html#sec-pre-requisites-start",
     "title": "5  Start your project",
-    "section": "5.1 Pre-requisites",
-    "text": "5.1 Pre-requisites\n\nTo start your own project, download the fast-track Delphi: code only available on GitHub.\nMake sure you have done the steps presented in Chapter 1 (install RStudio and R + get some packages)\nMake sure you went through and understood Chapter 2\nMake sure you have prepared the structure of your projects in REDCap and got a token to access them according to the instructions in Chapter 4"
+    "section": "",
+    "text": "To start your own project, download the fast-track Delphi: code only available on GitHub.\nMake sure you have done the steps presented in Chapter 1 (install RStudio and R + get some packages)\nMake sure you went through and understood Chapter 2\nMake sure you have prepared the structure of your projects in REDCap and got a token to access them according to the instructions in Chapter 4",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-understand-the-structure-start",
     "href": "05_start_your_project.html#sec-understand-the-structure-start",
     "title": "5  Start your project",
     "section": "5.2 Understand the structure",
-    "text": "5.2 Understand the structure\nYou are now ready to start your own project. Below you will find the detail of the structure - folders, subfolders and files - when you start your project, and what will be added by the end. The demo you have been through in Chapter 3 shows a project when it is finished.\n\n\n\n\n\n\nTip\n\n\n\nYou can use fs::dir_tree() to see the structure at any time.\n\n\n\n5.2.1 At the begining\nWhen you start your project (i.e., when downloading the fast-track Delphi: code only on GitHub), you will have the following structure:\n├── 000_READ_ME_first.md\n├── 00_run_ME_once_to_create_structure.R\n├── 0_run_ME_dft2.R\n├── 0_run_ME_dft3.R\n├── 0_run_ME_overall.R\n├── _xml_for_redcap\n│   ├── DelphiFTTemplateRound_2.REDCap.xml\n│   ├── DelphiFTTemplateRound_3.REDCap.xml\n├── analysis\n│   ├── 00_child_intro_method.Rmd\n│   ├── dft2\n│   │   ├── dft2_child_section.Rmd\n│   │   ├── dft2_report_generic.Rmd\n│   │   ├── dft2_report_per_participant.Rmd\n│   │   └── template-bookdown.docx\n│   ├── dft3\n│   │   ├── dft3_child_section.Rmd\n│   │   ├── dft3_report_generic.Rmd\n│   │   ├── dft3_report_per_participant.Rmd\n│   │   └── template-bookdown.docx\n│   └── overall\n│       ├── delphiFT_Overall_FigureFlow.pptx\n│       ├── ExecutiveSummary_figure_Target-Consensus.png\n│       ├── ExecutiveSummary_figure_Target-NoConsensus.png\n│       ├── overall_executive_summary.Rmd\n│       └── template_exec_summary_bookdown.docx\n├── code\n│   ├── 000_parameters.R\n│   ├── 00_functions.R\n│   ├── 00_update_texts_intro.R\n│   ├── 03a_create_flextable_results_type_1_generic.R\n│   ├── 03b_create_flextable_results_type_2_3_generic.R\n│   ├── 04a_create_flextable_results_type_1_participants.R\n│   ├── 04b_create_flextable_results_type_2_3_participants.R\n│   ├── 06_prepare_tables_combined_round_2_3.R\n│   ├── dft2\n│   │   ├── 01a_dft2_update_data_with_REDCapR.R\n│   │   ├── 01b_dft2_recode_data.R\n│   │   ├── 01c_dft2_define_cols.R\n│   │   ├── 02a_dft2_prepare_tables_without_participant_id.R\n│   │   ├── 02b_dft2_prepare_tables_participants.R\n│   │   └── 05_dft2_to_render_individual_reports.R\n│   └── dft3\n│       ├── 01a_dft3_update_data_with_REDCapR.R\n│       ├── 01b_dft3_recode_data.R\n│       ├── 01c_dft3_define_cols.R\n│       ├── 02a_dft3_prepare_tables_without_participant_id.R\n│       ├── 02b_dft3_prepare_tables_participants.R\n│       └── 05_dft3_to_render_individual_reports.R\n├── texts_intro\n│   ├── .. several *.docx files\n├── token_delphi_ft_this_project.R.example\n└── delphi_ft.Rproj\n\n\n5.2.2 At the end\nThe following will appear during the analysis and report production.\n├── token_delphi_ft_this_project.R\n├── data\n│   ├── dft2\n│   │   ├── dft2_data_clean.RData\n│   │   ├── dft2_lookup_final.RData\n│   │   └── dft2_lookup_value_labels_final.RData\n│   ├── dft3\n│   │   ├── dft3_data_clean.RData\n│   │   └── dft3_lookup_final.RData\n│   └── redcap_data_raw\n│       ├── dft2_data_redcapr_raw.RData\n│       ├── dft2_metadata.RData\n│       ├── dft3_data_redcapr_raw.RData\n│       └── dft3_metadata.RData\n├── output\n│   ├── checks\n│   │   ├── .. several *.xlsx files\n│   ├── png\n│   │   ├── .. several *.png files\n│   ├── RData\n│   │   ├── dft2_dt_comments_m.RData\n│   │   ├── dft2_type0_zz1.RData\n│   │   ├── dft2_type1_zz_combined.RData\n│   │   ├── dft2_type2_zz1.RData\n│   │   ├── dft2_type3_zz1.RData\n│   │   ├── dft3_dt_comments_m.RData\n│   │   ├── dft3_type1_zz_combined.RData\n│   │   └── type1_zz_combined_round_2_3.RData\n│   └── reports\n│       ├── dft2\n│       │   ├── dft2_report_generic_YYYY-MM-DD.docx\n│       │   └── report_by_participant\n│       │       ├──  dft2_report_participant_1_YYYY-MM-DD.docx\n│       │       ├── ...\n│       ├── dft3\n│       │   ├── dft3_report_generic_YYYY-MM-DD.docx\n│       │   └── report_by_participant\n│       │       ├──  dft3_report_participant_1_YYYY-MM-DD.docx\n│       │       ├── ...\n│       └── overall\n│           └── dft_overall_executive_summary_YYYY-MM-DD.docx\n.\n.\n."
+    "text": "5.2 Understand the structure\nYou are now ready to start your own project. Below you will find the detail of the structure - folders, subfolders and files - when you start your project, and what will be added by the end. The demo you have been through in Chapter 3 shows a project when it is finished.\n\n\n\n\n\n\nTip\n\n\n\nYou can use fs::dir_tree() to see the structure at any time.\n\n\n\n5.2.1 At the begining\nWhen you start your project (i.e., when downloading the fast-track Delphi: code only on GitHub), you will have the following structure:\n├── 000_READ_ME_first.md\n├── 00_run_ME_once_to_create_structure.R\n├── 0_run_ME_dft2.R\n├── 0_run_ME_dft3.R\n├── 0_run_ME_overall.R\n├── _xml_for_redcap\n│   ├── DelphiFTTemplateRound_2.REDCap.xml\n│   ├── DelphiFTTemplateRound_3.REDCap.xml\n├── analysis\n│   ├── 00_child_intro_method.Rmd\n│   ├── dft2\n│   │   ├── dft2_child_section.Rmd\n│   │   ├── dft2_report_generic.Rmd\n│   │   ├── dft2_report_per_participant.Rmd\n│   │   └── template-bookdown.docx\n│   ├── dft3\n│   │   ├── dft3_child_section.Rmd\n│   │   ├── dft3_report_generic.Rmd\n│   │   ├── dft3_report_per_participant.Rmd\n│   │   └── template-bookdown.docx\n│   └── overall\n│       ├── delphiFT_Overall_FigureFlow.pptx\n│       ├── ExecutiveSummary_figure_Target-Consensus.png\n│       ├── ExecutiveSummary_figure_Target-NoConsensus.png\n│       ├── overall_executive_summary.Rmd\n│       └── template_exec_summary_bookdown.docx\n├── code\n│   ├── 000_parameters.R\n│   ├── 00_functions.R\n│   ├── 00_update_texts_intro.R\n│   ├── 03a_create_flextable_results_type_1_generic.R\n│   ├── 03b_create_flextable_results_type_2_3_generic.R\n│   ├── 04a_create_flextable_results_type_1_participants.R\n│   ├── 04b_create_flextable_results_type_2_3_participants.R\n│   ├── 06_prepare_tables_combined_round_2_3.R\n│   ├── dft2\n│   │   ├── 01a_dft2_update_data_with_REDCapR.R\n│   │   ├── 01b_dft2_recode_data.R\n│   │   ├── 01c_dft2_define_cols.R\n│   │   ├── 02a_dft2_prepare_tables_without_participant_id.R\n│   │   ├── 02b_dft2_prepare_tables_participants.R\n│   │   └── 05_dft2_to_render_individual_reports.R\n│   └── dft3\n│       ├── 01a_dft3_update_data_with_REDCapR.R\n│       ├── 01b_dft3_recode_data.R\n│       ├── 01c_dft3_define_cols.R\n│       ├── 02a_dft3_prepare_tables_without_participant_id.R\n│       ├── 02b_dft3_prepare_tables_participants.R\n│       └── 05_dft3_to_render_individual_reports.R\n├── texts_intro\n│   ├── .. several *.docx files\n├── token_delphi_ft_this_project.R.example\n└── delphi_ft.Rproj\n\n\n5.2.2 At the end\nThe following will appear during the analysis and report production.\n├── token_delphi_ft_this_project.R\n├── data\n│   ├── dft2\n│   │   ├── dft2_data_clean.RData\n│   │   ├── dft2_lookup_final.RData\n│   │   └── dft2_lookup_value_labels_final.RData\n│   ├── dft3\n│   │   ├── dft3_data_clean.RData\n│   │   └── dft3_lookup_final.RData\n│   └── redcap_data_raw\n│       ├── dft2_data_redcapr_raw.RData\n│       ├── dft2_metadata.RData\n│       ├── dft3_data_redcapr_raw.RData\n│       └── dft3_metadata.RData\n├── output\n│   ├── checks\n│   │   ├── .. several *.xlsx files\n│   ├── png\n│   │   ├── .. several *.png files\n│   ├── RData\n│   │   ├── dft2_dt_comments_m.RData\n│   │   ├── dft2_type0_zz1.RData\n│   │   ├── dft2_type1_zz_combined.RData\n│   │   ├── dft2_type2_zz1.RData\n│   │   ├── dft2_type3_zz1.RData\n│   │   ├── dft3_dt_comments_m.RData\n│   │   ├── dft3_type1_zz_combined.RData\n│   │   └── type1_zz_combined_round_2_3.RData\n│   └── reports\n│       ├── dft2\n│       │   ├── dft2_report_generic_YYYY-MM-DD.docx\n│       │   └── report_by_participant\n│       │       ├──  dft2_report_participant_1_YYYY-MM-DD.docx\n│       │       ├── ...\n│       ├── dft3\n│       │   ├── dft3_report_generic_YYYY-MM-DD.docx\n│       │   └── report_by_participant\n│       │       ├──  dft3_report_participant_1_YYYY-MM-DD.docx\n│       │       ├── ...\n│       └── overall\n│           └── dft_overall_executive_summary_YYYY-MM-DD.docx\n.\n.\n.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-create-structure-project",
     "href": "05_start_your_project.html#sec-create-structure-project",
     "title": "5  Start your project",
     "section": "5.3 Create the structure of your project",
-    "text": "5.3 Create the structure of your project\n\nRun 00_run_ME_once_to_create_structure.R\n\nThis will create the predefined set of folders and subfolders - detailed above in Section 5.2 - within your main project folder.\n\n\n\n\n\n\nWarning\n\n\n\nWe strongly advise keeping this predefined structure as it is. If you still choose to modify it, you will need to revise every path in the *.R and *.Rmd files."
+    "text": "5.3 Create the structure of your project\n\nRun 00_run_ME_once_to_create_structure.R\n\nThis will create the predefined set of folders and subfolders - detailed above in Section 5.2 - within your main project folder.\n\n\n\n\n\n\nWarning\n\n\n\nWe strongly advise keeping this predefined structure as it is. If you still choose to modify it, you will need to revise every path in the *.R and *.Rmd files.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-update-parameters",
     "href": "05_start_your_project.html#sec-update-parameters",
     "title": "5  Start your project",
     "section": "5.4 Update parameters",
-    "text": "5.4 Update parameters\n\nOpen ./code/000_parameters.R and update with your topical inputs, as necessary"
+    "text": "5.4 Update parameters\n\nOpen ./code/000_parameters.R and update with your topical inputs, as necessary",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-update-word-templates",
     "href": "05_start_your_project.html#sec-update-word-templates",
     "title": "5  Start your project",
     "section": "5.5 Update the word templates",
-    "text": "5.5 Update the word templates\nThis project uses MS Word templates in order to build the generic and individualized reports. The autonumbering will be created by bookdown.\n\nUpdate the templates to suit your needs in each subfolder :\n\n./analysis/dft2/template-bookdown.docx\n./analysis/dft3/template-bookdown.docx\n./analysis/doverall/template_exec_summary_bookdown.docx\n\n\nPlease refer to the Officeverse manual to see how to do it."
+    "text": "5.5 Update the word templates\nThis project uses MS Word templates in order to build the generic and individualized reports. The autonumbering will be created by bookdown.\n\nUpdate the templates to suit your needs in each subfolder :\n\n./analysis/dft2/template-bookdown.docx\n./analysis/dft3/template-bookdown.docx\n./analysis/doverall/template_exec_summary_bookdown.docx\n\n\nPlease refer to the Officeverse manual to see how to do it.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
   },
   {
     "objectID": "05_start_your_project.html#sec-update-texts-introduction",
     "href": "05_start_your_project.html#sec-update-texts-introduction",
     "title": "5  Start your project",
     "section": "5.6 Update introductory texts",
-    "text": "5.6 Update introductory texts\nThese texts are word documents with one or two paragraphs, sometimes images that will be inserted at the beginning of the reports. They will be updated in several steps, once some of the results are available.\n\nPrepare the word documents in advance to gain time\n\n\n\n\n\n\n\n\nDo not leave a blank line at the beginning of the text, nor at the end\nHeaders are not needed in these texts as they will be provided in Rmd files\n\n\n\n\n\nStore them on the server in the folder defined in ./code/000_parameters.R (called path_texts_intro_server).\nRun ./code/00_update_texts_intro.R\n\nCongratulations: you are now ready to conduct round 1 (expert meeting following an adapted Nominal Group Technique (NGT) procedure - not detailed in this userguide) and round 2 with your panel of experts!"
+    "text": "5.6 Update introductory texts\nThese texts are word documents with one or two paragraphs, sometimes images that will be inserted at the beginning of the reports. They will be updated in several steps, once some of the results are available.\n\nPrepare the word documents in advance to gain time\n\n\n\n\n\n\n\n\nDo not leave a blank line at the beginning of the text, nor at the end\nHeaders are not needed in these texts as they will be provided in Rmd files\n\n\n\n\n\nStore them on the server in the folder defined in ./code/000_parameters.R (called path_texts_intro_server).\nRun ./code/00_update_texts_intro.R\n\nCongratulations: you are now ready to conduct round 1 (expert meeting following an adapted Nominal Group Technique (NGT) procedure - not detailed in this userguide) and round 2 with your panel of experts!",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Start your project</span>"
+    ]
+  },
+  {
+    "objectID": "06_round_2.html",
+    "href": "06_round_2.html",
+    "title": "6  Round 2",
+    "section": "",
+    "text": "6.1 E-questionnaire management through REDCap\nRound 1 (experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see publications for more details) is over. Experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see Chapter 2).\nThe following steps should be done in 1 day:\nYou can now relax during 3-4 days, until the deadline is over.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-e-questionnaire-management-through-redcap-round2",
     "href": "06_round_2.html#sec-e-questionnaire-management-through-redcap-round2",
     "title": "6  Round 2",
-    "section": "6.1 E-questionnaire management through REDCap",
-    "text": "6.1 E-questionnaire management through REDCap\nRound 1 (experts meeting following an adapted Nominal Group Technique procedure - not detailed in this user guide, see publications for more details) is over. Experts have generated and prioritized thematic proposals that you have reformulated into statements (type 1, 2 and 3 questions - see Chapter 2).\nThe following steps should be done in 1 day:\n\nWithin your round 2 REDCap project: replace all “xxx” with the texts of your actual statements and answer options. Duplicate type 1, 2 and/or 3 questions’ “skeleton” based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire\nTest the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs\nMove this round 2 REDCap project into production mode - talk with your REDCap Admin if necessary\nSend the hyperlink to experts (participants) with a deadline for e-questionnaire completion\n\nYou can now relax during 3-4 days, until the deadline is over.\n\n\n\n\n\n\nTip\n\n\n\nData collection can be observed in real time by accessing the ‘Dashboard’ Menu in your round 2 REDCap project. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire."
+    "section": "",
+    "text": "Within your round 2 REDCap project: replace all “xxx” with the texts of your actual statements and answer options. Duplicate type 1, 2 and/or 3 questions’ “skeleton” based on your needs, i.e., the number of sections and types of questions per section that you wish to include in this e-questionnaire\nTest the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs\nMove this round 2 REDCap project into production mode - talk with your REDCap Admin if necessary\nSend the hyperlink to experts (participants) with a deadline for e-questionnaire completion\n\n\n\n\n\n\n\n\nTip\n\n\n\nData collection can be observed in real time by accessing the ‘Dashboard’ Menu in your round 2 REDCap project. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-run-me-dft2",
     "href": "06_round_2.html#sec-run-me-dft2",
     "title": "6  Round 2",
     "section": "6.2 0_run_ME_dft2.R - Overview of steps",
-    "text": "6.2 0_run_ME_dft2.R - Overview of steps\nOnce data collection for round 2 is over, you can open 0_run_ME_dft2.R. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports."
+    "text": "6.2 0_run_ME_dft2.R - Overview of steps\nOnce data collection for round 2 is over, you can open 0_run_ME_dft2.R. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-update-data-round2",
     "href": "06_round_2.html#sec-update-data-round2",
     "title": "6  Round 2",
     "section": "6.3 Update data",
-    "text": "6.3 Update data\n\nRun ./code/dft2/01a_dft2_update_data_with_REDCapR.R\n\nThis code will connect to the corresponding REDCap project using the token, downloads the raw data and metadata from the project, and save them as *.RData files. It also creates *.xlsx tables by type of question (1, 2 and 3, see Chapter 2) with the raw data, which can be used for quick checks, if necessary.\n\n6.3.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/redcap_data_raw/\ndft2_metadata.RData\nRaw metadata\n\n\n./data/redcap_data_raw/\ndft2_data_redcapr_raw.RData\nRaw data"
+    "text": "6.3 Update data\n\nRun ./code/dft2/01a_dft2_update_data_with_REDCapR.R\n\nThis code will connect to the corresponding REDCap project using the token, downloads the raw data and metadata from the project, and save them as *.RData files. It also creates *.xlsx tables by type of question (1, 2 and 3, see Chapter 2) with the raw data, which can be used for quick checks, if necessary.\n\n6.3.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/redcap_data_raw/\ndft2_metadata.RData\nRaw metadata\n\n\n./data/redcap_data_raw/\ndft2_data_redcapr_raw.RData\nRaw data",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-recode-data-round2",
     "href": "06_round_2.html#sec-recode-data-round2",
     "title": "6  Round 2",
     "section": "6.4 Recode data",
-    "text": "6.4 Recode data\n\nUpdate as required and run ./code/dft2/01b_dft2_recode_data.R\n\nThis code will process the raw data and the metadata downloaded in Section 6.3, in order to create the “clean” data and metadata tables. In particular, it will:\n\ncorrect labeling errors, typos, etc.\nsimplify labeling\ndefine the lists of variables by type of questions (1, 2, 3)\ndo a conditional deduplication (in case one or several participants have filled in several REDCap records per person =&gt; keep the latest chosen answer option and all comments)\nsave clean data and metadata in RData format\n\n\n\n\n\n\nFigure 6.1: dft2_a_s6_type1.png (statement 6 in section A of round 2)\n\n\n\ncreate visuals (*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see Figure 6.1\n\n\n6.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/dft2/\ndft2_data_clean.RData\nClean data\n\n\n./data/dft2/\ndft2_lookup_final.RData\nClean lookup table (metadata)\n\n\n./data/dft2/\ndft2_lookup_value_labels_final.RData\nClean lookup table (metadata) with value labels for type 1 and 2 questions\n\n\n./output/check/\n*.xlsx\nVarious xlsx files that can be used for checks or sharing\n\n\n./output/png/\ndft2_*_s*_type1.png\nVisuals for all type 1 questions"
+    "text": "6.4 Recode data\n\nUpdate as required and run ./code/dft2/01b_dft2_recode_data.R\n\nThis code will process the raw data and the metadata downloaded in Section 6.3, in order to create the “clean” data and metadata tables. In particular, it will:\n\ncorrect labeling errors, typos, etc.\nsimplify labeling\ndefine the lists of variables by type of questions (1, 2, 3)\ndo a conditional deduplication (in case one or several participants have filled in several REDCap records per person =&gt; keep the latest chosen answer option and all comments)\nsave clean data and metadata in RData format\n\n\n\n\n\n\n\n\n\nFigure 6.1: dft2_a_s6_type1.png (statement 6 in section A of round 2)\n\n\n\n\ncreate visuals (*.png) for all type 1 questions only, showing the distribution of answers on a 1 to 9 scale and a boxplot - see Figure 6.1\n\n\n6.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/dft2/\ndft2_data_clean.RData\nClean data\n\n\n./data/dft2/\ndft2_lookup_final.RData\nClean lookup table (metadata)\n\n\n./data/dft2/\ndft2_lookup_value_labels_final.RData\nClean lookup table (metadata) with value labels for type 1 and 2 questions\n\n\n./output/check/\n*.xlsx\nVarious xlsx files that can be used for checks or sharing\n\n\n./output/png/\ndft2_*_s*_type1.png\nVisuals for all type 1 questions",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-prepare-tables-without-participant-id-round2",
     "href": "06_round_2.html#sec-prepare-tables-without-participant-id-round2",
     "title": "6  Round 2",
     "section": "6.5 Prepare tables without participant id",
-    "text": "6.5 Prepare tables without participant id\n\nRun ./code/dft2/02a_dft2_prepare_tables_without_participant_id.R\n\nThis code will analyse the “clean” data (generated in Section 6.4) to create the group result tables (= statistical and graphical summaries).\nIt automatically calls code ./code/dft2/01c_dft2_define_cols.R.\nIt also creates and saves in *.xlsx format tables containing only the “no opinion” responses, allowing a quick check if necessary.\n\n6.5.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/RData/\ndft2_type0_zz1.RData\nTable with characteristics of participants\n\n\n./output/RData/\ndft2_type1_zz_combined.RData\nTable with results of all type 1 questions\n\n\n./output/RData/\ndft2_type2_zz1.RData\nTable with results of all type 2 questions\n\n\n./output/RData/\ndft2_type3_zz1.RData\nTable with results of all type 3 questions\n\n\n./output/RData/\ndft2_dt_comments_m.RData\nTable with all comments\n\n\n./output/check/\ndft2_type*_zz0_no_opinion.xlsx\nQuick check table of ‘no opinion’ responses for type * questions"
+    "text": "6.5 Prepare tables without participant id\n\nRun ./code/dft2/02a_dft2_prepare_tables_without_participant_id.R\n\nThis code will analyse the “clean” data (generated in Section 6.4) to create the group result tables (= statistical and graphical summaries).\nIt automatically calls code ./code/dft2/01c_dft2_define_cols.R.\nIt also creates and saves in *.xlsx format tables containing only the “no opinion” responses, allowing a quick check if necessary.\n\n6.5.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/RData/\ndft2_type0_zz1.RData\nTable with characteristics of participants\n\n\n./output/RData/\ndft2_type1_zz_combined.RData\nTable with results of all type 1 questions\n\n\n./output/RData/\ndft2_type2_zz1.RData\nTable with results of all type 2 questions\n\n\n./output/RData/\ndft2_type3_zz1.RData\nTable with results of all type 3 questions\n\n\n./output/RData/\ndft2_dt_comments_m.RData\nTable with all comments\n\n\n./output/check/\ndft2_type*_zz0_no_opinion.xlsx\nQuick check table of ‘no opinion’ responses for type * questions",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-update-introductory-texts-round2",
     "href": "06_round_2.html#sec-update-introductory-texts-round2",
     "title": "6  Round 2",
     "section": "6.6 Update introductory texts",
-    "text": "6.6 Update introductory texts\n\nUpdate the content of your introductory texts (*.docx) if needed, as indicated in the Section 5.6.\nRun ./code/00_update_texts_intro.R\n\nThis code updates the local directory of texts used in the introduction of the report sections (from the available and up-to-date directory on the server)."
+    "text": "6.6 Update introductory texts\n\nUpdate the content of your introductory texts (*.docx) if needed, as indicated in the Section 5.6.\nRun ./code/00_update_texts_intro.R\n\nThis code updates the local directory of texts used in the introduction of the report sections (from the available and up-to-date directory on the server).",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-publish-generic-report-round2",
     "href": "06_round_2.html#sec-publish-generic-report-round2",
     "title": "6  Round 2",
     "section": "6.7 Publish the generic report",
-    "text": "6.7 Publish the generic report\nThe number of sections and the number of each type of questions within these sections will vary between projects.\nThe list of sections needs to be defined manually in 000_parameters.R.\n\nPublish the generic report by running the lines below in 0_run_ME_dft2.R\n### . publish Rmd ----\n### .. dft2_report_generic.Rmd ----\ninput &lt;-  \"analysis/dft2/dft2_report_generic.Rmd\"\n\noutput_file &lt;- here::here('output', 'reports', 'dft2',\n                          stringr::str_glue(\"dft2_report_generic_{Sys.Date()}.docx\"))\n\nrmarkdown::render(\n  input = input,\n  output_file = output_file)\n\nThis code will create the word document (“generic report”) by inserting the introductory texts (updated in Section 6.6) and the results tables (created in Section 6.5), based on a reference word template.\nIt automatically calls ./code/dft2/01c_dft2_define_cols.R and ./analysis/00_child_intro_method.Rmd. Then, for each section, it calls ./analysis/dft2/dft2_child_section.Rmd, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:\n\n./code/03a_create_flextable_results_type_1_generic.R : creates the result table for type 1 statements in the section and for their comments\n./code/03b_create_flextable_results_type_2_3_generic.R : creates the result tables for type 2 and 3 statements in the section and for their comments\n\n\n6.7.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/reports/dft2\ndft2_report_generic_date_YYYY-MM-DD.docx\nGeneric report with date"
+    "text": "6.7 Publish the generic report\nThe number of sections and the number of each type of questions within these sections will vary between projects.\nThe list of sections needs to be defined manually in 000_parameters.R.\n\nPublish the generic report by running the lines below in 0_run_ME_dft2.R\n### . publish Rmd ----\n### .. dft2_report_generic.Rmd ----\ninput &lt;-  \"analysis/dft2/dft2_report_generic.Rmd\"\n\noutput_file &lt;- here::here('output', 'reports', 'dft2',\n                          stringr::str_glue(\"dft2_report_generic_{Sys.Date()}.docx\"))\n\nrmarkdown::render(\n  input = input,\n  output_file = output_file)\n\nThis code will create the word document (“generic report”) by inserting the introductory texts (updated in Section 6.6) and the results tables (created in Section 6.5), based on a reference word template.\nIt automatically calls ./code/dft2/01c_dft2_define_cols.R and ./analysis/00_child_intro_method.Rmd. Then, for each section, it calls ./analysis/dft2/dft2_child_section.Rmd, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:\n\n./code/03a_create_flextable_results_type_1_generic.R : creates the result table for type 1 statements in the section and for their comments\n./code/03b_create_flextable_results_type_2_3_generic.R : creates the result tables for type 2 and 3 statements in the section and for their comments\n\n\n6.7.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/reports/dft2\ndft2_report_generic_date_YYYY-MM-DD.docx\nGeneric report with date",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
   },
   {
     "objectID": "06_round_2.html#sec-publish-individualized-reports-round2",
     "href": "06_round_2.html#sec-publish-individualized-reports-round2",
     "title": "6  Round 2",
     "section": "6.8 Publish all individualized reports",
-    "text": "6.8 Publish all individualized reports\n\nPublish individualized reports - one for each respondent of round 2 - by running the lines below in 0_run_ME_dft2.R\n\n### .. 05_dft2_to_render_individual_reports.R ------------------------------\n### TAKES time ... have a coffee, a walk, a nice chat with someone ...\nsource(here::here('code', 'dft2', '05_dft2_to_render_individual_reports.R'),\n       encoding = 'UTF-8')\n\nThis code will create the word document for each expert participant (“individualized report”), based on a word template, by inserting the email of the expert, the introductory texts (updated in Section 6.6), as well as the group result tables with individual answers for each statement.\n\n\n\n\n\nFigure 6.2: dft2_a_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)\n\n\nThe code ./analysis/dft2/dft2_report_per_participant.Rmd (automatically called within ./code/dft2/05_dft2_to_render_individual_reports.R) uses an iterative loop to create the individualized result report for each participant by calling automatically:\n\n./code/dft2/01c_dft2_define_cols.R and\n./code/dft2/02b_dft2_prepare_tables_participants.R : adds results of the participant to the generic table, and includes plots like Figure 6.2.\n\nIt will then call ./analysis/00_child_intro_method.Rmd as well as, for each section, ./analysis/dft2/dft2_child_section.Rmd, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:\n\n./code/04a_create_flextable_results_type_1_participants.R : creates the result table for type 1 statements with individual answers in the section and for their comments\n./code/04b_create_flextable_results_type_2_3_participants.R : creates the result table for type 2 and 3 statements with individual answers in the section and for their comments\n\n\n6.8.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n/output/reports/dft2/report_by_participant/\ndft2_report_participant_X_YYYY-MM-DD.docx\nIndividualized reports (one per participant) with date\n\n\n\nCongratulations: you are now ready to conduct round 3!"
+    "text": "6.8 Publish all individualized reports\n\nPublish individualized reports - one for each respondent of round 2 - by running the lines below in 0_run_ME_dft2.R\n\n### .. 05_dft2_to_render_individual_reports.R ------------------------------\n### TAKES time ... have a coffee, a walk, a nice chat with someone ...\nsource(here::here('code', 'dft2', '05_dft2_to_render_individual_reports.R'),\n       encoding = 'UTF-8')\n\nThis code will create the word document for each expert participant (“individualized report”), based on a word template, by inserting the email of the expert, the introductory texts (updated in Section 6.6), as well as the group result tables with individual answers for each statement.\n\n\n\n\n\n\n\n\nFigure 6.2: dft2_a_s6_type1_participantX.png (statement 6 in section A of round 2 - response of participant X is in red)\n\n\n\nThe code ./analysis/dft2/dft2_report_per_participant.Rmd (automatically called within ./code/dft2/05_dft2_to_render_individual_reports.R) uses an iterative loop to create the individualized result report for each participant by calling automatically:\n\n./code/dft2/01c_dft2_define_cols.R and\n./code/dft2/02b_dft2_prepare_tables_participants.R : adds results of the participant to the generic table, and includes plots like Figure 6.2.\n\nIt will then call ./analysis/00_child_intro_method.Rmd as well as, for each section, ./analysis/dft2/dft2_child_section.Rmd, which will create tables for each type of questions that are in the section (conditional for loop), by running two codes:\n\n./code/04a_create_flextable_results_type_1_participants.R : creates the result table for type 1 statements with individual answers in the section and for their comments\n./code/04b_create_flextable_results_type_2_3_participants.R : creates the result table for type 2 and 3 statements with individual answers in the section and for their comments\n\n\n6.8.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n/output/reports/dft2/report_by_participant/\ndft2_report_participant_X_YYYY-MM-DD.docx\nIndividualized reports (one per participant) with date\n\n\n\nCongratulations: you are now ready to conduct round 3!",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Round 2</span>"
+    ]
+  },
+  {
+    "objectID": "07_round_3.html",
+    "href": "07_round_3.html",
+    "title": "7  Round 3",
+    "section": "",
+    "text": "7.1 E-questionnaire management through REDCap\nRound 2 is over. You have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.\nThe following steps should be done in 1 day:\nYou can now relax during 3-4 days, until the deadline is over.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-e-questionnaire-management-through-redcap-round3",
     "href": "07_round_3.html#sec-e-questionnaire-management-through-redcap-round3",
     "title": "7  Round 3",
-    "section": "7.1 E-questionnaire management through REDCap",
-    "text": "7.1 E-questionnaire management through REDCap\nRound 2 is over. You have now rephrased, added and/or fused statements from round 2 into new ones and are ready to start round 3.\n\n\n\n\n\n\nNote\n\n\n\nThere should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.\n\n\nThe following steps should be done in 1 day:\n\nWithin your round 3 REDCap project: replace all “xxx” with the texts of your actual statements. Each statement header should also indicate reference(s) to the question(s) in round 2 from which it was derived. Duplicate type 1 questions’ “skeleton” based on your needs, i.e., the number of questions per section that you wish to include in this e-questionnaire\nTest the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs\nMove this round 3 REDCap project into production mode - talk with your REDCap Admin if necessary\nSend the hyperlink to experts (participants) with a deadline for e-questionnaire completion ; together with this hyperlink, send their individualized result report from round 2 (output of Section 6.8.1)\n\nYou can now relax during 3-4 days, until the deadline is over.\n\n\n\n\n\n\nTip\n\n\n\nData collection can be observed in real time by accessing the ‘Dashboard’ Menu in REDCap. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire."
+    "section": "",
+    "text": "Note\n\n\n\nThere should be only type 1 questions in this round. The code is therefore simpler and run faster than in round 2.\n\n\n\n\nWithin your round 3 REDCap project: replace all “xxx” with the texts of your actual statements. Each statement header should also indicate reference(s) to the question(s) in round 2 from which it was derived. Duplicate type 1 questions’ “skeleton” based on your needs, i.e., the number of questions per section that you wish to include in this e-questionnaire\nTest the e-questionnaire to verify comprehensiveness of the content and the absence of technical bugs\nMove this round 3 REDCap project into production mode - talk with your REDCap Admin if necessary\nSend the hyperlink to experts (participants) with a deadline for e-questionnaire completion ; together with this hyperlink, send their individualized result report from round 2 (output of Section 6.8.1)\n\n\n\n\n\n\n\n\nTip\n\n\n\nData collection can be observed in real time by accessing the ‘Dashboard’ Menu in REDCap. When getting close to the deadline, remember to send a personalized email to any experts who has not yet completed the e-questionnaire.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-run-me-dft2",
     "href": "07_round_3.html#sec-run-me-dft2",
     "title": "7  Round 3",
     "section": "7.2 0_run_ME_dft3.R - Overview of steps",
-    "text": "7.2 0_run_ME_dft3.R - Overview of steps\nOnce data collection for round 3 is over, you can open 0_run_ME_dft3.R. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports."
+    "text": "7.2 0_run_ME_dft3.R - Overview of steps\nOnce data collection for round 3 is over, you can open 0_run_ME_dft3.R. It will show you the order of files to update and run. It will upload, process and analyse the data and create reports.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-update-data-round3",
     "href": "07_round_3.html#sec-update-data-round3",
     "title": "7  Round 3",
     "section": "7.3 Update data",
-    "text": "7.3 Update data\n\nRun ./code/dft3/01a_dft3_update_data_with_REDCapR.R\n\nThis code will connect to the corresponding REDCap project using the token, downloads the raw data and metadata from the project, and save them as *.RData files. It also creates one *.xlsx table with the raw data, which can be used for quick checks.\n\n7.3.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/redcap_data_raw/\ndft3_metadata.RData\nRaw metadata\n\n\n./data/redcap_data_raw/\ndft3_data_redcapr_raw.RData\nRaw data"
+    "text": "7.3 Update data\n\nRun ./code/dft3/01a_dft3_update_data_with_REDCapR.R\n\nThis code will connect to the corresponding REDCap project using the token, downloads the raw data and metadata from the project, and save them as *.RData files. It also creates one *.xlsx table with the raw data, which can be used for quick checks.\n\n7.3.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/redcap_data_raw/\ndft3_metadata.RData\nRaw metadata\n\n\n./data/redcap_data_raw/\ndft3_data_redcapr_raw.RData\nRaw data",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-recode-data-round3",
     "href": "07_round_3.html#sec-recode-data-round3",
     "title": "7  Round 3",
     "section": "7.4 Recode data",
-    "text": "7.4 Recode data\n\nUpdate as required and run ./code/dft3/01b_dft3_recode_data.R\n\nThis code will process the raw data and the metadata downloaded in Section 7.3, in order to create the “clean” data and metadata tables. In particular, it will:\n\ncorrect labeling errors, typos, etc.\nsimplify labeling\ndefine the lists of variables by type (1)\ndo a conditional deduplication (in case one or several participants have filled in several REDCap records per person -&gt; keep the latest answer choice and all comments)\nsave clean data and metadata in RData format\n\n\n\n\n\n\nFigure 7.1: dft3_z_s4_type1.png (for the statement 4 in preamble of round 3)\n\n\n\ncreate visuals (*.png) for all type 1 questions, showing the distribution of answers on a 1 to 9 scale and a boxplot - see Figure 7.1\n\n\n7.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/dft3/\ndft3_data_clean.RData\nClean data\n\n\n./data/dft3/\ndft3_lookup_final.RData\nClean lookup table (metadata)\n\n\n./output/check/\n*.xlsx\nVarious xlsx files that can be used for checks or sharing\n\n\n./output/png/\ndft3_*_s*_type1.png\nVisuals for all type 1 questions"
+    "text": "7.4 Recode data\n\nUpdate as required and run ./code/dft3/01b_dft3_recode_data.R\n\nThis code will process the raw data and the metadata downloaded in Section 7.3, in order to create the “clean” data and metadata tables. In particular, it will:\n\ncorrect labeling errors, typos, etc.\nsimplify labeling\ndefine the lists of variables by type (1)\ndo a conditional deduplication (in case one or several participants have filled in several REDCap records per person -&gt; keep the latest answer choice and all comments)\nsave clean data and metadata in RData format\n\n\n\n\n\n\n\n\n\nFigure 7.1: dft3_z_s4_type1.png (for the statement 4 in preamble of round 3)\n\n\n\n\ncreate visuals (*.png) for all type 1 questions, showing the distribution of answers on a 1 to 9 scale and a boxplot - see Figure 7.1\n\n\n7.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./data/dft3/\ndft3_data_clean.RData\nClean data\n\n\n./data/dft3/\ndft3_lookup_final.RData\nClean lookup table (metadata)\n\n\n./output/check/\n*.xlsx\nVarious xlsx files that can be used for checks or sharing\n\n\n./output/png/\ndft3_*_s*_type1.png\nVisuals for all type 1 questions",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-prepare-tables-without-participant-id-round3",
     "href": "07_round_3.html#sec-prepare-tables-without-participant-id-round3",
     "title": "7  Round 3",
     "section": "7.5 Prepare tables without participant id",
-    "text": "7.5 Prepare tables without participant id\n\nRun ./code/dft3/02a_dft3_prepare_tables_without_participant_id.R\n\nThis code will analyse the “clean” data (generated in Section 7.4) to create the group result tables (= statistical and graphical summaries).\nIt automatically calls code ./code/dft3/01c_dft3_define_cols.R.\nIt also creates and saves in *.xlsx format the table containing only the “no opinion” responses, allowing a quick check if necessary.\n\n7.5.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/RData/\ndft3_type1_zz_combined.RData\nTable with results of all type 1 questions\n\n\n./output/RData/\ndft3_dt_comments_m.RData\nTable with all comments\n\n\n./output/check/\ndft3_type1_zz0_no_opinion.xlsx\nQuick check table of ‘no opinion’ responses"
+    "text": "7.5 Prepare tables without participant id\n\nRun ./code/dft3/02a_dft3_prepare_tables_without_participant_id.R\n\nThis code will analyse the “clean” data (generated in Section 7.4) to create the group result tables (= statistical and graphical summaries).\nIt automatically calls code ./code/dft3/01c_dft3_define_cols.R.\nIt also creates and saves in *.xlsx format the table containing only the “no opinion” responses, allowing a quick check if necessary.\n\n7.5.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/RData/\ndft3_type1_zz_combined.RData\nTable with results of all type 1 questions\n\n\n./output/RData/\ndft3_dt_comments_m.RData\nTable with all comments\n\n\n./output/check/\ndft3_type1_zz0_no_opinion.xlsx\nQuick check table of ‘no opinion’ responses",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-update-introductory-texts-round3",
     "href": "07_round_3.html#sec-update-introductory-texts-round3",
     "title": "7  Round 3",
     "section": "7.6 Update introductory texts",
-    "text": "7.6 Update introductory texts\n\nUpdate the content of your introductory texts (*.docx) if needed, as indicated in the Section 5.6.\nRun ./code/00_update_texts_intro.R\n\nThis code updates the local directory of texts used in the introduction of the report sections (from the available and up-to-date directory on the server)."
+    "text": "7.6 Update introductory texts\n\nUpdate the content of your introductory texts (*.docx) if needed, as indicated in the Section 5.6.\nRun ./code/00_update_texts_intro.R\n\nThis code updates the local directory of texts used in the introduction of the report sections (from the available and up-to-date directory on the server).",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-create-generic-report-round3",
     "href": "07_round_3.html#sec-create-generic-report-round3",
     "title": "7  Round 3",
     "section": "7.7 Publish the generic report",
-    "text": "7.7 Publish the generic report\nThe number of sections and the number of questions (all type 1) within these sections will vary between projects.\nThe list of sections needs to be defined manually in 000_parameters.R.\n\nPublish the generic report by running the lines below in 0_run_ME_dft3.R\n### . publish Rmd ----\n### .. dft3_report_generic.Rmd ----\ninput &lt;-  \"analysis/dft3/dft3_report_generic.Rmd\"\n\noutput_file &lt;- here::here('output', 'reports', 'dft3',\n                          stringr::str_glue(\"dft3_report_generic_{Sys.Date()}.docx\"))\n\nrmarkdown::render(\n  input = input,\n  output_file = output_file)\n\nThis code will create the word document (“generic report”) inserting the introductory texts (updated in Section 7.6) and the results tables (created in Section 7.5), based on a reference word template.\nIt automatically calls ./code/dft3/01c_dft3_define_cols.R. and ./analysis/00_child_intro_method.Rmd. Then, for each section, it calls ./analysis/dft3/dft3_child_section.Rmd, which will create tables for all questions (type 1) that are in the section (conditional for loop), by running one code:\n\n./code/03a_create_flextable_results_type_1_generic.R : creates the result table for type 1 statements in the section and for their comments\n\n\n7.7.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/reports/dft3\ndft3_report_generic_date_YYYY-MM-DD.docx\nGeneric report with date"
+    "text": "7.7 Publish the generic report\nThe number of sections and the number of questions (all type 1) within these sections will vary between projects.\nThe list of sections needs to be defined manually in 000_parameters.R.\n\nPublish the generic report by running the lines below in 0_run_ME_dft3.R\n### . publish Rmd ----\n### .. dft3_report_generic.Rmd ----\ninput &lt;-  \"analysis/dft3/dft3_report_generic.Rmd\"\n\noutput_file &lt;- here::here('output', 'reports', 'dft3',\n                          stringr::str_glue(\"dft3_report_generic_{Sys.Date()}.docx\"))\n\nrmarkdown::render(\n  input = input,\n  output_file = output_file)\n\nThis code will create the word document (“generic report”) inserting the introductory texts (updated in Section 7.6) and the results tables (created in Section 7.5), based on a reference word template.\nIt automatically calls ./code/dft3/01c_dft3_define_cols.R. and ./analysis/00_child_intro_method.Rmd. Then, for each section, it calls ./analysis/dft3/dft3_child_section.Rmd, which will create tables for all questions (type 1) that are in the section (conditional for loop), by running one code:\n\n./code/03a_create_flextable_results_type_1_generic.R : creates the result table for type 1 statements in the section and for their comments\n\n\n7.7.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/reports/dft3\ndft3_report_generic_date_YYYY-MM-DD.docx\nGeneric report with date",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
   },
   {
     "objectID": "07_round_3.html#sec-publish-individualized-reports",
     "href": "07_round_3.html#sec-publish-individualized-reports",
     "title": "7  Round 3",
     "section": "7.8 Publish all individualized reports",
-    "text": "7.8 Publish all individualized reports\n\nPublish individualized reports - one for each respondent of round 3 - by running the lines below in 0_run_ME_dft3.R\n\n### .. 05_dft3_to_render_individual_reports.R ------------------------------\n### TAKES time ... have a coffee, a walk, a nice chat with someone ...\nsource(here::here('code', 'dft3', '05_dft3_to_render_individual_reports.R'),\n       encoding = 'UTF-8')\n\nThis code will create the word document for each participant (“individualized report”), based on a word template, by inserting the email of the participant, the introductory texts (updated in Section 7.6), as well as the group result tables with individual answers for each statement.\nThe code ./analysis/dft3/dft3_report_per_participant.Rmd (automatically called within ./code/dft3/05_dft3_to_render_individual_reports.R) uses an iterative loop to create the individualized report for each participant by calling automatically:\n\n./code/dft3/01c_dft3_define_cols.R and\n./code/dft3/02b_dft3_prepare_tables_participants.R : adds results of the participant to the generic table\n\nIt will then call ./analysis/00_child_intro_method.Rmd as well as, for each section, ./analysis/dft3/dft3_child_section.Rmd, which will create tables for all questions (type 1) that are in the section (conditional for loop), by running one code:\n\n./code/04a_create_flextable_results_type_1_participants.R : creates the result table for type 1 statements with individual answers in the section and for their comments\n\n\n7.8.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n/output/reports/dft3/report_by_participant/\ndft3_report_participant_X_YYYY-MM-DD.docx\nIndividualized reports (one per participant) with date\n\n\n\nCongratulations: you are now ready to create your overall synthesis report! Individualized reports created in Section 7.8 can be sent to participants for their information."
+    "text": "7.8 Publish all individualized reports\n\nPublish individualized reports - one for each respondent of round 3 - by running the lines below in 0_run_ME_dft3.R\n\n### .. 05_dft3_to_render_individual_reports.R ------------------------------\n### TAKES time ... have a coffee, a walk, a nice chat with someone ...\nsource(here::here('code', 'dft3', '05_dft3_to_render_individual_reports.R'),\n       encoding = 'UTF-8')\n\nThis code will create the word document for each participant (“individualized report”), based on a word template, by inserting the email of the participant, the introductory texts (updated in Section 7.6), as well as the group result tables with individual answers for each statement.\nThe code ./analysis/dft3/dft3_report_per_participant.Rmd (automatically called within ./code/dft3/05_dft3_to_render_individual_reports.R) uses an iterative loop to create the individualized report for each participant by calling automatically:\n\n./code/dft3/01c_dft3_define_cols.R and\n./code/dft3/02b_dft3_prepare_tables_participants.R : adds results of the participant to the generic table\n\nIt will then call ./analysis/00_child_intro_method.Rmd as well as, for each section, ./analysis/dft3/dft3_child_section.Rmd, which will create tables for all questions (type 1) that are in the section (conditional for loop), by running one code:\n\n./code/04a_create_flextable_results_type_1_participants.R : creates the result table for type 1 statements with individual answers in the section and for their comments\n\n\n7.8.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n/output/reports/dft3/report_by_participant/\ndft3_report_participant_X_YYYY-MM-DD.docx\nIndividualized reports (one per participant) with date\n\n\n\nCongratulations: you are now ready to create your overall synthesis report! Individualized reports created in Section 7.8 can be sent to participants for their information.",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Round 3</span>"
+    ]
+  },
+  {
+    "objectID": "08_overall.html",
+    "href": "08_overall.html",
+    "title": "8  Overall",
+    "section": "",
+    "text": "8.1 Update summary image\nIt summarises the process with dates, number of experts (participants) and number of statements. See Figure 8.1 below for an example of this figure using data from the pilot study provided in the demo data (in French).",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "08_overall.html#sec-update-summary-image",
     "href": "08_overall.html#sec-update-summary-image",
     "title": "8  Overall",
-    "section": "8.1 Update summary image",
-    "text": "8.1 Update summary image\n\nUpdate the image for the executive summary in the ./analysis/overall/delphiFT_Overall_FigureFlow.pptx provided with the details pertaining to your project and save it as ./analysis/overall/ExecutiveSummary_figure-Flow.png\n\nIt summarises the process with dates, number of experts (participants) and number of statements. See Figure 8.1 below for an example of this figure using data from the pilot study provided in the demo data (in French).\n\n\n\nFigure 8.1: Overview of the steps for the pilot study of the fast-track Delphi process"
+    "section": "",
+    "text": "Update the image for the executive summary in the ./analysis/overall/delphiFT_Overall_FigureFlow.pptx provided with the details pertaining to your project and save it as ./analysis/overall/ExecutiveSummary_figure-Flow.png\n\n\n\n\n\n\n\n\nFigure 8.1: Overview of the steps for the pilot study of the fast-track Delphi process",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "08_overall.html#sec-update-introductory-texts-for-the-executive-summary",
     "href": "08_overall.html#sec-update-introductory-texts-for-the-executive-summary",
     "title": "8  Overall",
     "section": "8.2 Update introductory texts for the executive summary",
-    "text": "8.2 Update introductory texts for the executive summary\n\nUpdate the introductory texts on the server\nRun ./code/00_update_texts_intro.R one more time to update the *.docx files in your local directory"
+    "text": "8.2 Update introductory texts for the executive summary\n\nUpdate the introductory texts on the server\nRun ./code/00_update_texts_intro.R one more time to update the *.docx files in your local directory",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "08_overall.html#sec-modify-executive-summary-report-title",
     "href": "08_overall.html#sec-modify-executive-summary-report-title",
     "title": "8  Overall",
     "section": "8.3 Modify executive summary report titles and details",
-    "text": "8.3 Modify executive summary report titles and details\n\nOpen the code ./code/000_parameters.R and go to section 4\nCheck and modify if necessary title_overall, subtitle_overall and authors_text\nUpdate the list of type 1 statements from round 2 that you want to keep in the overall report : statement_numbers_in_dft2_to_keep_for_execsummary (some statements might have been reformulated despite reaching agreement and consensus)"
+    "text": "8.3 Modify executive summary report titles and details\n\nOpen the code ./code/000_parameters.R and go to section 4\nCheck and modify if necessary title_overall, subtitle_overall and authors_text\nUpdate the list of type 1 statements from round 2 that you want to keep in the overall report : statement_numbers_in_dft2_to_keep_for_execsummary (some statements might have been reformulated despite reaching agreement and consensus)",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "08_overall.html#sec-publish-overall-report",
     "href": "08_overall.html#sec-publish-overall-report",
     "title": "8  Overall",
     "section": "8.4 0_run_ME_overall.R - Publish overall report",
-    "text": "8.4 0_run_ME_overall.R - Publish overall report\n\nRun 0_run_ME_overall.R\n\nThis code will:\n\nupdate the introductory texts by running ./code/00_update_texts_intro.R\nprepare the result tables (only type 1 questions) with combined round 2 and 3 by running ./code/06_prepare_tables_combined_round_2_3.R\ncreate \\*.xlsx tables for quick checks, if necessary\npublish the overall report (called Executive summary) by running ./analysis/overall/overall_executive_summary.Rmd\n\n\n8.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/checks/\nchk_recode_exec_summary.xlsx\nQuick check table\n\n\n./output/checks/\ntype1_zz_combined_round_2_3.xlsx\nQuick check table\n\n\n./output/RData/\ntype1_zz_combined_round_2_3.RData\nClean data for all type 1 questions from round 2 and 3\n\n\n./output/reports/overall/\ndft_overall_executive_summary_YYYY_MM_DD.docx\nExecutive summary"
+    "text": "8.4 0_run_ME_overall.R - Publish overall report\n\nRun 0_run_ME_overall.R\n\nThis code will:\n\nupdate the introductory texts by running ./code/00_update_texts_intro.R\nprepare the result tables (only type 1 questions) with combined round 2 and 3 by running ./code/06_prepare_tables_combined_round_2_3.R\ncreate \\*.xlsx tables for quick checks, if necessary\npublish the overall report (called Executive summary) by running ./analysis/overall/overall_executive_summary.Rmd\n\n\n8.4.1 Detail of outputs\n\n\n\n\n\n\n\n\nFolder\nOutput file\nDescription\n\n\n\n\n./output/checks/\nchk_recode_exec_summary.xlsx\nQuick check table\n\n\n./output/checks/\ntype1_zz_combined_round_2_3.xlsx\nQuick check table\n\n\n./output/RData/\ntype1_zz_combined_round_2_3.RData\nClean data for all type 1 questions from round 2 and 3\n\n\n./output/reports/overall/\ndft_overall_executive_summary_YYYY_MM_DD.docx\nExecutive summary",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "08_overall.html#sec-finalize-overall-report",
     "href": "08_overall.html#sec-finalize-overall-report",
     "title": "8  Overall",
     "section": "8.5 Finalise overall report",
-    "text": "8.5 Finalise overall report\nHere are a few tips to be done manually (directly in your Word software) to improve the look and comprehensiveness of your executive summary:\n\nOpen the summary report using the Word software\nAdd page numbers (still an unsolved problem - see Stackoverflow question)\nAdd your ‘Key messages’\nAdd the “target” images (available in ./_img/ as *.png files) in the table headers (sorry, we had trouble doing it by code)\nIf necessary, rearrange the order of the statements within the tables (example: first, statement that have reached consensual agreement by the end of round 2, then those having reached consensual agreement in round 3)\nDelete the ‘section’ column\nAdjust the height of the table rows\nDelete the table ‘Consensual disagreement reached’ if none of your statements have reached a consensual disagreement\n\n\n\n\n\n\n\nTip\n\n\n\nIf table captions and/or tables are on next page, it is probably because of paragraph formatting:\n\nselect caption or table and go to Paragraph &gt; Line and Page Breaks tab (Enchaînements in french)\nuncheck Widow/Orphan control (Eviter veuves et orphelins) and Page break before (Paragraphes solidaires)\n\n\n\n… et voilà !\nCongratulations for going through all steps of the fast-track Delphi process. You are now ready to spread the consensual messages that have been reached by your expert participants. Good luck and enjoy the communication part!"
+    "text": "8.5 Finalise overall report\nHere are a few tips to be done manually (directly in your Word software) to improve the look and comprehensiveness of your executive summary:\n\nOpen the summary report using the Word software\nAdd page numbers (still an unsolved problem - see Stackoverflow question)\nAdd your ‘Key messages’\nAdd the “target” images (available in ./_img/ as *.png files) in the table headers (sorry, we had trouble doing it by code)\nIf necessary, rearrange the order of the statements within the tables (example: first, statement that have reached consensual agreement by the end of round 2, then those having reached consensual agreement in round 3)\nDelete the ‘section’ column\nAdjust the height of the table rows\nDelete the table ‘Consensual disagreement reached’ if none of your statements have reached a consensual disagreement\n\n\n\n\n\n\n\nTip\n\n\n\nIf table captions and/or tables are on next page, it is probably because of paragraph formatting:\n\nselect caption or table and go to Paragraph &gt; Line and Page Breaks tab (Enchaînements in french)\nuncheck Widow/Orphan control (Eviter veuves et orphelins) and Page break before (Paragraphes solidaires)\n\n\n\n… et voilà !\nCongratulations for going through all steps of the fast-track Delphi process. You are now ready to spread the consensual messages that have been reached by your expert participants. Good luck and enjoy the communication part!",
+    "crumbs": [
+      "Create your own project",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Overall</span>"
+    ]
   },
   {
     "objectID": "resources.html",
     "href": "resources.html",
     "title": "Appendix A — Resources",
     "section": "",
-    "text": "Here are some of resources we used to learn and improve our skills with R, RStudio, Quarto and various packages.\nThanks to the contributors of the packages and tutorials.\n\nR for Data Science (2e) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nTom Mock. Beautiful Reports and Presentations with Quarto. 2022-09-27\nTracy Teal. These are a few of my favorite things (about Quarto presentations). RStudio (2022)\nQuarto Blog - News, tips, and commentary about all things Quarto\nDavid Gohel. Using the flextable R package\nDavid Gohel. Officeverse"
+    "text": "Here are some of resources we used to learn and improve our skills with R, RStudio, Quarto and various packages.\nThanks to the contributors of the packages and tutorials.\n\nR for Data Science (2e) by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nTom Mock. Beautiful Reports and Presentations with Quarto. 2022-09-27\nTracy Teal. These are a few of my favorite things (about Quarto presentations). RStudio (2022)\nQuarto Blog - News, tips, and commentary about all things Quarto\nDavid Gohel. Using the flextable R package\nDavid Gohel. Officeverse",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Resources</span>"
+    ]
   }
 ]

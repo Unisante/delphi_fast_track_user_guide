@@ -50,7 +50,7 @@ book:
   appendices:
     - resources.qmd
   page-footer: 
-    left: "Fast-track Delphi: user guide - v0.6 - Feb 2024"
+    left: "Fast-track Delphi: user guide - v0.6 - Dec 2024"
     center: "![](_img/logo_unisante_footer.png){width=25%}"
 
 

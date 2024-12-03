@@ -70,7 +70,10 @@ This project was funded by internal research funds (Unisanté).
 
 1.  Velarde Crézé C, Lebon L, Duperrex O, Faivre V, Pasche M, Cornuz J. Nouvelles cigarettes électroniques jetables « puffs » : consensus d'expert-e-s sur leur réglementation. Revue Médicale Suisse. 2023;19(812):181‑5. DOI: [10.53738/REVMED.2023.19.812.181](https://doi.org/10.53738/revmed.2023.19.812.181)
 
-2.  Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A fast-track Delphi process to timely support public health-related policy decisions in a crisis context. (in preparation)
+2.  Velarde Crézé C, Zürcher K, Duperrex O, Flahault A, Cornuz J. La recherche de consensus scientifique pour promouvoir le lien entre science et politiques publiques. Rev Med Suisse. 2024 Jan 31;20(859):230–4. DOI: [10.53738/REVMED.2024.20.859.230](https://doi.org/10.53738/revmed.2024.20.859.230)
+
+3. Velarde Crézé C, Duperrex O, Lebon L, Faivre V, Pasche M, Cornuz J. A multi-stage approach to support timely health policy decisions during crisis: the fast-track Delphi. BMC Public Health. 2024.  DOI: [10.1186/s12889-024-20903-0](https://doi.org/10.1186/s12889-024-20903-0)
+
 
 # Citation {#sec-citation}
 
@@ -84,9 +87,9 @@ Duperrex O and Velarde Crézé C. Fast-track Delphi: user guide. v0.5. 2023. Dé
 
 ![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png){fig-align="left"}
 
-
-:::{.callout-tip collapse="true"}
+::: {.callout-tip collapse="true"}
 ## Expand for Session Info
+
 ```{r, echo = FALSE}
 ## from https://themockup.blog/posts/2022-04-18-session-info/#quarto-native-callouts
 
